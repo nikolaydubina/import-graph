@@ -18,8 +18,7 @@ Every stage is standalone and can be processed with usual UNIX tools.
 - `Python` https://github.com/naiquevin/pipdeptree written in Python; looks for python modules locally; does not collect data; CLI; JSON and dot, Deprecated  
 - `JavaScript` https://github.com/auchenberg/dependo written in JavaScript; does not fetch data; D3.js; CLI; HTML   
 - `JavaScript` https://github.com/pahen/madge written in JavaScript; does not collect data; CLI; dot  
-- `JavaScript` https://github.com/sverweij/dependency-cruiser written in JavaScript; rules; does not collect data;  
-  - CLI; dot  
+- `JavaScript` https://github.com/sverweij/dependency-cruiser written in JavaScript; rules; does not collect data; CLI; dot  
 - `JavaScript` https://github.com/anvaka/npmgraph.an written in JavaScript; collects data; HTML; hosted in GitHub Pages  
 - `JavaScript` https://github.com/anvaka/npmgraphbuilder written in JavaScript; collects data; module  
 - `JavaScript` https://github.com/dyatko/arkit written in JavaScript; modules and dependencies; CLI; svg, puml  
