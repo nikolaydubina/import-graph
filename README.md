@@ -3,9 +3,10 @@
 
 Collect and visualize dependencies data for your project
 
-Works with `Go`, `Python` and `GitHub`. 
-Will be extended in future for more source. 
-Works as CLI as web page.
+Works with `Go` and `GitHub`. 
+Will be extended in future for more languages and sources. 
+CLI, dot, web.
+Every stage is standalone and can be processed with usual UNIX tools. 
 
 ## Related Projects
 
