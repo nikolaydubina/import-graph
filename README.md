@@ -1,12 +1,13 @@
-> Have my dependencies updated recently?  
-> Does my dependencies have good test coverage?  
+> When was the last time my dependencies were updated?  
+> Are they well maintained?  
+> Do they have good test coverage?  
+> Who maintains them?  
+> Who else uses them?  
 
-Collect and visualize dependencies data for your project
-
-Works with `Go` and `GitHub`. 
-Will be extended in future for more languages and sources. 
-CLI, dot, web.
-Every stage is standalone and can be processed with usual UNIX tools. 
+Tools here allow you to _collect_ and _visualize_ data about your dependencies.
+Every stage is a UNIX filter which allows great integrations.
+Front ends are in [dot](https://graphviz.org) and web.
+Currently works with `Go` and `GitHub`.
 
 ## Related Projects
 
