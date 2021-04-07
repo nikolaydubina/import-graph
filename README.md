@@ -1,5 +1,5 @@
-> Have my dependencies updated recently? 
-> Does my dependencies have good test coverage?
+> Have my dependencies updated recently?  
+> Does my dependencies have good test coverage?  
 
 Collect and visualize dependencies data for your project
 
