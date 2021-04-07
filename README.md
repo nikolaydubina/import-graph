@@ -3,14 +3,15 @@
 
 Collect and visualize dependencies data for your project
 
-Works with `Go`, `Python` and `GitHub`. More sources and languages will follow.
+Works with `Go`, `Python` and `GitHub`. 
+Will be extended in future for more source. 
+Works as CLI as web page.
 
 ## Related Projects
 
-- `Dot` https://graphviz.org/Gallery/directed/neural-network.html
-- `Go` https://github.com/loov/goda
-- `Python` https://github.com/jmarkowski/codeviz
-- `Python` https://github.com/thebjorn/pydeps
+- `Dot` https://graphviz.org/Gallery/directed/neural-network.html is a very popular tool for visualizing graph data
+- `Go` https://github.com/loov/goda writen in Go; analyses imports on its own; does not collect dta; CLI; dot
+- `C++` https://github.com/jmarkowski/codeviz writen in Python; C++ headers analysis; does not collect data; CLI; dot
+- `Python` https://github.com/thebjorn/pydeps written in Python; looks for Python bytecode imports; clustering; does not collect data; CLI; dot
 - `JavaScript` TODO
 - `Java` TODO
-- `C++` TODO
