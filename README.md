@@ -15,6 +15,7 @@ Currently works with `Go` and `GitHub`.
 - `Graphviz` https://graphviz.org/Gallery/directed/neural-network.html is nice example of dot format
 - `Docs` https://awesomeopensource.com/projects/dependency-graph is a list of dependency visualization projects  
 - `Go` https://github.com/loov/goda written in Go; analyses imports on its own; does not collect dta; CLI; dot  
+- `Go` https://github.com/adonovan/spaghetti wirtten in Go; search and read details about selected package; web; not graphic
 - `C++` https://github.com/jmarkowski/codeviz written in Python; C++ headers analysis; does not collect data; CLI; dot  
 - `Python` https://github.com/thebjorn/pydeps written in Python; looks for Python bytecode imports; clustering; does not collect data; CLI; dot  
 - `Python` https://github.com/naiquevin/pipdeptree written in Python; looks for python modules locally; does not collect data; CLI; JSON and dot, Deprecated  
