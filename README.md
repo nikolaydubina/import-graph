@@ -1,8 +1,8 @@
 > When was the last time my dependencies were updated?  
 > Are they well maintained?  
-> Do they have good test coverage?  
 > Who maintains them?  
 > Who else uses them?  
+> Do they have good test coverage?  
 
 Tools here allow you to _collect_ and _visualize_ data about your dependencies.
 Every stage is a UNIX filter which allows great integrations.
