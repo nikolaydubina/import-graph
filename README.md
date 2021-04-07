@@ -23,8 +23,7 @@ Every stage is standalone and can be processed with usual UNIX tools.
 - `JavaScript` https://github.com/anvaka/npmgraphbuilder written in JavaScript; collects data; module  
 - `JavaScript` https://github.com/dyatko/arkit written in JavaScript; modules and dependencies; CLI; svg, puml  
 - `JavaScript` https://github.com/hughsk/colony written in JavaScript; does not collect data; HTML; JSON  
-- `JavaScript` https://www.npmjs.com/package/node-dependency-visualizer written in JavaScript; does not collect  
-  - data; CLI; dot  
+- `JavaScript` https://www.npmjs.com/package/node-dependency-visualizer written in JavaScript; does not collectdata; CLI; dot  
 - `Objective-C` `Swift` https://github.com/PaulTaykalo/objc-dependency-visualizer written in JavaScript and Ruby; does not collect data; CLI; dot; HTML; D3.js   
 - `Java` https://github.com/arunkumar9t2/scabbard written in Kotlin; CLI; dot  
 - `PHP` https://github.com/mamuz/PhpDependencyAnalysis written in PHP; does not collect data; code analysis; CLI; dot  
