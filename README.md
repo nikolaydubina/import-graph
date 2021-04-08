@@ -13,6 +13,7 @@ Currently works with `Go` and `GitHub`.
 
 - `Graphviz` https://graphviz.org/ is a very popular tool for visualizing graph data, most of tools bellow use dot from it
 - `Graphviz` https://graphviz.org/Gallery/directed/neural-network.html is nice example of dot format
+- `Graphviz` http://magjac.com/graphviz-visual-editor online editor
 - `Docs` https://awesomeopensource.com/projects/dependency-graph is a list of dependency visualization projects  
 - `Go` https://github.com/loov/goda written in Go; analyses imports on its own; does not collect dta; CLI; dot  
 - `Go` https://github.com/adonovan/spaghetti wirtten in Go; search and read details about selected package; web; not graphic
