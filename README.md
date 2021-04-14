@@ -1,18 +1,23 @@
-> Have my dependencies updated recently?  
-> Does my dependencies have good test coverage?  
+> When was the last time my dependencies were updated?  
+> Are they well maintained?  
+> Who maintains them?  
+> Who else uses them?  
+> Do they have good test coverage?  
 
-Collect and visualize dependencies data for your project
-
-Works with `Go` and `GitHub`. 
-Will be extended in future for more languages and sources. 
-CLI, dot, web.
-Every stage is standalone and can be processed with usual UNIX tools. 
+Tools here allow you to _collect_ and _visualize_ data about your dependencies.
+Every stage is a UNIX filter which allows great integrations.
+Front ends are in [dot](https://graphviz.org) and web.
+Currently works with `Go` and `GitHub`.
 
 ## Related Projects
 
-- `Dot` https://graphviz.org/Gallery/directed/neural-network.html is a very popular tool for visualizing graph data  
+- `Graphviz` https://graphviz.org/ is a very popular tool for visualizing graph data, most of tools bellow use dot from it
+- `Graphviz` https://graphviz.org/Gallery/directed/neural-network.html is nice example of dot format
+- `Graphviz` http://magjac.com/graphviz-visual-editor online editor
 - `Docs` https://awesomeopensource.com/projects/dependency-graph is a list of dependency visualization projects  
 - `Go` https://github.com/loov/goda written in Go; analyses imports on its own; does not collect dta; CLI; dot  
+- `Go` https://github.com/adonovan/spaghetti wirtten in Go; search and read details about selected package; web; not graphic
+- `GitHub Tasks` https://github.com/moul/depviz written in Go and JavaScript; collects data from GitHub Tasks; plots nice web UI
 - `C++` https://github.com/jmarkowski/codeviz written in Python; C++ headers analysis; does not collect data; CLI; dot  
 - `Python` https://github.com/thebjorn/pydeps written in Python; looks for Python bytecode imports; clustering; does not collect data; CLI; dot  
 - `Python` https://github.com/naiquevin/pipdeptree written in Python; looks for python modules locally; does not collect data; CLI; JSON and dot, Deprecated  
@@ -23,8 +28,7 @@ Every stage is standalone and can be processed with usual UNIX tools.
 - `JavaScript` https://github.com/anvaka/npmgraphbuilder written in JavaScript; collects data; module  
 - `JavaScript` https://github.com/dyatko/arkit written in JavaScript; modules and dependencies; CLI; svg, puml  
 - `JavaScript` https://github.com/hughsk/colony written in JavaScript; does not collect data; HTML; JSON  
-- `JavaScript` https://www.npmjs.com/package/node-dependency-visualizer written in JavaScript; does not collect  
-  - data; CLI; dot  
+- `JavaScript` https://www.npmjs.com/package/node-dependency-visualizer written in JavaScript; does not collectdata; CLI; dot  
 - `Objective-C` `Swift` https://github.com/PaulTaykalo/objc-dependency-visualizer written in JavaScript and Ruby; does not collect data; CLI; dot; HTML; D3.js   
 - `Java` https://github.com/arunkumar9t2/scabbard written in Kotlin; CLI; dot  
 - `PHP` https://github.com/mamuz/PhpDependencyAnalysis written in PHP; does not collect data; code analysis; CLI; dot  
