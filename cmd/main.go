@@ -5,12 +5,12 @@ import (
 	"net/http"
 	"sync"
 
+	"github.com/nikolaydubina/import-graph/gitstats"
+	gitStorage "github.com/nikolaydubina/import-graph/gitstats/storage"
 	"github.com/nikolaydubina/import-graph/iggo"
 	iggorc "github.com/nikolaydubina/import-graph/iggo/resolver_cached"
 )
 
-// get repo code
-// get stats about git repo (last updated; num people updated)
 // check test data?
 // check code coverage?
 // check readme mentions alpha/beta
@@ -33,14 +33,31 @@ import (
 func main() {
 	gc := iggo.GoProcessGraphBuilder{}
 	gf := iggorc.GoCachedResolver{Resolver: &iggo.GoResolver{HTTPClient: http.DefaultClient}, Storage: sync.Map{}}
-	g, _ := gc.BuildGraph()
+	gitStatsFetcher := gitstats.GitStatsFetcher{
+		GitStorage: &gitStorage.GitProcessStorage{
+			Path: ".import-graph/git-repos/",
+		},
+	}
+
+	g, err := gc.BuildGraph()
+	if err != nil {
+		log.Println(err)
+	}
 	for _, n := range g.Nodes {
-		gitHubURL, err := gf.ResolveGitHubURL(n.Name)
+		gitURL, err := gf.ResolveGitURL(n.Name)
 		if err != nil {
 			log.Println(err)
 			continue
 		}
-		log.Println(gitHubURL)
+		if err := gitStatsFetcher.GitStorage.Fetch(*gitURL); err != nil {
+			log.Println(err)
+			continue
+		}
+
+		gitStats, err := gitStatsFetcher.GetGitStats(*gitURL)
+		if err != nil {
+			log.Println(err)
+		}
+		log.Printf("%+v\n", gitStats)
 	}
-	return
 }
