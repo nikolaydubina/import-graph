@@ -30,7 +30,7 @@ func (g *GitStatsFetcher) GetGitStats(gitURL url.URL) (GitStats, error) {
 		URL: gitURL,
 	}
 
-	logs, err := GetLog(g.GitStorage.DirPath(gitURL))
+	logs, err := NewGitLog(g.GitStorage.DirPath(gitURL))
 	if err != nil {
 		return stats, fmt.Errorf("can not get git logs: %w", err)
 	}
@@ -39,20 +39,8 @@ func (g *GitStatsFetcher) GetGitStats(gitURL url.URL) (GitStats, error) {
 	}
 
 	stats.LastCommit = logs[0].AuthorDate
-	stats.MonthsSinceLastCommit = logs[0].MonthsSinceLastCommit()
-	stats.NumContributors = GetNumContributors(logs)
+	stats.MonthsSinceLastCommit = logs.MonthsSinceLastCommit()
+	stats.NumContributors = logs.NumContributors()
 
 	return stats, nil
-}
-
-func GetNumContributors(logs []GitLogEntry) uint {
-	var count uint = 0
-	contributors := map[string]bool{}
-	for _, entry := range logs {
-		if !contributors[entry.AuthorEmail] {
-			contributors[entry.AuthorEmail] = true
-			count++
-		}
-	}
-	return count
 }

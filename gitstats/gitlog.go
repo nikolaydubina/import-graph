@@ -16,10 +16,6 @@ type GitLogEntry struct {
 	AuthorDate  time.Time
 }
 
-func (e GitLogEntry) MonthsSinceLastCommit() uint {
-	return uint(math.Floor(float64(time.Since(e.AuthorDate).Hours()) / 24 / 28))
-}
-
 // NewGitLogEntryFromLine git log entry from single row of predefined pretty print format
 func NewGitLogEntryFromLine(input string) (GitLogEntry, error) {
 	vals := strings.Split(strings.TrimSpace(input), " ")
@@ -39,8 +35,11 @@ func NewGitLogEntryFromLine(input string) (GitLogEntry, error) {
 	return entry, nil
 }
 
-// GetLog fetches git log entries given path for git
-func GetLog(gitPath string) ([]GitLogEntry, error) {
+// GitLog is sequence of git log entries in reverse chronological order (i.e. first is latest)
+type GitLog []GitLogEntry
+
+// NewGitLog fetches git log entries given path for git
+func NewGitLog(gitPath string) (GitLog, error) {
 	cmd := exec.Command(
 		"git",
 		fmt.Sprintf("--git-dir=%s/.git", gitPath),
@@ -71,4 +70,25 @@ func GetLog(gitPath string) ([]GitLogEntry, error) {
 		return nil, fmt.Errorf("command did not finish successfully: %w", err)
 	}
 	return gitlogs, nil
+}
+
+// NumContributors returns number of contributors in log
+func (logs GitLog) NumContributors() uint {
+	var count uint = 0
+	contributors := map[string]bool{}
+	for _, entry := range logs {
+		if !contributors[entry.AuthorEmail] {
+			contributors[entry.AuthorEmail] = true
+			count++
+		}
+	}
+	return count
+}
+
+// MonthsSinceLastCommit returns how many months was since last commit
+func (logs GitLog) MonthsSinceLastCommit() uint {
+	if len(logs) == 0 {
+		return 0
+	}
+	return uint(math.Floor(float64(time.Since(logs[0].AuthorDate).Hours()) / 24 / 28))
 }
