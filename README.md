@@ -9,6 +9,13 @@ Every stage is a UNIX filter which allows great integrations.
 Front ends are in [dot](https://graphviz.org) and web.
 Currently works with `Go` and `GitHub`.
 
+## Go
+
+Using module level dependency graph. This is because:
+
+- go mod graph
+- modules are linked to repositories and it is straightforward how to fetch it
+
 ## Related Projects
 
 - `Graphviz` https://graphviz.org/ is a very popular tool for visualizing graph data, most of tools bellow use dot from it

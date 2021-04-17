@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-type GitProcessStorage interface {
+type GitStorage interface {
 	Fetch(gitURL url.URL) error
 	DirPath(gitURL url.URL) string
 }
@@ -22,7 +22,7 @@ type GitStats struct {
 
 // GitStatsFetcher computes git stats after fetching using provided storage
 type GitStatsFetcher struct {
-	GitStorage GitProcessStorage
+	GitStorage GitStorage
 }
 
 func (g *GitStatsFetcher) GetGitStats(gitURL url.URL) (GitStats, error) {

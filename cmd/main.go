@@ -6,7 +6,6 @@ import (
 	"sync"
 
 	"github.com/nikolaydubina/import-graph/gitstats"
-	gitStorage "github.com/nikolaydubina/import-graph/gitstats/storage"
 	"github.com/nikolaydubina/import-graph/iggo"
 	iggorc "github.com/nikolaydubina/import-graph/iggo/resolver_cached"
 )
@@ -34,7 +33,7 @@ func main() {
 	gc := iggo.GoProcessGraphBuilder{}
 	gf := iggorc.GoCachedResolver{Resolver: &iggo.GoResolver{HTTPClient: http.DefaultClient}, Storage: sync.Map{}}
 	gitStatsFetcher := gitstats.GitStatsFetcher{
-		GitStorage: &gitStorage.GitProcessStorage{
+		GitStorage: &gitstats.GitProcessStorage{
 			Path: ".import-graph/git-repos/",
 		},
 	}
