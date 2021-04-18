@@ -54,6 +54,16 @@ func getNameFromVersioned(versioned string) string {
 	return parts[0]
 }
 
+// GoReaderModGraphBuilder builds graph from reader based on `go mod graph` output
+type GoReaderModGraphBuilder struct {
+	Reader           io.Reader
+	GoModGraphParser GoModGraphParser
+}
+
+func (c *GoReaderModGraphBuilder) BuildGraph() (*Graph, error) {
+	return c.GoModGraphParser.Parse(c.Reader)
+}
+
 // GoCmdModGraphBuilder invokes `go mod graph` and parses output.
 // This is useful if caller does not have this input yet.
 type GoCmdModGraphBuilder struct {

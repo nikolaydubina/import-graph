@@ -20,7 +20,7 @@ Using module level dependency graph. This is because:
 
 ```bash
 $ make build
-$ ./import-graph/cmd/cmd | jq --unbuffered
+$ go mod graph | ./import-graph/cmd/cmd | jq --unbuffered
 ```
 
 ## Related Projects
