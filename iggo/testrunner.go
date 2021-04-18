@@ -11,22 +11,22 @@ import (
 	"strings"
 )
 
-type GoProcessTestRunner struct{}
+type GoCmdTestRunner struct{}
 
 // GoModuleTestRunResult is summary of running tests in for all packages in Go module
 type GoModuleTestRunResult struct {
-	HasTests                  bool
-	HasTestFiles              bool
-	NumPackages               uint32
-	NumPackagesWithTests      uint32
-	NumPackagesWithTestsFiles uint32
-	NumPackagesTestsPassed    uint32
-	MinPackageCoverage        float64
-	AvgPackageCoverage        float64
+	HasTests                  bool    `json:"has_tests"`
+	HasTestFiles              bool    `json:"has_test_files"`
+	NumPackages               uint32  `json:"num_packages"`
+	NumPackagesWithTests      uint32  `json:"num_packages_with_tests"`
+	NumPackagesWithTestsFiles uint32  `json:"num_packages_with_tests_files"`
+	NumPackagesTestsPassed    uint32  `json:"nun_packages_tests_passed"`
+	MinPackageCoverage        float64 `json:"min_package_coverage"`
+	AvgPackageCoverage        float64 `json:"avg_package_coverage"`
 }
 
 // RunModuleTets runs tests for all packages in Go module, collects aggregate statistics
-func (c *GoProcessTestRunner) RunModuleTets(moduleDirPath string) (GoModuleTestRunResult, error) {
+func (c *GoCmdTestRunner) RunModuleTets(moduleDirPath string) (GoModuleTestRunResult, error) {
 	pkgTestStats, err := c.RunTests(moduleDirPath)
 	if err != nil {
 		return GoModuleTestRunResult{}, err
@@ -49,7 +49,7 @@ func (c *GoProcessTestRunner) RunModuleTets(moduleDirPath string) (GoModuleTestR
 		if v.Passed {
 			stats.NumPackagesTestsPassed++
 		}
-		if v.Coverage < stats.MinPackageCoverage {
+		if v.Coverage > 0 && (stats.MinPackageCoverage == 0 || v.Coverage < stats.MinPackageCoverage) {
 			stats.MinPackageCoverage = v.Coverage
 		}
 		sumCov += v.Coverage
@@ -68,7 +68,7 @@ type GoPackageTestRunResult struct {
 }
 
 // RunTests runs tests via Go process and returns report
-func (c *GoProcessTestRunner) RunTests(moduleDirPath string) (map[string]GoPackageTestRunResult, error) {
+func (c *GoCmdTestRunner) RunTests(moduleDirPath string) (map[string]GoPackageTestRunResult, error) {
 	cmd := exec.Command("go", "test", "-json", "-covermode=atomic", "./...")
 	cmd.Dir = moduleDirPath
 	stdout, err := cmd.StdoutPipe()

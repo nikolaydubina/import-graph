@@ -1,2 +1,2 @@
 build:
-	cd cmd; go build 
+	cd cmd; GO111MODULE=on go build ./... 

@@ -16,6 +16,13 @@ Using module level dependency graph. This is because:
 - go mod graph
 - modules are linked to repositories and it is straightforward how to fetch it
 
+## How to run
+
+```bash
+$ make build
+$ ./import-graph/cmd/cmd | jq --unbuffered
+```
+
 ## Related Projects
 
 - `Graphviz` https://graphviz.org/ is a very popular tool for visualizing graph data, most of tools bellow use dot from it
