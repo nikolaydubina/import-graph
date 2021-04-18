@@ -29,7 +29,7 @@ $ go mod graph | ./import-graph/cmd/cmd | jq
     "num_packages": 2,
     "num_packages_with_tests": 2,
     "num_packages_with_tests_files": 2,
-    "nun_packages_tests_passed": 2,
+    "num_packages_tests_passed": 2,
     "min_package_coverage": 85.7,
     "avg_package_coverage": 86.95
 }

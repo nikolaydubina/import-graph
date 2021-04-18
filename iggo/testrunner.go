@@ -20,7 +20,7 @@ type GoModuleTestRunResult struct {
 	NumPackages               uint32  `json:"num_packages"`
 	NumPackagesWithTests      uint32  `json:"num_packages_with_tests"`
 	NumPackagesWithTestsFiles uint32  `json:"num_packages_with_tests_files"`
-	NumPackagesTestsPassed    uint32  `json:"nun_packages_tests_passed"`
+	NumPackagesTestsPassed    uint32  `json:"num_packages_tests_passed"`
 	MinPackageCoverage        float64 `json:"min_package_coverage"`
 	AvgPackageCoverage        float64 `json:"avg_package_coverage"`
 }
