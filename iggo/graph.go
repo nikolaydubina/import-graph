@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"os/exec"
 	"strings"
 
 	"go.uber.org/multierr"
@@ -93,40 +92,4 @@ func getNameFromVersioned(versioned string) string {
 		return ""
 	}
 	return parts[0]
-}
-
-// GoReaderModGraphBuilder builds graph from reader based on `go mod graph` output
-type GoReaderModGraphBuilder struct {
-	Reader           io.Reader
-	GoModGraphParser GoModGraphParser
-}
-
-func (c *GoReaderModGraphBuilder) BuildGraph() (*Graph, error) {
-	return c.GoModGraphParser.Parse(c.Reader)
-}
-
-// GoCmdModGraphBuilder invokes `go mod graph` and parses output.
-// This is useful if caller does not have this input yet.
-type GoCmdModGraphBuilder struct {
-	GoModGraphParser GoModGraphParser
-}
-
-func (c *GoCmdModGraphBuilder) BuildGraph() (*Graph, error) {
-	cmd := exec.Command("go", "mod", "graph")
-	stdout, err := cmd.StdoutPipe()
-	if err != nil {
-		return nil, fmt.Errorf("can not get stdout pipe: %w", err)
-	}
-	if err := cmd.Start(); err != nil {
-		return nil, fmt.Errorf("can not start go command: %w", err)
-	}
-	graph, err := c.GoModGraphParser.Parse(stdout)
-	if err != nil {
-		return nil, fmt.Errorf("can not parse go mod graph: %w", err)
-	}
-
-	if err := cmd.Wait(); err != nil {
-		return nil, fmt.Errorf("command did not finish successfully: %w", err)
-	}
-	return graph, nil
 }
