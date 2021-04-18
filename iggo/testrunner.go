@@ -55,7 +55,7 @@ func (c *GoCmdTestRunner) RunModuleTets(moduleDirPath string) (GoModuleTestRunRe
 		sumCov += v.Coverage
 	}
 
-	stats.AvgPackageCoverage = sumCov / float64(stats.NumPackages)
+	stats.AvgPackageCoverage = sumCov / float64(stats.NumPackagesWithTests)
 	return stats, nil
 }
 

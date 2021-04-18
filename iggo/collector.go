@@ -42,19 +42,26 @@ func (c *GoModuleStatsCollector) CollectStats(moduleName string) (moduleStats Mo
 	}
 
 	gitURL, err := c.URLResolver.ResolveGitURL(moduleName)
-	errFinal = multierr.Combine(errFinal, fmt.Errorf("can not resolve URL: %w", err))
+	if err != nil {
+		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not resolve URL: %w", err))
+	}
+
 	if err := c.GitStorage.Fetch(*gitURL); err != nil {
 		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not fetch git: %w", err))
 	}
 	gitDirPath := c.GitStorage.DirPath(*gitURL)
 
 	gitStats, err := c.GitStatsFetcher.GetGitStats(gitDirPath)
-	errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get git stats: %w", err))
-	moduleStats.GitStats = &gitStats
+	if err != nil {
+		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get git stats: %w", err))
+	}
+	moduleStats.GitStats = gitStats
 
 	testStats, err := c.TestRunner.RunModuleTets(gitDirPath)
-	errFinal = multierr.Combine(errFinal, fmt.Errorf("can not run tests: %w", err))
-	moduleStats.GoModuleTestRunResult = &testStats
+	if err != nil {
+		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not run tests: %w", err))
+	}
+	moduleStats.GoModuleTestRunResult = testStats
 
 	return
 }
@@ -69,7 +76,9 @@ type GoModuleGraphStatsCollector struct {
 func (c *GoModuleGraphStatsCollector) CollectStats(g Graph) (finalGraph Graph, finalErr error) {
 	for _, n := range g.Modules {
 		moduleWithStats, err := c.ModuleCollector.CollectStats(n.ModuleName)
-		finalErr = multierr.Combine(finalErr, fmt.Errorf("can not get module stats for module %s: %w", n.ModuleName, err))
+		if err != nil {
+			finalErr = multierr.Combine(finalErr, fmt.Errorf("can not get module stats for module %s: %w", n.ModuleName, err))
+		}
 		finalGraph.Modules = append(finalGraph.Modules, moduleWithStats)
 	}
 

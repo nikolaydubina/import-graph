@@ -24,8 +24,8 @@ type ModuleStats struct {
 	ModuleName string `json:"module_name"`
 
 	// Data bellow will be filled by appropriate routines
-	*gitstats.GitStats
-	*GoModuleTestRunResult
+	gitstats.GitStats
+	GoModuleTestRunResult
 }
 
 type Graph struct {
