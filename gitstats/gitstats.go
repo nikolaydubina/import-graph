@@ -14,7 +14,9 @@ type GitStorage interface {
 // GitStats contains information about single git repository computed using git only
 type GitStats struct {
 	LastCommit            time.Time `json:"last_commit"`
-	MonthsSinceLastCommit uint      `json:"months_since_last_commit"`
+	DaysSinceLastCommit   float64   `json:"days_since_last_commit"`
+	YearsSinceLastCommit  float64   `json:"years_since_last_commit"`
+	MonthsSinceLastCommit float64   `json:"months_since_last_commit"`
 	NumContributors       uint      `json:"num_contributors"`
 }
 
@@ -35,7 +37,9 @@ func (g *GitStatsFetcher) GetGitStats(gitDirPath string) (GitStats, error) {
 	}
 
 	stats.LastCommit = logs[0].AuthorDate
-	stats.MonthsSinceLastCommit = logs.MonthsSinceLastCommit()
+	stats.DaysSinceLastCommit = logs.DaysSinceLastCommit()
+	stats.MonthsSinceLastCommit = logs.DaysSinceLastCommit() / 28.0
+	stats.YearsSinceLastCommit = logs.DaysSinceLastCommit() / 28.0 / 12.0
 	stats.NumContributors = logs.NumContributors()
 
 	return stats, nil

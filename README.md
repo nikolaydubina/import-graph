@@ -1,30 +1,57 @@
-> When was the last time my dependencies were updated?  
-> Are they well maintained?  
-> Who maintains them?  
-> Who else uses them?  
-> Do they have good test coverage?  
+> Are my dependencies any good?
 
-Tools here allow you to _collect_ data about your dependencies.
-Next, you can visualize with `dot` or with `jsonl-graph-viz-tool` (TODO: git, website).
-You can also run website (TODO: website all together).
-Every stage is a UNIX filter which allows great integrations.
-Front ends are in [dot](https://graphviz.org) and web.
-Currently works with `Go` and `GitHub`.
+Collect data about your dependencies, visualize with [dot](https://graphviz.org) or with `jsonl-graph-viz` (TODO: git, website).
+This is powering (TODO: website all together).
 
-## Go
+## Examples
 
-Using module level dependency graph. This is because:
+Build with `$ make build`. Then run,
 
-- go mod graph
-- modules are linked to repositories and it is straightforward how to fetch it
-- ignoring release tag, using latest from default branch
-
-## How to run
-
-```bash
-$ make build
-$ go mod graph | ./import-graph/cmd/cmd | jq
 ```
+$ go mod graph | ./import-graph/cmd/cmd  -ouput=dot | dot ...
+```
+TODO: image
+
+```
+$ go mod graph | ./import-graph/cmd/cmd | jq
+
+...
+{
+    "id": "github.com/google/gofuzz",
+    "module_name": "github.com/google/gofuzz",
+    "last_commit": "2021-01-06T07:40:07+08:00",
+    "days_since_last_commit": 102.72333373628472,
+    "years_since_last_commit": 0.3057242075485009,
+    "months_since_last_commit": 3.668690490582011,
+    "num_contributors": 19,
+    "has_tests": true,
+    "has_test_files": true,
+    "num_packages": 2,
+    "num_packages_with_tests": 2,
+    "num_packages_with_tests_files": 2,
+    "nun_packages_tests_passed": 2,
+    "min_package_coverage": 85.7,
+    "avg_package_coverage": 86.95
+}
+...
+{                                                                                                                                                                                                            
+  "from": "github.com/nikolaydubina/go-featureprocessing",
+  "to": "github.com/google/gofuzz"
+}
+```
+
+## Data Sources
+
+- [x] Runs tests and code coverage
+- [x] Analyzes git log
+- [ ] Runs linters
+- [ ] Detects benchmarks
+- [ ] Checks for Codecov Codacy
+- [ ] Checks GoReportCard
+- [ ] Checks Readme for words and badges
+- [ ] Version is stable (same as godoc)
+- [ ] Mentioning in Awesome-lists
+- [ ] Analyzes GitHub Repo, Organization, Contributors, Stars, Contributor, Contributors organizations, Is contributor active?
 
 ## Related Projects
 

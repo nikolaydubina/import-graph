@@ -11,22 +11,6 @@ import (
 
 // GoModuleStatsCollector is collecting all the details about single Go module
 // Does not fail if encounters errors, but still collects thoese errors.
-//
-// TODO:
-// check codecov
-// check readme mentions alpha/beta
-// version of package is stable same as godoc
-// readme has go-report card
-// readme reports code coverage
-// try run Makefile lint
-// try run linting
-// benchmarks detected
-//
-// GitHub -> stars, organization, contributor profiles
-// if github get github page (Python/JS headless browser?)
-// if github check owner
-// if github owner is organization: match against lists
-// if github owner is user: collect stats on other repos; (try fetch linkedin?)
 type GoModuleStatsCollector struct {
 	GitStorage      *gitstats.GitProcessStorage
 	URLResolver     *iggorc.GoCachedResolver

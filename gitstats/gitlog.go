@@ -3,7 +3,6 @@ package gitstats
 import (
 	"bufio"
 	"fmt"
-	"math"
 	"os/exec"
 	"strconv"
 	"strings"
@@ -85,10 +84,9 @@ func (logs GitLog) NumContributors() uint {
 	return count
 }
 
-// MonthsSinceLastCommit returns how many months was since last commit
-func (logs GitLog) MonthsSinceLastCommit() uint {
+func (logs GitLog) DaysSinceLastCommit() float64 {
 	if len(logs) == 0 {
 		return 0
 	}
-	return uint(math.Floor(float64(time.Since(logs[0].AuthorDate).Hours()) / 24 / 28))
+	return time.Since(logs[0].AuthorDate).Hours() / 24
 }
