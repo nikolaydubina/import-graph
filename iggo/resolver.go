@@ -9,13 +9,13 @@ import (
 	"strings"
 )
 
-// GoResolver find Git and GitHub URLs for a Go module
-type GoResolver struct {
+// GoURLResolver find Git and GitHub URLs for a Go module
+type GoURLResolver struct {
 	HTTPClient *http.Client
 }
 
 // ResolveGitHubURL finds GitHub URL
-func (c *GoResolver) ResolveGitHubURL(name string) (*url.URL, error) {
+func (c *GoURLResolver) ResolveGitHubURL(name string) (*url.URL, error) {
 	if strings.HasPrefix(name, "github.com/") {
 		return url.Parse("https://" + name)
 	}
@@ -34,7 +34,7 @@ func (c *GoResolver) ResolveGitHubURL(name string) (*url.URL, error) {
 }
 
 // ResolveGitURL finds git URL
-func (c *GoResolver) ResolveGitURL(name string) (*url.URL, error) {
+func (c *GoURLResolver) ResolveGitURL(name string) (*url.URL, error) {
 	if strings.HasPrefix(name, "github.com/") {
 		return url.Parse("https://" + name)
 	}
@@ -45,7 +45,7 @@ func (c *GoResolver) ResolveGitURL(name string) (*url.URL, error) {
 	return parseResponse(resp)
 }
 
-func (c *GoResolver) fetchData(name string) (string, error) {
+func (c *GoURLResolver) fetchData(name string) (string, error) {
 	resp, err := c.HTTPClient.Get("https://" + name + "?go-get=1")
 	if err != nil {
 		return "", fmt.Errorf("can not make GET to Go module name: %w", err)

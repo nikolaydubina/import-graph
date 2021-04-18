@@ -25,8 +25,11 @@ func main() {
 	goModGraphParser := &iggo.GoModGraphParser{}
 	goModGraphCollector := iggo.GoModuleGraphStatsCollector{
 		ModuleCollector: iggo.GoModuleStatsCollector{
-			URLResolver: &iggorc.GoCachedResolver{Resolver: &iggo.GoResolver{HTTPClient: http.DefaultClient}, Storage: sync.Map{}},
-			GitStorage:  &gitStorage,
+			URLResolver: &iggorc.GoCachedResolver{
+				URLResolver: &iggo.GoURLResolver{HTTPClient: http.DefaultClient},
+				Storage:     sync.Map{},
+			},
+			GitStorage: &gitStorage,
 			GitStatsFetcher: &gitstats.GitStatsFetcher{
 				GitStorage: &gitStorage,
 			},

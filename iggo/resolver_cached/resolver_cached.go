@@ -6,22 +6,22 @@ import (
 	"sync"
 )
 
-type GoResolver interface {
+type GoURLResolver interface {
 	ResolveGitHubURL(name string) (*url.URL, error)
 	ResolveGitURL(name string) (*url.URL, error)
 }
 
 type GoCachedResolver struct {
-	Resolver GoResolver
-	Storage  sync.Map
+	URLResolver GoURLResolver
+	Storage     sync.Map
 }
 
 func (c *GoCachedResolver) ResolveGitHubURL(name string) (*url.URL, error) {
-	return c.tryLoad(name, newKeyGitHubURLKey(name), c.Resolver.ResolveGitHubURL)
+	return c.tryLoad(name, newKeyGitHubURLKey(name), c.URLResolver.ResolveGitHubURL)
 }
 
 func (c *GoCachedResolver) ResolveGitURL(name string) (*url.URL, error) {
-	return c.tryLoad(name, newKeyGitURLKey(name), c.Resolver.ResolveGitURL)
+	return c.tryLoad(name, newKeyGitURLKey(name), c.URLResolver.ResolveGitURL)
 }
 
 // tryLoad will load from Cache or invoke f and set to cache and return
