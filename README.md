@@ -5,15 +5,14 @@ This is powering (TODO: website all together).
 
 ## Examples
 
-Build with `$ make build`. Then run,
-
 ```
-$ go mod graph | ./import-graph/cmd/cmd  -ouput=dot | dot ...
+$ make build
+$ go mod graph | ./bin/import-graph  -ouput=dot | dot ...
 ```
 TODO: image
 
 ```
-$ go mod graph | ./import-graph/cmd/cmd | jq
+$ go mod graph | ./bin/import-graph | jq
 
 ...
 {
