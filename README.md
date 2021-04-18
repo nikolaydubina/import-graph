@@ -32,7 +32,7 @@ $ go mod graph | ./bin/import-graph | jq
     "avg_package_coverage": 86.95
 }
 ...
-{                                                                                                                                                                                                            
+{
   "from": "github.com/nikolaydubina/go-featureprocessing",
   "to": "github.com/google/gofuzz"
 }
