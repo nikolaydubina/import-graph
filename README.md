@@ -4,7 +4,9 @@
 > Who else uses them?  
 > Do they have good test coverage?  
 
-Tools here allow you to _collect_ and _visualize_ data about your dependencies.
+Tools here allow you to _collect_ data about your dependencies.
+Next, you can visualize with `dot` or with `jsonl-graph-viz-tool` (TODO: git, website).
+You can also run website (TODO: website all together).
 Every stage is a UNIX filter which allows great integrations.
 Front ends are in [dot](https://graphviz.org) and web.
 Currently works with `Go` and `GitHub`.
@@ -15,6 +17,7 @@ Using module level dependency graph. This is because:
 
 - go mod graph
 - modules are linked to repositories and it is straightforward how to fetch it
+- ignoring release tag, using latest from default branch
 
 ## How to run
 

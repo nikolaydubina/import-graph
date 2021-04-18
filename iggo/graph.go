@@ -2,11 +2,52 @@ package iggo
 
 import (
 	"bufio"
+	"encoding/json"
 	"fmt"
 	"io"
 	"os/exec"
 	"strings"
+
+	"go.uber.org/multierr"
+
+	"github.com/nikolaydubina/import-graph/gitstats"
 )
+
+type Edge struct {
+	From string `json:"from"`
+	To   string `json:"to"`
+}
+
+// ModuleStats is stats about single module
+type ModuleStats struct {
+	ID         string `json:"id"` // unique key among all nodes, for Go this is module name
+	ModuleName string `json:"module_name"`
+
+	// Data bellow will be filled by appropriate routines
+	*gitstats.GitStats
+	*GoModuleTestRunResult
+}
+
+type Graph struct {
+	Modules []ModuleStats `json:"nodes"`
+	Edges   []Edge        `json:"edges"`
+}
+
+// WriteJSONL which is default export format
+func (g *Graph) WriteJSONL(w io.Writer) error {
+	encoder := json.NewEncoder(w)
+	var finalErr error
+
+	for _, n := range g.Modules {
+		finalErr = multierr.Combine(encoder.Encode(n))
+	}
+
+	for _, e := range g.Edges {
+		finalErr = multierr.Combine(encoder.Encode(e))
+	}
+
+	return finalErr
+}
 
 // GoModGraphParser builds graph from output of `go mod graph`
 // This is conveneint if caller can call `go mod graph` by himself.
@@ -22,11 +63,11 @@ func (c *GoModGraphParser) Parse(input io.Reader) (*Graph, error) {
 		graph.Edges = append(graph.Edges, Edge{From: from, To: to})
 
 		if !nodeAdded[from] {
-			graph.Nodes = append(graph.Nodes, Node{Name: from})
+			graph.Modules = append(graph.Modules, ModuleStats{ModuleName: from})
 			nodeAdded[from] = true
 		}
 		if !nodeAdded[to] {
-			graph.Nodes = append(graph.Nodes, Node{Name: to})
+			graph.Modules = append(graph.Modules, ModuleStats{ModuleName: to})
 			nodeAdded[to] = true
 		}
 	}
