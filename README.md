@@ -13,7 +13,6 @@ TODO: image
 
 ```
 $ go mod graph | ./bin/import-graph | jq
-
 ...
 {
     "id": "github.com/google/gofuzz",
