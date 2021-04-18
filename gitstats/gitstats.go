@@ -8,13 +8,11 @@ import (
 )
 
 type GitStorage interface {
-	Fetch(gitURL url.URL) error
 	DirPath(gitURL url.URL) string
 }
 
 // GitStats contains information about single git repository computed using git only
 type GitStats struct {
-	URL                   url.URL   `json:"-"`
 	LastCommit            time.Time `json:"last_commit"`
 	MonthsSinceLastCommit uint      `json:"months_since_last_commit"`
 	NumContributors       uint      `json:"num_contributors"`
@@ -25,12 +23,10 @@ type GitStatsFetcher struct {
 	GitStorage GitStorage
 }
 
-func (g *GitStatsFetcher) GetGitStats(gitURL url.URL) (GitStats, error) {
-	stats := GitStats{
-		URL: gitURL,
-	}
+func (g *GitStatsFetcher) GetGitStats(gitDirPath string) (GitStats, error) {
+	stats := GitStats{}
 
-	logs, err := NewGitLog(g.GitStorage.DirPath(gitURL))
+	logs, err := NewGitLog(gitDirPath)
 	if err != nil {
 		return stats, fmt.Errorf("can not get git logs: %w", err)
 	}

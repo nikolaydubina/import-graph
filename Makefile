@@ -1,2 +1,2 @@
 build:
-	go build ./...
+	cd cmd; go build 
