@@ -6,7 +6,7 @@ This is powering (TODO: website all together).
 ```
 $ go mod graph | ./bin/import-graph -output=dot | dot -Tsvg > output.svg
 ```
-![dot-svg-example](./docs/go-featureprocessing/output.svg)
+![dot-svg-example](./docs/go-featureprocessing/output.dot.svg)
 
 ```
 $ go mod graph | ./bin/import-graph | jq
