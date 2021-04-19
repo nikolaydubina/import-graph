@@ -1,6 +1,6 @@
 > How does my dependencies look like?
 
-Collect data about your dependencies, visualize with [dot](https://graphviz.org) or with `jsonl-graph-viz` (TODO: git, website).
+Collect data about your dependencies. Visualize with `jsonl-graph-viz` (TODO: git, website) or [dot](https://graphviz.org).
 This is powering (TODO: website all together).
 
 ```
