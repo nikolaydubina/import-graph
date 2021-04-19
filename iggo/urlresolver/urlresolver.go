@@ -1,4 +1,4 @@
-package iggo
+package urlresolver
 
 import (
 	"bytes"

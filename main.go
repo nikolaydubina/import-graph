@@ -11,7 +11,9 @@ import (
 	"github.com/nikolaydubina/import-graph/frontend/graphviz"
 	"github.com/nikolaydubina/import-graph/gitstats"
 	"github.com/nikolaydubina/import-graph/iggo"
-	iggorc "github.com/nikolaydubina/import-graph/iggo/resolver_cached"
+	"github.com/nikolaydubina/import-graph/iggo/testrunner"
+	"github.com/nikolaydubina/import-graph/iggo/urlresolver"
+	"github.com/nikolaydubina/import-graph/iggo/urlresolver/basiccache"
 )
 
 type OutputType struct{ V string }
@@ -34,15 +36,15 @@ func main() {
 	goModGraphParser := &iggo.GoModGraphParser{}
 	goModGraphCollector := iggo.GoModuleGraphStatsCollector{
 		ModuleCollector: iggo.GoModuleStatsCollector{
-			URLResolver: &iggorc.GoCachedResolver{
-				URLResolver: &iggo.GoURLResolver{HTTPClient: http.DefaultClient},
+			URLResolver: &basiccache.GoCachedResolver{
+				URLResolver: &urlresolver.GoURLResolver{HTTPClient: http.DefaultClient},
 				Storage:     sync.Map{},
 			},
 			GitStorage: &gitStorage,
 			GitStatsFetcher: &gitstats.GitStatsFetcher{
 				GitStorage: &gitStorage,
 			},
-			TestRunner: iggo.GoCmdTestRunner{},
+			TestRunner: testrunner.GoCmdTestRunner{},
 		},
 	}
 	graphVizRenderer, err := graphviz.NewGraphvizRenderer()

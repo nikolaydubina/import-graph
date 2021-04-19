@@ -6,16 +6,17 @@ import (
 	"go.uber.org/multierr"
 
 	"github.com/nikolaydubina/import-graph/gitstats"
-	iggorc "github.com/nikolaydubina/import-graph/iggo/resolver_cached"
+	"github.com/nikolaydubina/import-graph/iggo/testrunner"
+	"github.com/nikolaydubina/import-graph/iggo/urlresolver/basiccache"
 )
 
 // GoModuleStatsCollector is collecting all the details about single Go module
 // Does not fail if encounters errors, but still collects thoese errors.
 type GoModuleStatsCollector struct {
 	GitStorage      *gitstats.GitProcessStorage
-	URLResolver     *iggorc.GoCachedResolver
+	URLResolver     *basiccache.GoCachedResolver
 	GitStatsFetcher *gitstats.GitStatsFetcher
-	TestRunner      GoCmdTestRunner
+	TestRunner      testrunner.GoCmdTestRunner
 }
 
 // CollectStats fetches all possible information about Go module

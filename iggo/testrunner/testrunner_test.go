@@ -1,4 +1,4 @@
-package iggo_test
+package testrunner_test
 
 // GoPackageTestRunResultOutput is json formatted output result of a run go test
 // {"Time":"2021-04-18T17:21:45.226785+08:00","Action":"pass","Package":"cloud.google.com/go/texttospeech/apiv1","Test":"TestTextToSpeechSynthesizeSpeechError","Elapsed":0}

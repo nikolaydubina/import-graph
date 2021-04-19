@@ -10,6 +10,7 @@ import (
 	"go.uber.org/multierr"
 
 	"github.com/nikolaydubina/import-graph/gitstats"
+	"github.com/nikolaydubina/import-graph/iggo/testrunner"
 )
 
 type Edge struct {
@@ -24,7 +25,7 @@ type ModuleStats struct {
 
 	// Data bellow will be filled by appropriate routines
 	gitstats.GitStats
-	GoModuleTestRunResult
+	testrunner.GoModuleTestRunResult
 }
 
 type Graph struct {

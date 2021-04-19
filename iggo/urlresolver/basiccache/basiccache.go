@@ -1,4 +1,4 @@
-package resolver_cached
+package basiccache
 
 import (
 	"fmt"
