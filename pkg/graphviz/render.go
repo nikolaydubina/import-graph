@@ -15,6 +15,7 @@ import (
 var basicTemplate string
 
 // GraphvizRenderer contains methods to tranform input to Graphviz format
+// TODO: consider adding colors in background https://stackoverflow.com/questions/17765301/graphviz-dot-how-to-change-the-colour-of-one-record-in-multi-record-shape
 type GraphvizRenderer struct {
 	Template *template.Template
 }
