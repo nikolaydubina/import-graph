@@ -42,12 +42,13 @@ $ go mod graph | ./bin/import-graph | jq
 - [x] Runs tests and code coverage
 - [ ] Runs linters
 - [ ] Detects benchmarks
-- [ ] Checks for Codecov Codacy
-- [ ] Checks GoReportCard
-- [ ] Checks Readme for words and badges
+- [ ] codecov.io
+- [ ] codacy.com
+- [ ] goreportcard.com
+- [ ] Readme for words and badges
 - [ ] Version is stable (same as godoc)
-- [ ] Mentioning in Awesome-lists
-- [ ] Analyzes GitHub Repo, Organization, Contributors, Stars, Contributor, Contributors organizations, Is contributor active?
+- [ ] Mentions in Awesome-lists
+- [ ] GitHub: Repo, Organization, Contributors, Stars, Contributor, Contributors organizations, Is contributor active?
 
 ## Related Projects
 
