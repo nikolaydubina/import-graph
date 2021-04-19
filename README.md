@@ -6,8 +6,7 @@ This is powering (TODO: website all together).
 ## Examples
 
 ```
-$ make build
-$ go mod graph | ./bin/import-graph  -ouput=dot | dot ...
+$ go mod graph | ./bin/import-graph -output=dot | dot -Tsvg > output.svg
 ```
 TODO: image
 

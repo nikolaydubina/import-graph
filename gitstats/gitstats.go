@@ -13,7 +13,7 @@ type GitStorage interface {
 
 // GitStats contains information about single git repository computed using git only
 type GitStats struct {
-	LastCommit            time.Time `json:"last_commit"`
+	LastCommit            time.Time `json:"last_commit,omitempty"`
 	DaysSinceLastCommit   float64   `json:"days_since_last_commit"`
 	YearsSinceLastCommit  float64   `json:"years_since_last_commit"`
 	MonthsSinceLastCommit float64   `json:"months_since_last_commit"`
