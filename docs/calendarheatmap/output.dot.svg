@@ -103,7 +103,7 @@
 <polyline fill="none" stroke="black" points="0,-635.5 260,-635.5 "/>
 <text text-anchor="start" x="8" y="-620.3" font-family="Times,serif" font-size="14.00">last_commit_days_since</text>
 <polyline fill="none" stroke="black" points="182,-612.5 182,-635.5 "/>
-<text text-anchor="end" x="252" y="-620.3" font-family="Times,serif" font-size="14.00">58.58</text>
+<text text-anchor="end" x="252" y="-620.3" font-family="Times,serif" font-size="14.00">58.59</text>
 <polyline fill="none" stroke="black" points="0,-612.5 260,-612.5 "/>
 <text text-anchor="start" x="8" y="-597.3" font-family="Times,serif" font-size="14.00">last_commit_months_since</text>
 <polyline fill="none" stroke="black" points="193,-589.5 193,-612.5 "/>
@@ -138,8 +138,8 @@
 <text text-anchor="end" x="252" y="-436.3" font-family="Times,serif" font-size="14.00">5.60</text>
 <polyline fill="none" stroke="black" points="0,-428.5 260,-428.5 "/>
 <text text-anchor="start" x="8" y="-413.3" font-family="Times,serif" font-size="14.00">package_coverage_min</text>
-<polyline fill="none" stroke="black" points="187,-405.5 187,-428.5 "/>
-<text text-anchor="end" x="252" y="-413.3" font-family="Times,serif" font-size="14.00">54</text>
+<polyline fill="none" stroke="black" points="179,-405.5 179,-428.5 "/>
+<text text-anchor="end" x="252" y="-413.3" font-family="Times,serif" font-size="14.00">54.00</text>
 </g>
 <!-- github.com/nikolaydubina/calendarheatmap&#45;&gt;golang.org/x/image -->
 <g id="edge1" class="edge">
@@ -175,7 +175,7 @@
 <polyline fill="none" stroke="black" points="0,-230.5 260,-230.5 "/>
 <text text-anchor="start" x="8" y="-215.3" font-family="Times,serif" font-size="14.00">last_commit_days_since</text>
 <polyline fill="none" stroke="black" points="185,-207.5 185,-230.5 "/>
-<text text-anchor="end" x="252" y="-215.3" font-family="Times,serif" font-size="14.00">8.55</text>
+<text text-anchor="end" x="252" y="-215.3" font-family="Times,serif" font-size="14.00">8.56</text>
 <polyline fill="none" stroke="black" points="0,-207.5 260,-207.5 "/>
 <text text-anchor="start" x="8" y="-192.3" font-family="Times,serif" font-size="14.00">last_commit_months_since</text>
 <polyline fill="none" stroke="black" points="193,-184.5 193,-207.5 "/>
