@@ -11,6 +11,7 @@ import (
 	"github.com/nikolaydubina/import-graph/frontend/graphviz"
 	"github.com/nikolaydubina/import-graph/gitstats"
 	"github.com/nikolaydubina/import-graph/iggo"
+	"github.com/nikolaydubina/import-graph/iggo/gomodgraph"
 	"github.com/nikolaydubina/import-graph/iggo/testrunner"
 	"github.com/nikolaydubina/import-graph/iggo/urlresolver"
 	"github.com/nikolaydubina/import-graph/iggo/urlresolver/basiccache"
@@ -33,7 +34,7 @@ func main() {
 	gitStorage := gitstats.GitProcessStorage{
 		Path: ".import-graph/git-repos/",
 	}
-	goModGraphParser := &iggo.GoModGraphParser{}
+	goModGraphParser := &gomodgraph.GoModGraphParser{}
 	goModGraphCollector := iggo.GoModuleGraphStatsCollector{
 		ModuleCollector: iggo.GoModuleStatsCollector{
 			URLResolver: &basiccache.GoCachedResolver{
