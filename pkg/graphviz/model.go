@@ -2,6 +2,7 @@ package graphviz
 
 import (
 	"bufio"
+	"bytes"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -56,16 +57,26 @@ func NewGraphFromJSONLReader(r io.Reader) (g Graph, finalErr error) {
 	for scanner.Scan() {
 		line := scanner.Bytes()
 
+		// first decoder for node
+		decoder := json.NewDecoder(bytes.NewReader(line))
+		decoder.UseNumber()
+
 		var node Node
 		var nodeErr error
-		if nodeErr = json.Unmarshal(line, &node); nodeErr == nil && node.IsValid() {
+		if nodeErr = decoder.Decode(&node); nodeErr == nil && node.IsValid() {
 			g.Nodes = append(g.Nodes, node)
+			continue
 		}
+
+		// second decoder for edge
+		decoder = json.NewDecoder(bytes.NewReader(line))
+		decoder.UseNumber()
 
 		var edge Edge
 		var edgeErr error
-		if edgeErr = json.Unmarshal(line, &edge); edgeErr == nil && edge.IsValid() {
+		if edgeErr = decoder.Decode(&edge); edgeErr == nil && edge.IsValid() {
 			g.Edges = append(g.Edges, edge)
+			continue
 		}
 
 		// can not get either, keep errors

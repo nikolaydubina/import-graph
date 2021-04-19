@@ -8,13 +8,14 @@ import (
 	"os"
 	"sync"
 
-	"github.com/nikolaydubina/import-graph/frontend/graphviz"
-	"github.com/nikolaydubina/import-graph/gitstats"
-	"github.com/nikolaydubina/import-graph/iggo"
-	"github.com/nikolaydubina/import-graph/iggo/gomodgraph"
-	"github.com/nikolaydubina/import-graph/iggo/testrunner"
-	"github.com/nikolaydubina/import-graph/iggo/urlresolver"
-	"github.com/nikolaydubina/import-graph/iggo/urlresolver/basiccache"
+	"github.com/nikolaydubina/import-graph/app/collector"
+
+	"github.com/nikolaydubina/import-graph/pkg/gitstats"
+	"github.com/nikolaydubina/import-graph/pkg/go/gomodgraph"
+	"github.com/nikolaydubina/import-graph/pkg/go/testrunner"
+	"github.com/nikolaydubina/import-graph/pkg/go/urlresolver"
+	"github.com/nikolaydubina/import-graph/pkg/go/urlresolver/basiccache"
+	"github.com/nikolaydubina/import-graph/pkg/graphviz"
 )
 
 type OutputType struct{ V string }
@@ -35,8 +36,8 @@ func main() {
 		Path: ".import-graph/git-repos/",
 	}
 	goModGraphParser := &gomodgraph.GoModGraphParser{}
-	goModGraphCollector := iggo.GoModuleGraphStatsCollector{
-		ModuleCollector: iggo.GoModuleStatsCollector{
+	goModGraphCollector := collector.GoModuleGraphStatsCollector{
+		ModuleCollector: collector.GoModuleStatsCollector{
 			URLResolver: &basiccache.GoCachedResolver{
 				URLResolver: &urlresolver.GoURLResolver{HTTPClient: http.DefaultClient},
 				Storage:     sync.Map{},

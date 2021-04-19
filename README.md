@@ -1,46 +1,45 @@
-> Are my dependencies any good?
+> How does my dependencies look like?
 
 Collect data about your dependencies, visualize with [dot](https://graphviz.org) or with `jsonl-graph-viz` (TODO: git, website).
 This is powering (TODO: website all together).
 
-## Examples
-
 ```
 $ go mod graph | ./bin/import-graph -output=dot | dot -Tsvg > output.svg
 ```
-TODO: image
+![dot-svg-example](./docs/go-featureprocessing/output.svg)
 
 ```
 $ go mod graph | ./bin/import-graph | jq
 ...
 {
-    "id": "github.com/google/gofuzz",
-    "module_name": "github.com/google/gofuzz",
-    "last_commit": "2021-01-06T07:40:07+08:00",
-    "days_since_last_commit": 102.72333373628472,
-    "years_since_last_commit": 0.3057242075485009,
-    "months_since_last_commit": 3.668690490582011,
-    "num_contributors": 19,
+    "id": "golang.org/x/text",
+    "can_get_gitstats": true,
+    "can_run_tests": true,
+    "last_commit": "2021-04-11T08:32:09+08:00",
+    "last_commit_days_since": 8.55289011298611,
+    "last_commit_years_since": 0.0254550300982074,
+    "last_commit_months_since": 0.3054603611784888,
+    "num_contributors": 56,
     "has_tests": true,
     "has_test_files": true,
-    "num_packages": 2,
-    "num_packages_with_tests": 2,
-    "num_packages_with_tests_files": 2,
-    "num_packages_tests_passed": 2,
-    "min_package_coverage": 85.7,
-    "avg_package_coverage": 86.95
+    "num_packages": 63,
+    "num_packages_with_tests": 48,
+    "num_packages_with_tests_files": 48,
+    "num_packages_tests_passed": 48,
+    "package_coverage_avg": 5.8,
+    "package_coverage_min": 81.48333333333333
 }
 ...
 {
-  "from": "github.com/nikolaydubina/go-featureprocessing",
-  "to": "github.com/google/gofuzz"
+    "from": "golang.org/x/image",
+    "to": "golang.org/x/text"
 }
 ```
 
 ## Data Sources
 
-- [x] Runs tests and code coverage
 - [x] Analyzes git log
+- [x] Runs tests and code coverage
 - [ ] Runs linters
 - [ ] Detects benchmarks
 - [ ] Checks for Codecov Codacy

@@ -1,4 +1,4 @@
-package iggo
+package collector
 
 import (
 	"encoding/json"
@@ -7,20 +7,23 @@ import (
 
 	"go.uber.org/multierr"
 
-	"github.com/nikolaydubina/import-graph/gitstats"
-	"github.com/nikolaydubina/import-graph/iggo/gomodgraph"
-	"github.com/nikolaydubina/import-graph/iggo/testrunner"
-	"github.com/nikolaydubina/import-graph/iggo/urlresolver/basiccache"
+	"github.com/nikolaydubina/import-graph/pkg/gitstats"
+	"github.com/nikolaydubina/import-graph/pkg/go/gomodgraph"
+	"github.com/nikolaydubina/import-graph/pkg/go/testrunner"
+	"github.com/nikolaydubina/import-graph/pkg/go/urlresolver/basiccache"
 )
 
 // ModuleStats is stats about single module
 type ModuleStats struct {
 	ID         string `json:"id"` // unique key among all nodes, for Go this is module name
-	ModuleName string `json:"module_name"`
+	ModuleName string `json:"-"`  // this is in id anyways
 
-	// Data bellow will be filled by appropriate routines
-	gitstats.GitStats
-	testrunner.GoModuleTestRunResult
+	// Collected data
+	CanGetGitStats bool `json:"can_get_gitstats"`
+	CanRunTests    bool `json:"can_run_tests"`
+
+	*gitstats.GitStats                `json:",omitempty"`
+	*testrunner.GoModuleTestRunResult `json:",omitempty"`
 }
 
 type Edge struct {
@@ -75,15 +78,23 @@ func (c *GoModuleStatsCollector) CollectStats(moduleName string) (moduleStats Mo
 	}
 	gitDirPath := c.GitStorage.DirPath(*gitURL)
 
+	// Git Stats
 	gitStats, err := c.GitStatsFetcher.GetGitStats(gitDirPath)
 	if err != nil {
 		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get git stats: %w", err))
 	}
+	if gitStats != nil {
+		moduleStats.CanGetGitStats = true
+	}
 	moduleStats.GitStats = gitStats
 
+	// Run tests
 	testStats, err := c.TestRunner.RunModuleTets(gitDirPath)
 	if err != nil {
 		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not run tests: %w", err))
+	}
+	if testStats != nil {
+		moduleStats.CanRunTests = true
 	}
 	moduleStats.GoModuleTestRunResult = testStats
 

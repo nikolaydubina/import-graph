@@ -17,19 +17,19 @@ type GoCmdTestRunner struct{}
 type GoModuleTestRunResult struct {
 	HasTests                  bool    `json:"has_tests"`
 	HasTestFiles              bool    `json:"has_test_files"`
-	NumPackages               uint32  `json:"num_packages"`
-	NumPackagesWithTests      uint32  `json:"num_packages_with_tests"`
-	NumPackagesWithTestsFiles uint32  `json:"num_packages_with_tests_files"`
-	NumPackagesTestsPassed    uint32  `json:"num_packages_tests_passed"`
-	MinPackageCoverage        float64 `json:"min_package_coverage"`
-	AvgPackageCoverage        float64 `json:"avg_package_coverage"`
+	NumPackages               uint    `json:"num_packages"`
+	NumPackagesWithTests      uint    `json:"num_packages_with_tests"`
+	NumPackagesWithTestsFiles uint    `json:"num_packages_with_tests_files"`
+	NumPackagesTestsPassed    uint    `json:"num_packages_tests_passed"`
+	MinPackageCoverage        float64 `json:"package_coverage_avg"`
+	AvgPackageCoverage        float64 `json:"package_coverage_min"`
 }
 
 // RunModuleTets runs tests for all packages in Go module, collects aggregate statistics
-func (c *GoCmdTestRunner) RunModuleTets(moduleDirPath string) (GoModuleTestRunResult, error) {
+func (c *GoCmdTestRunner) RunModuleTets(moduleDirPath string) (*GoModuleTestRunResult, error) {
 	pkgTestStats, err := c.RunTests(moduleDirPath)
 	if err != nil {
-		return GoModuleTestRunResult{}, err
+		return nil, err
 	}
 
 	stats := GoModuleTestRunResult{}
@@ -56,7 +56,7 @@ func (c *GoCmdTestRunner) RunModuleTets(moduleDirPath string) (GoModuleTestRunRe
 	}
 
 	stats.AvgPackageCoverage = sumCov / float64(stats.NumPackagesWithTests)
-	return stats, nil
+	return &stats, nil
 }
 
 type GoPackageTestRunResult struct {

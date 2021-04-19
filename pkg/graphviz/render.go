@@ -1,6 +1,7 @@
 package graphviz
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 	"sort"
@@ -43,6 +44,19 @@ func (g *GraphvizRenderer) Render(params TemplateParams, w io.Writer) error {
 	return g.Template.Execute(w, params)
 }
 
+// RenderValue coerces to json.Number and tries to avoid adding decimal points to integers
+func RenderValue(v interface{}) string {
+	if v, ok := v.(json.Number); ok {
+		if vInt, err := v.Int64(); err == nil {
+			return fmt.Sprintf("%d", vInt)
+		}
+		if v, err := v.Float64(); err == nil {
+			return fmt.Sprintf("%.2f", v)
+		}
+	}
+	return fmt.Sprintf("%v", v)
+}
+
 // RenderBasicLabel makes graphviz string for a single node
 // This is pretty complex to write in Go template language due to map structure.
 func RenderBasicLabel(n Node) string {
@@ -51,15 +65,7 @@ func RenderBasicLabel(n Node) string {
 		if k == "id" {
 			continue
 		}
-
-		valStr := fmt.Sprintf("%v", v)
-		if v, ok := n[k].(int64); ok {
-			valStr = fmt.Sprintf("%d", v)
-		} else if v, ok := n[k].(float64); ok {
-			valStr = fmt.Sprintf("%.2f", v)
-		}
-
-		rows = append(rows, fmt.Sprintf(`{%v\l | %s\r}`, k, valStr))
+		rows = append(rows, fmt.Sprintf(`{%v\l | %s\r}`, k, RenderValue(v)))
 	}
 
 	// this will sort by key, since key is first

@@ -16,3 +16,6 @@
 
 cmd/cmd
 bin/
+
+.import-graph
+third-party

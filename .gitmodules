@@ -1,0 +1,9 @@
+[submodule "go-featureprocessing"]
+	path = go-featureprocessing
+	url = https://github.com/nikolaydubina/go-featureprocessing
+[submodule "third-party/go-featureprocessing"]
+	path = third-party/go-featureprocessing
+	url = https://github.com/nikolaydubina/go-featureprocessing
+[submodule "third-party/calendarheatmap"]
+	path = third-party/calendarheatmap
+	url = https://github.com/nikolaydubina/calendarheatmap
