@@ -12,22 +12,29 @@ $ go mod graph | ./bin/import-graph -output=dot | dot -Tsvg > output.svg
 $ go mod graph | ./bin/import-graph | jq
 ...
 {
-    "id": "golang.org/x/text",
+    "id": "github.com/nikolaydubina/calendarheatmap",
     "can_get_gitstats": true,
+    "can_get_codecov": true,
     "can_run_tests": true,
-    "last_commit": "2021-04-11T08:32:09+08:00",
-    "last_commit_days_since": 8.55289011298611,
-    "last_commit_years_since": 0.0254550300982074,
-    "last_commit_months_since": 0.3054603611784888,
-    "num_contributors": 56,
+    "github_url": "https://github.com/nikolaydubina/calendarheatmap",
+    "git_url": "https://github.com/nikolaydubina/calendarheatmap",
+    "git_last_commit": "2021-04-17",
+    "git_last_commit_days_since": 3.686903991909722,
+    "git_last_commit_years_since": 0.010972928547453702,
+    "git_last_commit_months_since": 0.13167514256944443,
+    "git_num_contributors": 2,
+    "codecov_url": "https://app.codecov.io/gh/nikolaydubina/calendarheatmap",
+    "codecov_files": 6,
+    "codecov_lines": 236,
+    "codecov_coverage": 80.08,
     "has_tests": true,
     "has_test_files": true,
-    "num_packages": 63,
-    "num_packages_with_tests": 48,
-    "num_packages_with_tests_files": 48,
-    "num_packages_tests_passed": 48,
-    "package_coverage_avg": 5.8,
-    "package_coverage_min": 81.48333333333333
+    "num_packages": 2,
+    "num_packages_with_tests": 1,
+    "num_packages_with_tests_files": 1,
+    "num_packages_tests_passed": 1,
+    "package_coverage_avg": 85.3,
+    "package_coverage_min": 85.3
 }
 ...
 {
