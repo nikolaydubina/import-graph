@@ -66,6 +66,12 @@ func RenderBasicLabel(n Node) string {
 		if k == "id" {
 			continue
 		}
+
+		if strings.HasSuffix(k, "_url") {
+			// URLs tend to be big and clutter dot outputs
+			continue
+		}
+
 		rows = append(rows, fmt.Sprintf(`{%v\l | %s\r}`, k, RenderValue(v)))
 	}
 

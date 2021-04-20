@@ -24,9 +24,12 @@ type ModuleStats struct {
 	CanGetCodecovStats bool `json:"can_get_codecov"`
 	CanRunTests        bool `json:"can_run_tests"`
 
-	*gitstats.GitStats                `json:",omitempty"`
-	*testrunner.GoModuleTestRunResult `json:",omitempty"`
+	GitHubURL string `json:"github_url,omitempty"`
+	GitURL    string `json:"git_url,omitempty"`
+
+	*GitStats                         `json:",omitempty"`
 	*CodecovStats                     `json:",omitempty"`
+	*testrunner.GoModuleTestRunResult `json:",omitempty"`
 }
 
 type Edge struct {
@@ -77,6 +80,7 @@ func (c *GoModuleStatsCollector) CollectStats(moduleName string) (moduleStats Mo
 		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not resolve URL: %w", err))
 		return
 	}
+	moduleStats.GitURL = gitURL.String()
 	if err := c.GitStorage.Fetch(gitURL); err != nil {
 		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not fetch git: %w", err))
 		return
@@ -89,24 +93,27 @@ func (c *GoModuleStatsCollector) CollectStats(moduleName string) (moduleStats Mo
 		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get git stats: %w", err))
 	}
 	if gitStats != nil {
+		moduleStats.GitStats = NewGitStats(gitStats)
 		moduleStats.CanGetGitStats = true
 	}
-	moduleStats.GitStats = gitStats
 
 	// GitHub URL
 	gitHubURL, err := c.URLResolver.ResolveGitHubURL(moduleName)
 	if err != nil {
 		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not resolve URL: %w", err))
 	}
+	moduleStats.GitHubURL = gitHubURL.String()
 
 	// codecov.io
 	codecovStats, err := c.CodecovClient.GetRepoStatsFromGitHubURL(gitHubURL)
 	if err != nil {
 		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get codecov stats: %w", err))
 	}
-	if cc := NewCodecovStats(codecovStats); cc != nil {
+	if cc, err := NewCodecovStats(codecovStats); cc != nil && err == nil {
 		moduleStats.CodecovStats = cc
 		moduleStats.CanGetCodecovStats = true
+	} else if err != nil {
+		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not format codecov stats: %w", err))
 	}
 
 	// Run tests
@@ -143,23 +150,4 @@ func (c *GoModuleGraphStatsCollector) CollectStats(gmod gomodgraph.Graph) (g Gra
 	}
 
 	return
-}
-
-type CodecovStats struct {
-	RepoURL  string  `json:"codecov_url"` // need flat value so can not use url.URL
-	NumFiles uint    `json:"codecov_files"`
-	NumLines uint    `json:"codecov_lines"`
-	Coverage float64 `json:"codecov_coverage"`
-}
-
-func NewCodecovStats(r *codecov.RepoStats) *CodecovStats {
-	if r == nil {
-		return nil
-	}
-	return &CodecovStats{
-		RepoURL:  r.RepoURL.String(),
-		NumFiles: r.LatestCommmit.Report.Totals.NumFiles,
-		NumLines: r.LatestCommmit.Report.Totals.NumLines,
-		Coverage: r.LatestCommmit.Report.Totals.Coverage,
-	}
 }

@@ -31,11 +31,11 @@ type CommitStats struct {
 }
 
 type RepoStats struct {
-	Language      string      `json:"language"` // e.g. "go"
-	Branch        string      `json:"branch"`   // e.g. "main"
-	Name          string      `json:"name"`     // name of repository
-	LatestCommmit CommitStats `json:"latest_commit"`
-	RepoURL       url.URL     `json:"-"` // computed
+	Language      string       `json:"language"`      // e.g. "go"
+	Branch        string       `json:"branch"`        // e.g. "main"
+	Name          string       `json:"name"`          // name of repository
+	LatestCommmit *CommitStats `json:"latest_commit"` // can be null for repos registered but no data yet
+	RepoURL       url.URL      `json:"-"`             // computed
 }
 
 func getRepoURL(owner string, repoName string) (*url.URL, error) {
