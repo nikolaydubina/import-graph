@@ -1,6 +1,6 @@
 > How does my dependencies look like?
 
-Collect data about your dependencies, visualize with [dot](https://graphviz.org) or with `jsonl-graph-viz` (TODO: git, website).
+Collect data about your dependencies. Visualize with `jsonl-graph-viz` (TODO: git, website) or [dot](https://graphviz.org).
 This is powering (TODO: website all together).
 
 ```
@@ -42,12 +42,13 @@ $ go mod graph | ./bin/import-graph | jq
 - [x] Runs tests and code coverage
 - [ ] Runs linters
 - [ ] Detects benchmarks
-- [ ] codecov.io
+- [x] codecov.io
 - [ ] codacy.com
 - [ ] goreportcard.com
 - [ ] Readme for words and badges
-- [ ] Version is stable (same as godoc)
-- [ ] Mentions in Awesome-lists
+- [ ] Version of module is stable
+- [ ] Version of Go in go.mod
+- [ ] Mentionings in Awesome-lists
 - [ ] GitHub: Repo, Organization, Contributors, Stars, Contributor, Contributors organizations, Is contributor active?
 
 ## Related Projects
