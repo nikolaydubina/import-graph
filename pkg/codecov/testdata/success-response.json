@@ -1,0 +1,297 @@
+{
+    "can_edit": false,
+    "can_view": true,
+    "latest_commit": {
+        "report": {
+            "files": [
+                {
+                    "name": "transformers/common.go",
+                    "totals": {
+                        "files": 0,
+                        "lines": 3,
+                        "hits": 3,
+                        "misses": 0,
+                        "partials": 0,
+                        "coverage": 100,
+                        "branches": 0,
+                        "methods": 0,
+                        "sessions": 0,
+                        "complexity": 0,
+                        "complexity_total": 0,
+                        "complexity_ratio": 0,
+                        "diff": null
+                    }
+                },
+                {
+                    "name": "transformers/scalers.go",
+                    "totals": {
+                        "files": 0,
+                        "lines": 52,
+                        "hits": 52,
+                        "misses": 0,
+                        "partials": 0,
+                        "coverage": 100,
+                        "branches": 0,
+                        "methods": 0,
+                        "sessions": 0,
+                        "complexity": 0,
+                        "complexity_total": 0,
+                        "complexity_ratio": 0,
+                        "diff": null
+                    }
+                },
+                {
+                    "name": "transformers/categorical.go",
+                    "totals": {
+                        "files": 0,
+                        "lines": 32,
+                        "hits": 32,
+                        "misses": 0,
+                        "partials": 0,
+                        "coverage": 100,
+                        "branches": 0,
+                        "methods": 0,
+                        "sessions": 0,
+                        "complexity": 0,
+                        "complexity_total": 0,
+                        "complexity_ratio": 0,
+                        "diff": null
+                    }
+                },
+                {
+                    "name": "transformers/textprocesors.go",
+                    "totals": {
+                        "files": 0,
+                        "lines": 68,
+                        "hits": 68,
+                        "misses": 0,
+                        "partials": 0,
+                        "coverage": 100,
+                        "branches": 0,
+                        "methods": 0,
+                        "sessions": 0,
+                        "complexity": 0,
+                        "complexity_total": 0,
+                        "complexity_ratio": 0,
+                        "diff": null
+                    }
+                },
+                {
+                    "name": "transformers/discretization.go",
+                    "totals": {
+                        "files": 0,
+                        "lines": 7,
+                        "hits": 7,
+                        "misses": 0,
+                        "partials": 0,
+                        "coverage": 100,
+                        "branches": 0,
+                        "methods": 0,
+                        "sessions": 0,
+                        "complexity": 0,
+                        "complexity_total": 0,
+                        "complexity_ratio": 0,
+                        "diff": null
+                    }
+                },
+                {
+                    "name": "cmd/generate/tests/employeefp.go",
+                    "totals": {
+                        "files": 0,
+                        "lines": 111,
+                        "hits": 111,
+                        "misses": 0,
+                        "partials": 0,
+                        "coverage": 100,
+                        "branches": 0,
+                        "methods": 0,
+                        "sessions": 0,
+                        "complexity": 0,
+                        "complexity_total": 0,
+                        "complexity_ratio": 0,
+                        "diff": null
+                    }
+                },
+                {
+                    "name": "cmd/generate/tests/weirdtagsfp.go",
+                    "totals": {
+                        "files": 0,
+                        "lines": 100,
+                        "hits": 100,
+                        "misses": 0,
+                        "partials": 0,
+                        "coverage": 100,
+                        "branches": 0,
+                        "methods": 0,
+                        "sessions": 0,
+                        "complexity": 0,
+                        "complexity_total": 0,
+                        "complexity_ratio": 0,
+                        "diff": null
+                    }
+                },
+                {
+                    "name": "transformers/samplenormalizers.go",
+                    "totals": {
+                        "files": 0,
+                        "lines": 29,
+                        "hits": 29,
+                        "misses": 0,
+                        "partials": 0,
+                        "coverage": 100,
+                        "branches": 0,
+                        "methods": 0,
+                        "sessions": 0,
+                        "complexity": 0,
+                        "complexity_total": 0,
+                        "complexity_ratio": 0,
+                        "diff": null
+                    }
+                },
+                {
+                    "name": "cmd/generate/tests/with32fieldsfp.go",
+                    "totals": {
+                        "files": 0,
+                        "lines": 240,
+                        "hits": 240,
+                        "misses": 0,
+                        "partials": 0,
+                        "coverage": 100,
+                        "branches": 0,
+                        "methods": 0,
+                        "sessions": 0,
+                        "complexity": 0,
+                        "complexity_total": 0,
+                        "complexity_ratio": 0,
+                        "diff": null
+                    }
+                },
+                {
+                    "name": "structtransformer/structtransformer.go",
+                    "totals": {
+                        "files": 0,
+                        "lines": 35,
+                        "hits": 35,
+                        "misses": 0,
+                        "partials": 0,
+                        "coverage": 100,
+                        "branches": 0,
+                        "methods": 0,
+                        "sessions": 0,
+                        "complexity": 0,
+                        "complexity_total": 0,
+                        "complexity_ratio": 0,
+                        "diff": null
+                    }
+                },
+                {
+                    "name": "cmd/generate/tests/alltransformersfp.go",
+                    "totals": {
+                        "files": 0,
+                        "lines": 118,
+                        "hits": 118,
+                        "misses": 0,
+                        "partials": 0,
+                        "coverage": 100,
+                        "branches": 0,
+                        "methods": 0,
+                        "sessions": 0,
+                        "complexity": 0,
+                        "complexity_total": 0,
+                        "complexity_ratio": 0,
+                        "diff": null
+                    }
+                },
+                {
+                    "name": "cmd/generate/tests/largememorytransformerfp.go",
+                    "totals": {
+                        "files": 0,
+                        "lines": 105,
+                        "hits": 105,
+                        "misses": 0,
+                        "partials": 0,
+                        "coverage": 100,
+                        "branches": 0,
+                        "methods": 0,
+                        "sessions": 0,
+                        "complexity": 0,
+                        "complexity_total": 0,
+                        "complexity_ratio": 0,
+                        "diff": null
+                    }
+                }
+            ],
+            "totals": {
+                "files": 12,
+                "lines": 900,
+                "hits": 900,
+                "misses": 0,
+                "partials": 0,
+                "coverage": 100,
+                "branches": 0,
+                "methods": 0,
+                "sessions": 1,
+                "complexity": 0,
+                "complexity_total": 0,
+                "complexity_ratio": 0,
+                "diff": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    null,
+                    null,
+                    0
+                ]
+            }
+        },
+        "commitid": "0a6ba9c62d81f6f9c8a95f584b64ca2f1aed8a44",
+        "timestamp": "2021-01-16T09:23:12Z",
+        "ci_passed": true,
+        "repository": 11330487,
+        "author": {
+            "avatar_url": "https://avatars0.githubusercontent.com/u/2933061?v=3&s=55",
+            "service": "github",
+            "username": "nikolaydubina",
+            "name": "Nikolay Dubina",
+            "stats": {
+                "repos": 3
+            },
+            "ownerid": 3131390,
+            "integration_id": 10240315
+        },
+        "message": "Update README.md"
+    },
+    "bot": null,
+    "repoid": 11330487,
+    "service_id": "322598448",
+    "name": "go-featureprocessing",
+    "private": false,
+    "updatestamp": "2021-04-05T11:01:18.306989Z",
+    "author": {
+        "avatar_url": "https://avatars0.githubusercontent.com/u/2933061?v=3&s=55",
+        "service": "github",
+        "username": "nikolaydubina",
+        "name": "Nikolay Dubina",
+        "stats": {
+            "repos": 3
+        },
+        "ownerid": 3131390,
+        "integration_id": 10240315
+    },
+    "language": "go",
+    "hookid": "270187199",
+    "using_integration": true,
+    "branch": "main",
+    "active": true,
+    "activated": false,
+    "fork": null,
+    "yaml": null,
+    "image_token": "02QNME4TNT"
+}

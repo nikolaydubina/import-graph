@@ -15,34 +15,34 @@ type GoURLResolver struct {
 }
 
 // ResolveGitHubURL finds GitHub URL
-func (c *GoURLResolver) ResolveGitHubURL(name string) (*url.URL, error) {
+func (c *GoURLResolver) ResolveGitHubURL(name string) (url.URL, error) {
 	if strings.HasPrefix(name, "github.com/") {
-		return url.Parse("https://" + name)
+		return resolvePointerURL(url.Parse("https://" + name))
 	}
 	resp, err := c.fetchData(name)
 	if err != nil {
-		return nil, fmt.Errorf("can not make GET to Go module name: %w", err)
+		return url.URL{}, fmt.Errorf("can not make GET to Go module name: %w", err)
 	}
 	gitURL, err := parseResponse(resp)
 	if err != nil {
-		return nil, fmt.Errorf("can not parse response: %w", err)
+		return url.URL{}, fmt.Errorf("can not parse response: %w", err)
 	}
 	if gitURL.Host != "github.com" {
-		return nil, fmt.Errorf("git is not on GitHub: %v", gitURL)
+		return url.URL{}, fmt.Errorf("git is not on GitHub: %v", gitURL)
 	}
-	return gitURL, nil
+	return *gitURL, nil
 }
 
 // ResolveGitURL finds git URL
-func (c *GoURLResolver) ResolveGitURL(name string) (*url.URL, error) {
+func (c *GoURLResolver) ResolveGitURL(name string) (url.URL, error) {
 	if strings.HasPrefix(name, "github.com/") {
-		return url.Parse("https://" + name)
+		return resolvePointerURL(url.Parse("https://" + name))
 	}
 	resp, err := c.fetchData(name)
 	if err != nil {
-		return nil, fmt.Errorf("can not make GET to Go module name: %w", err)
+		return url.URL{}, fmt.Errorf("can not make GET to Go module name: %w", err)
 	}
-	return parseResponse(resp)
+	return resolvePointerURL(parseResponse(resp))
 }
 
 func (c *GoURLResolver) fetchData(name string) (string, error) {
@@ -87,4 +87,12 @@ func parseResponse(resp string) (*url.URL, error) {
 		return nil, fmt.Errorf("not git repo, vcs is: %s", vals[1])
 	}
 	return url.Parse(vals[2])
+}
+
+// convenience function
+func resolvePointerURL(u *url.URL, err error) (url.URL, error) {
+	if u != nil {
+		return *u, err
+	}
+	return url.URL{}, err
 }

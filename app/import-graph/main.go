@@ -10,6 +10,7 @@ import (
 
 	"github.com/nikolaydubina/import-graph/app/collector"
 
+	"github.com/nikolaydubina/import-graph/pkg/codecov"
 	"github.com/nikolaydubina/import-graph/pkg/gitstats"
 	"github.com/nikolaydubina/import-graph/pkg/go/gomodgraph"
 	"github.com/nikolaydubina/import-graph/pkg/go/testrunner"
@@ -47,6 +48,10 @@ func main() {
 				GitStorage: &gitStorage,
 			},
 			TestRunner: testrunner.GoCmdTestRunner{},
+			CodecovClient: &codecov.HTTPClient{
+				HTTPClient: http.DefaultClient,
+				BaseURL:    "api.codecov.io",
+			},
 		},
 	}
 	graphVizRenderer, err := graphviz.NewGraphvizRenderer()

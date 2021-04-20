@@ -7,6 +7,7 @@ import (
 
 	"go.uber.org/multierr"
 
+	"github.com/nikolaydubina/import-graph/pkg/codecov"
 	"github.com/nikolaydubina/import-graph/pkg/gitstats"
 	"github.com/nikolaydubina/import-graph/pkg/go/gomodgraph"
 	"github.com/nikolaydubina/import-graph/pkg/go/testrunner"
@@ -19,11 +20,13 @@ type ModuleStats struct {
 	ModuleName string `json:"-"`  // this is in id anyways
 
 	// Collected data
-	CanGetGitStats bool `json:"can_get_gitstats"`
-	CanRunTests    bool `json:"can_run_tests"`
+	CanGetGitStats     bool `json:"can_get_gitstats"`
+	CanGetCodecovStats bool `json:"can_get_codecov"`
+	CanRunTests        bool `json:"can_run_tests"`
 
 	*gitstats.GitStats                `json:",omitempty"`
 	*testrunner.GoModuleTestRunResult `json:",omitempty"`
+	*CodecovStats                     `json:",omitempty"`
 }
 
 type Edge struct {
@@ -59,6 +62,7 @@ type GoModuleStatsCollector struct {
 	URLResolver     *basiccache.GoCachedResolver
 	GitStatsFetcher *gitstats.GitStatsFetcher
 	TestRunner      testrunner.GoCmdTestRunner
+	CodecovClient   *codecov.HTTPClient
 }
 
 // CollectStats fetches all possible information about Go module
@@ -71,12 +75,13 @@ func (c *GoModuleStatsCollector) CollectStats(moduleName string) (moduleStats Mo
 	gitURL, err := c.URLResolver.ResolveGitURL(moduleName)
 	if err != nil {
 		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not resolve URL: %w", err))
+		return
 	}
-
-	if err := c.GitStorage.Fetch(*gitURL); err != nil {
+	if err := c.GitStorage.Fetch(gitURL); err != nil {
 		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not fetch git: %w", err))
+		return
 	}
-	gitDirPath := c.GitStorage.DirPath(*gitURL)
+	gitDirPath := c.GitStorage.DirPath(gitURL)
 
 	// Git Stats
 	gitStats, err := c.GitStatsFetcher.GetGitStats(gitDirPath)
@@ -87,6 +92,22 @@ func (c *GoModuleStatsCollector) CollectStats(moduleName string) (moduleStats Mo
 		moduleStats.CanGetGitStats = true
 	}
 	moduleStats.GitStats = gitStats
+
+	// GitHub URL
+	gitHubURL, err := c.URLResolver.ResolveGitHubURL(moduleName)
+	if err != nil {
+		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not resolve URL: %w", err))
+	}
+
+	// codecov.io
+	codecovStats, err := c.CodecovClient.GetRepoStatsFromGitHubURL(gitHubURL)
+	if err != nil {
+		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get codecov stats: %w", err))
+	}
+	if cc := NewCodecovStats(codecovStats); cc != nil {
+		moduleStats.CodecovStats = cc
+		moduleStats.CanGetCodecovStats = true
+	}
 
 	// Run tests
 	testStats, err := c.TestRunner.RunModuleTets(gitDirPath)
@@ -122,4 +143,23 @@ func (c *GoModuleGraphStatsCollector) CollectStats(gmod gomodgraph.Graph) (g Gra
 	}
 
 	return
+}
+
+type CodecovStats struct {
+	RepoURL  string  `json:"codecov_url"` // need flat value so can not use url.URL
+	NumFiles uint    `json:"codecov_files"`
+	NumLines uint    `json:"codecov_lines"`
+	Coverage float64 `json:"codecov_coverage"`
+}
+
+func NewCodecovStats(r *codecov.RepoStats) *CodecovStats {
+	if r == nil {
+		return nil
+	}
+	return &CodecovStats{
+		RepoURL:  r.RepoURL.String(),
+		NumFiles: r.LatestCommmit.Report.Totals.NumFiles,
+		NumLines: r.LatestCommmit.Report.Totals.NumLines,
+		Coverage: r.LatestCommmit.Report.Totals.Coverage,
+	}
 }
