@@ -17,9 +17,9 @@ Output in [JSONL](https://jsonlines.org) graph:
 $ go mod graph | ./bin/import-graph
 ```
 ```
-{"id":"github.com/nikolaydubina/calendarheatmap","can_get_gitstats":true,"can_get_codecov":true,"can_run_tests":true,"github_url":"https://github.com/nikolaydubina/calendarheatmap","git_url":"https://github.com/nikolaydubina/calendarheatmap","git_last_commit":"2021-04-17","git_last_commit_days_since":3.686903991909722,"git_last_commit_years_since":0.010972928547453702,"git_last_commit_months_since":0.13167514256944443,"git_num_contributors":2,"codecov_url":"https://app.codecov.io/gh/nikolaydubina/calendarheatmap","codecov_files":6,"codecov_lines":236,"codecov_coverage":80.08,"has_tests":true,"has_test_files":true,"num_packages":2,"num_packages_with_tests":1,"num_packages_with_tests_files":1,"num_packages_tests_passed":1,"package_coverage_avg":85.3,"package_coverage_min":85.3}
-{"id":"golang.org/x/image","can_get_gitstats":true,"can_get_codecov":false,"can_run_tests":true,"git_url":"https://go.googlesource.com/image","git_last_commit":"2021-02-20","git_last_commit_days_since":59.38917091612269,"git_last_commit_years_since":0.1767534848694472,"git_last_commit_months_since":2.1210418184333664,"git_num_contributors":44,"has_tests":true,"has_test_files":true,"num_packages":32,"num_packages_with_tests":14,"num_packages_with_tests_files":14,"num_packages_tests_passed":14,"package_coverage_avg":5.6,"package_coverage_min":54.00000000000001}
-{"id":"golang.org/x/text","can_get_gitstats":true,"can_get_codecov":false,"can_run_tests":true,"git_url":"https://go.googlesource.com/text","git_last_commit":"2021-04-11","git_last_commit_days_since":9.363270275891203,"git_last_commit_years_since":0.027866875821139222,"git_last_commit_months_since":0.33440250985367065,"git_num_contributors":56,"has_tests":true,"has_test_files":true,"num_packages":63,"num_packages_with_tests":48,"num_packages_with_tests_files":48,"num_packages_tests_passed":48,"package_coverage_avg":5.8,"package_coverage_min":81.48333333333333}
+{"id":"github.com/nikolaydubina/calendarheatmap","can_get_gitstats":true,"can_get_codecov":true,"can_run_tests":true,"github_url":"https://github.com/nikolaydubina/calendarheatmap","git_url":"https://github.com/nikolaydubina/calendarheatmap","git_last_commit":"2021-04-17","git_last_commit_days_since":4,"git_num_contributors":2,"codecov_url":"https://app.codecov.io/gh/nikolaydubina/calendarheatmap","codecov_files":6,"codecov_lines":236,"codecov_coverage":80.08,"has_tests":true,"has_test_files":true,"num_packages":2,"num_packages_with_tests":1,"num_packages_with_tests_files":1,"num_packages_tests_passed":1,"package_coverage_avg":85.3,"package_coverage_min":85.3}
+{"id":"golang.org/x/image","can_get_gitstats":true,"can_get_codecov":false,"can_run_tests":true,"git_url":"https://go.googlesource.com/image","git_last_commit":"2021-02-20","git_last_commit_days_since":60,"git_num_contributors":44,"has_tests":true,"has_test_files":true,"num_packages":32,"num_packages_with_tests":14,"num_packages_with_tests_files":14,"num_packages_tests_passed":14,"package_coverage_avg":5.6,"package_coverage_min":54}
+{"id":"golang.org/x/text","can_get_gitstats":true,"can_get_codecov":false,"can_run_tests":true,"git_url":"https://go.googlesource.com/text","git_last_commit":"2021-04-11","git_last_commit_days_since":10,"git_num_contributors":56,"has_tests":true,"has_test_files":true,"num_packages":63,"num_packages_with_tests":48,"num_packages_with_tests_files":48,"num_packages_tests_passed":48,"package_coverage_avg":5.8,"package_coverage_min":81.48333333333332}
 {"from":"github.com/nikolaydubina/calendarheatmap","to":"golang.org/x/image"}
 {"from":"golang.org/x/image","to":"golang.org/x/text"}
 ```
@@ -37,9 +37,7 @@ $ go mod graph | ./bin/import-graph | jq
     "github_url": "https://github.com/nikolaydubina/calendarheatmap",
     "git_url": "https://github.com/nikolaydubina/calendarheatmap",
     "git_last_commit": "2021-04-17",
-    "git_last_commit_days_since": 3.686903991909722,
-    "git_last_commit_years_since": 0.010972928547453702,
-    "git_last_commit_months_since": 0.13167514256944443,
+    "git_last_commit_days_since": 4,
     "git_num_contributors": 2,
     "codecov_url": "https://app.codecov.io/gh/nikolaydubina/calendarheatmap",
     "codecov_files": 6,
