@@ -7,26 +7,24 @@ import (
 	"time"
 )
 
-type GitStorage interface {
-	DirPath(gitURL url.URL) string
-}
-
-// GitStats contains information about single git repository computed using git only
-type GitStats struct {
-	LastCommit            time.Time `json:"last_commit,omitempty"`
-	DaysSinceLastCommit   float64   `json:"last_commit_days_since"`
-	YearsSinceLastCommit  float64   `json:"last_commit_years_since"`
-	MonthsSinceLastCommit float64   `json:"last_commit_months_since"`
-	NumContributors       uint      `json:"num_contributors"`
+type gitLogFetcher interface {
+	GetGitLog(gitURL url.URL) (GitLog, error)
 }
 
 // GitStatsFetcher computes git stats after fetching using provided storage
 type GitStatsFetcher struct {
-	GitStorage GitStorage
+	GitLogFetcher gitLogFetcher
 }
 
-func (g *GitStatsFetcher) GetGitStats(gitDirPath string) (*GitStats, error) {
-	logs, err := NewGitLog(gitDirPath)
+// GitStats contains information about single git repository computed using local git only
+type GitStats struct {
+	LastCommit          time.Time `json:"last_commit,omitempty"`
+	DaysSinceLastCommit float64   `json:"last_commit_days_since"`
+	NumContributors     uint      `json:"num_contributors"`
+}
+
+func (g *GitStatsFetcher) GetGitStats(gitURL url.URL) (*GitStats, error) {
+	logs, err := g.GitLogFetcher.GetGitLog(gitURL)
 	if err != nil {
 		return nil, fmt.Errorf("can not get git logs: %w", err)
 	}
@@ -35,11 +33,9 @@ func (g *GitStatsFetcher) GetGitStats(gitDirPath string) (*GitStats, error) {
 	}
 
 	stats := GitStats{
-		LastCommit:            logs[0].AuthorDate,
-		DaysSinceLastCommit:   logs.DaysSinceLastCommit(),
-		MonthsSinceLastCommit: logs.DaysSinceLastCommit() / 28.0,
-		YearsSinceLastCommit:  logs.DaysSinceLastCommit() / 28.0 / 12.0,
-		NumContributors:       logs.NumContributors(),
+		LastCommit:          logs[0].AuthorDate,
+		DaysSinceLastCommit: logs.DaysSinceLastCommit(),
+		NumContributors:     logs.NumContributors(),
 	}
 	return &stats, nil
 }

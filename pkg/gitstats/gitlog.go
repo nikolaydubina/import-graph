@@ -1,9 +1,7 @@
 package gitstats
 
 import (
-	"bufio"
 	"fmt"
-	"os/exec"
 	"strconv"
 	"strings"
 	"time"
@@ -36,40 +34,6 @@ func NewGitLogEntryFromLine(input string) (GitLogEntry, error) {
 
 // GitLog is sequence of git log entries in reverse chronological order (i.e. first is latest)
 type GitLog []GitLogEntry
-
-// NewGitLog fetches git log entries given path for git
-func NewGitLog(gitPath string) (GitLog, error) {
-	cmd := exec.Command(
-		"git",
-		fmt.Sprintf("--git-dir=%s/.git", gitPath),
-		"log",
-		"--pretty=format:%at %ae",
-	)
-	stdout, err := cmd.StdoutPipe()
-	if err != nil {
-		return nil, fmt.Errorf("can not get stdout pipe: %w", err)
-	}
-	if err := cmd.Start(); err != nil {
-		return nil, fmt.Errorf("can not start go command: %w", err)
-	}
-	scanner := bufio.NewScanner(stdout)
-
-	var gitlogs []GitLogEntry
-	for scanner.Scan() {
-		entry, err := NewGitLogEntryFromLine(scanner.Text())
-		if err != nil {
-			return nil, fmt.Errorf("issue parsing git log line: %w", err)
-		}
-		gitlogs = append(gitlogs, entry)
-	}
-	if err := scanner.Err(); err != nil {
-		return nil, fmt.Errorf("got error from stdout of git log scanner: %w", err)
-	}
-	if err := cmd.Wait(); err != nil {
-		return nil, fmt.Errorf("command did not finish successfully: %w", err)
-	}
-	return gitlogs, nil
-}
 
 // NumContributors returns number of contributors in log
 func (logs GitLog) NumContributors() uint {

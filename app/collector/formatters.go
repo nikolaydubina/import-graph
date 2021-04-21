@@ -2,6 +2,7 @@ package collector
 
 import (
 	"errors"
+	"math"
 
 	"github.com/nikolaydubina/import-graph/pkg/codecov"
 	"github.com/nikolaydubina/import-graph/pkg/gitstats"
@@ -31,11 +32,9 @@ func NewCodecovStats(r *codecov.RepoStats) (*CodecovStats, error) {
 }
 
 type GitStats struct {
-	LastCommit            string  `json:"git_last_commit,omitempty"` // applying formatting to days
-	DaysSinceLastCommit   float64 `json:"git_last_commit_days_since"`
-	YearsSinceLastCommit  float64 `json:"git_last_commit_years_since"`
-	MonthsSinceLastCommit float64 `json:"git_last_commit_months_since"`
-	NumContributors       uint    `json:"git_num_contributors"`
+	LastCommit          string `json:"git_last_commit,omitempty"`  // applying formatting to days
+	DaysSinceLastCommit uint   `json:"git_last_commit_days_since"` // num full days
+	NumContributors     uint   `json:"git_num_contributors"`
 }
 
 func NewGitStats(r *gitstats.GitStats) *GitStats {
@@ -43,10 +42,8 @@ func NewGitStats(r *gitstats.GitStats) *GitStats {
 		return nil
 	}
 	return &GitStats{
-		LastCommit:            r.LastCommit.Format("2006-01-02"),
-		DaysSinceLastCommit:   r.DaysSinceLastCommit,
-		MonthsSinceLastCommit: r.MonthsSinceLastCommit,
-		YearsSinceLastCommit:  r.YearsSinceLastCommit,
-		NumContributors:       r.NumContributors,
+		LastCommit:          r.LastCommit.Format("2006-01-02"),
+		DaysSinceLastCommit: uint(math.Floor(r.DaysSinceLastCommit)),
+		NumContributors:     r.NumContributors,
 	}
 }

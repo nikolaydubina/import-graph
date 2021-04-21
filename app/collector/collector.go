@@ -61,72 +61,69 @@ func (g *Graph) WriteJSONL(w io.Writer) error {
 // GoModuleStatsCollector is collecting all the details about single Go module
 // Does not fail if encounters errors, but still collects thoese errors.
 type GoModuleStatsCollector struct {
-	GitStorage      *gitstats.GitProcessStorage
+	GitStorage      *gitstats.GitCmdLocalClient
 	URLResolver     *basiccache.GoCachedResolver
 	GitStatsFetcher *gitstats.GitStatsFetcher
-	TestRunner      testrunner.GoCmdTestRunner
+	TestRunner      *testrunner.GoCmdTestRunner
 	CodecovClient   *codecov.HTTPClient
 }
 
 // CollectStats fetches all possible information about Go module
-func (c *GoModuleStatsCollector) CollectStats(moduleName string) (moduleStats ModuleStats, errFinal error) {
-	moduleStats = ModuleStats{
+func (c *GoModuleStatsCollector) CollectStats(moduleName string) (ModuleStats, error) {
+	moduleStats := ModuleStats{
 		ID:         moduleName,
 		ModuleName: moduleName,
 	}
+	var errFinal error
 
 	gitURL, err := c.URLResolver.ResolveGitURL(moduleName)
 	if err != nil {
 		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not resolve URL: %w", err))
-		return
 	}
 	moduleStats.GitURL = gitURL.String()
-	if err := c.GitStorage.Fetch(gitURL); err != nil {
-		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not fetch git: %w", err))
-		return
-	}
-	gitDirPath := c.GitStorage.DirPath(gitURL)
 
-	// Git Stats
-	gitStats, err := c.GitStatsFetcher.GetGitStats(gitDirPath)
-	if err != nil {
-		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get git stats: %w", err))
-	}
-	if gitStats != nil {
-		moduleStats.GitStats = NewGitStats(gitStats)
-		moduleStats.CanGetGitStats = true
-	}
-
-	// GitHub URL
 	gitHubURL, err := c.URLResolver.ResolveGitHubURL(moduleName)
 	if err != nil {
 		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not resolve URL: %w", err))
 	}
 	moduleStats.GitHubURL = gitHubURL.String()
 
-	// codecov.io
-	codecovStats, err := c.CodecovClient.GetRepoStatsFromGitHubURL(gitHubURL)
-	if err != nil {
-		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get codecov stats: %w", err))
-	}
-	if cc, err := NewCodecovStats(codecovStats); cc != nil && err == nil {
-		moduleStats.CodecovStats = cc
-		moduleStats.CanGetCodecovStats = true
-	} else if err != nil {
-		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not format codecov stats: %w", err))
+	if err := c.GitStorage.Clone(gitURL); err != nil {
+		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not fetch git: %w", err))
 	}
 
-	// Run tests
-	testStats, err := c.TestRunner.RunModuleTets(gitDirPath)
-	if err != nil {
-		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not run tests: %w", err))
+	if c.GitStatsFetcher != nil {
+		if st, err := c.GitStatsFetcher.GetGitStats(gitURL); err != nil {
+			errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get git stats: %w", err))
+		} else {
+			moduleStats.GitStats = NewGitStats(st)
+			moduleStats.CanGetGitStats = true
+		}
 	}
-	if testStats != nil {
-		moduleStats.CanRunTests = true
-	}
-	moduleStats.GoModuleTestRunResult = testStats
 
-	return
+	if c.CodecovClient != nil {
+		if resp, err := c.CodecovClient.GetRepoStatsFromGitHubURL(gitHubURL); err != nil {
+			errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get codecov stats: %w", err))
+		} else {
+			if st, err := NewCodecovStats(resp); err != nil {
+				errFinal = multierr.Combine(errFinal, fmt.Errorf("can not format codecov stats: %w", err))
+			} else {
+				moduleStats.CanGetCodecovStats = true
+				moduleStats.CodecovStats = st
+			}
+		}
+	}
+
+	if c.TestRunner != nil {
+		if st, err := c.TestRunner.RunModuleTets(c.GitStorage.DirPath(gitURL)); err != nil {
+			errFinal = multierr.Combine(errFinal, fmt.Errorf("can not run tests: %w", err))
+		} else {
+			moduleStats.CanRunTests = true
+			moduleStats.GoModuleTestRunResult = st
+		}
+	}
+
+	return moduleStats, errFinal
 }
 
 // GoModuleGraphStatsCollector collects data about Go modules and their relationships
@@ -136,7 +133,10 @@ type GoModuleGraphStatsCollector struct {
 
 // CollectStats returns new Graph with collected data
 // Keeps as much data as possible. Does no stop on errors, but keep track of them.
-func (c *GoModuleGraphStatsCollector) CollectStats(gmod gomodgraph.Graph) (g Graph, finalErr error) {
+func (c *GoModuleGraphStatsCollector) CollectStats(gmod gomodgraph.Graph) (Graph, error) {
+	var g Graph
+	var finalErr error
+
 	for _, n := range gmod.Modules {
 		moduleWithStats, err := c.ModuleCollector.CollectStats(n.ModuleName)
 		if err != nil {
@@ -149,5 +149,5 @@ func (c *GoModuleGraphStatsCollector) CollectStats(gmod gomodgraph.Graph) (g Gra
 		g.Edges = append(g.Edges, Edge{From: e.From, To: e.To})
 	}
 
-	return
+	return g, finalErr
 }

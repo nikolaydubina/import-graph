@@ -29,11 +29,18 @@ var (
 func main() {
 	var (
 		outputType OutputType
+		runTests   bool
 	)
 	flag.StringVar(&outputType.V, "output", "jsonl", "output type (jsonl, dot)")
+	flag.BoolVar(&runTests, "test", false, "set to run tests")
 	flag.Parse()
 
-	gitStorage := gitstats.GitProcessStorage{
+	var testRunner *testrunner.GoCmdTestRunner
+	if runTests {
+		testRunner = &testrunner.GoCmdTestRunner{}
+	}
+
+	gitClient := gitstats.GitCmdLocalClient{
 		Path: ".import-graph/git-repos/",
 	}
 	goModGraphParser := &gomodgraph.GoModGraphParser{}
@@ -43,11 +50,11 @@ func main() {
 				URLResolver: &urlresolver.GoURLResolver{HTTPClient: http.DefaultClient},
 				Storage:     sync.Map{},
 			},
-			GitStorage: &gitStorage,
+			GitStorage: &gitClient,
 			GitStatsFetcher: &gitstats.GitStatsFetcher{
-				GitStorage: &gitStorage,
+				GitLogFetcher: &gitClient,
 			},
-			TestRunner: testrunner.GoCmdTestRunner{},
+			TestRunner: testRunner,
 			CodecovClient: &codecov.HTTPClient{
 				HTTPClient: http.DefaultClient,
 				BaseURL:    "api.codecov.io",
