@@ -1,4 +1,4 @@
-## Collect data about your dependencies
+# Collect data about your dependencies
 
 ![import-graph-overview](./docs/import-graph-overview.svg)
 
