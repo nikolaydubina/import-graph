@@ -1,7 +1,10 @@
+## Collect data about your dependencies
+
 ![import-graph-overview](./docs/import-graph-overview.svg)
 
-Collect data about your dependencies. Visualize with `jsonl-graph-viz` (TODO: git, website) or [dot](https://graphviz.org).
-This is powering (TODO: website all together).
+Visualize with `jsonl-graph-viz`:
+
+TODO
 
 Render with [dot](https://graphviz.org):
 
@@ -19,6 +22,7 @@ $ go mod graph | ./bin/import-graph
 {"id":"golang.org/x/tools","can_get_gitstats":true,"can_get_codecov":false,"can_run_tests":false,"git_url":"https://go.googlesource.com/tools","git_last_commit":"2021-04-20","git_last_commit_days_since":1,"git_num_contributors":389}
 {"from":"github.com/gin-gonic/gin","to":"github.com/gin-contrib/sse"}
 {"from":"github.com/gin-gonic/gin","to":"github.com/go-playground/validator/v10"}
+...
 ```
 
 Pretty-print with [jq](https://github.com/stedolan/jq):
