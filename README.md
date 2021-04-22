@@ -8,53 +8,49 @@ Render with [dot](https://graphviz.org):
 ```
 $ go mod graph | ./bin/import-graph -output=dot | dot -Tsvg > output.svg
 ```
-![dot-svg-example](./docs/go-featureprocessing/output.dot.svg)
+![dot-svg-example](./docs/gin.svg)
 
 Output in [JSONL](https://jsonlines.org) graph:
 ```
 $ go mod graph | ./bin/import-graph
 ```
 ```
-{"id":"github.com/nikolaydubina/calendarheatmap","can_get_gitstats":true,"can_get_codecov":true,"can_run_tests":true,"github_url":"https://github.com/nikolaydubina/calendarheatmap","git_url":"https://github.com/nikolaydubina/calendarheatmap","git_last_commit":"2021-04-17","git_last_commit_days_since":4,"git_num_contributors":2,"codecov_url":"https://app.codecov.io/gh/nikolaydubina/calendarheatmap","codecov_files":6,"codecov_lines":236,"codecov_coverage":80.08,"has_tests":true,"has_test_files":true,"num_packages":2,"num_packages_with_tests":1,"num_packages_with_tests_files":1,"num_packages_tests_passed":1,"package_coverage_avg":85.3,"package_coverage_min":85.3}
-{"id":"golang.org/x/image","can_get_gitstats":true,"can_get_codecov":false,"can_run_tests":true,"git_url":"https://go.googlesource.com/image","git_last_commit":"2021-02-20","git_last_commit_days_since":60,"git_num_contributors":44,"has_tests":true,"has_test_files":true,"num_packages":32,"num_packages_with_tests":14,"num_packages_with_tests_files":14,"num_packages_tests_passed":14,"package_coverage_avg":5.6,"package_coverage_min":54}
-{"id":"golang.org/x/text","can_get_gitstats":true,"can_get_codecov":false,"can_run_tests":true,"git_url":"https://go.googlesource.com/text","git_last_commit":"2021-04-11","git_last_commit_days_since":10,"git_num_contributors":56,"has_tests":true,"has_test_files":true,"num_packages":63,"num_packages_with_tests":48,"num_packages_with_tests_files":48,"num_packages_tests_passed":48,"package_coverage_avg":5.8,"package_coverage_min":81.48333333333332}
-{"from":"github.com/nikolaydubina/calendarheatmap","to":"golang.org/x/image"}
-{"from":"golang.org/x/image","to":"golang.org/x/text"}
+{"id":"golang.org/x/net","can_get_gitstats":true,"can_get_codecov":false,"can_run_tests":true,"git_url":"https://go.googlesource.com/net","git_last_commit":"2021-04-20","git_last_commit_days_since":1,"git_num_contributors":196,"has_tests":true,"has_test_files":true,"num_packages":33,"num_packages_with_tests":30,"num_packages_with_tests_files":30,"num_packages_tests_passed":30,"package_coverage_avg":25.9,"package_coverage_min":71.35666666666665}
+{"id":"golang.org/x/tools","can_get_gitstats":true,"can_get_codecov":false,"can_run_tests":false,"git_url":"https://go.googlesource.com/tools","git_last_commit":"2021-04-20","git_last_commit_days_since":1,"git_num_contributors":389}
+{"from":"github.com/gin-gonic/gin","to":"github.com/gin-contrib/sse"}
+{"from":"github.com/gin-gonic/gin","to":"github.com/go-playground/validator/v10"}
 ```
 
 Pretty-print with [jq](https://github.com/stedolan/jq):
 ```
-$ go mod graph | ./bin/import-graph | jq
+$ go mod graph | ./bin/import-graph | jq -f
 ```
 ```
+...
 {
-    "id": "github.com/nikolaydubina/calendarheatmap",
+    "id": "github.com/gin-gonic/gin",
     "can_get_gitstats": true,
     "can_get_codecov": true,
     "can_run_tests": true,
-    "github_url": "https://github.com/nikolaydubina/calendarheatmap",
-    "git_url": "https://github.com/nikolaydubina/calendarheatmap",
-    "git_last_commit": "2021-04-17",
-    "git_last_commit_days_since": 4,
-    "git_num_contributors": 2,
-    "codecov_url": "https://app.codecov.io/gh/nikolaydubina/calendarheatmap",
-    "codecov_files": 6,
-    "codecov_lines": 236,
-    "codecov_coverage": 80.08,
+    "github_url": "https://github.com/gin-gonic/gin",
+    "git_url": "https://github.com/gin-gonic/gin",
+    "git_last_commit": "2021-04-21",
+    "git_last_commit_days_since": 1,
+    "git_num_contributors": 321,
+    "codecov_url": "https://app.codecov.io/gh/gin-gonic/gin",
+    "codecov_files": 41,
+    "codecov_lines": 2036,
+    "codecov_coverage": 98.67,
     "has_tests": true,
     "has_test_files": true,
-    "num_packages": 2,
-    "num_packages_with_tests": 1,
-    "num_packages_with_tests_files": 1,
-    "num_packages_tests_passed": 1,
-    "package_coverage_avg": 85.3,
-    "package_coverage_min": 85.3
+    "num_packages": 6,
+    "num_packages_with_tests": 4,
+    "num_packages_with_tests_files": 4,
+    "num_packages_tests_passed": 4,
+    "package_coverage_avg": 96.3,
+    "package_coverage_min": 98.9
 }
 ...
-{
-    "from": "golang.org/x/image",
-    "to": "golang.org/x/text"
-}
 ```
 
 ## Data Sources

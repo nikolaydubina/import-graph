@@ -69,7 +69,7 @@ type GoPackageTestRunResult struct {
 
 // RunTests runs tests via Go process and returns report
 func (c *GoCmdTestRunner) RunTests(moduleDirPath string) (map[string]GoPackageTestRunResult, error) {
-	cmd := exec.Command("go", "test", "-json", "-covermode=atomic", "./...")
+	cmd := exec.Command("go", "test", "-short", "-json", "-covermode=atomic", "./...")
 	cmd.Dir = moduleDirPath
 	stdout, err := cmd.StdoutPipe()
 	if err != nil {

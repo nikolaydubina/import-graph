@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"log"
 
 	"go.uber.org/multierr"
 
@@ -137,12 +138,15 @@ func (c *GoModuleGraphStatsCollector) CollectStats(gmod gomodgraph.Graph) (Graph
 	var g Graph
 	var finalErr error
 
-	for _, n := range gmod.Modules {
+	for i, n := range gmod.Modules {
 		moduleWithStats, err := c.ModuleCollector.CollectStats(n.ModuleName)
+		infoStr := ""
 		if err != nil {
 			finalErr = multierr.Combine(finalErr, fmt.Errorf("can not get module stats for module %s: %w", n.ModuleName, err))
+			infoStr = fmt.Sprintf(" with error: %s", err)
 		}
 		g.Modules = append(g.Modules, moduleWithStats)
+		log.Printf("[%d/%d] %s: done%s\n", i+1, len(gmod.Modules), n.ModuleName, infoStr)
 	}
 
 	for _, e := range gmod.Edges {
@@ -150,4 +154,25 @@ func (c *GoModuleGraphStatsCollector) CollectStats(gmod gomodgraph.Graph) (Graph
 	}
 
 	return g, finalErr
+}
+
+// CollectStatsWrite is version that serializes output as soon as it is computed
+func (c *GoModuleGraphStatsCollector) CollectStatsWrite(gmod gomodgraph.Graph, w io.Writer) {
+	encoder := json.NewEncoder(w)
+
+	for _, n := range gmod.Modules {
+		m, err := c.ModuleCollector.CollectStats(n.ModuleName)
+		if err != nil {
+			log.Println(fmt.Errorf("%s got error: %w", n.ModuleName, err))
+		}
+		if err := encoder.Encode(m); err != nil {
+			log.Println(err)
+		}
+	}
+
+	for _, e := range gmod.Edges {
+		if err := encoder.Encode(Edge{From: e.From, To: e.To}); err != nil {
+			log.Println(e)
+		}
+	}
 }

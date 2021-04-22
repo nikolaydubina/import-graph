@@ -71,23 +71,13 @@ func main() {
 		log.Println(err)
 	}
 
-	gCollected, err := goModGraphCollector.CollectStats(*g)
-	if err != nil {
-		log.Println(err)
-	}
-
 	switch outputType {
 	case OutputTypeJSONL:
-		if err := gCollected.WriteJSONL(os.Stdout); err != nil {
-			log.Println(err)
-		}
+		goModGraphCollector.CollectStatsWrite(*g, os.Stdout)
 	case OutputTypeDot:
 		var buf bytes.Buffer
 
-		if err := gCollected.WriteJSONL(&buf); err != nil {
-			log.Fatalln(err)
-		}
-
+		goModGraphCollector.CollectStatsWrite(*g, &buf)
 		g, err := graphviz.NewGraphFromJSONLReader(&buf)
 		if err != nil {
 			log.Fatalln(err)

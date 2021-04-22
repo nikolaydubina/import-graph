@@ -7,3 +7,6 @@
 [submodule "third-party/calendarheatmap"]
 	path = third-party/calendarheatmap
 	url = https://github.com/nikolaydubina/calendarheatmap
+[submodule "third-party/gin"]
+	path = third-party/gin
+	url = https://github.com/gin-gonic/gin

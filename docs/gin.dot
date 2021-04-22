@@ -1,0 +1,75 @@
+digraph G {
+	concentrate=True;
+	rankdir=TB;
+	node [shape=record];
+	
+	"github.com/gin-gonic/gin" [label="{ github.com/gin-gonic/gin | {can_get_codecov\l | true\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | true\r} | {codecov_coverage\l | 98.67\r} | {codecov_files\l | 41\r} | {codecov_lines\l | 2036\r} | {git_last_commit\l | 2021-04-21\r} | {git_last_commit_days_since\l | 1\r} | {git_num_contributors\l | 321\r} | {has_test_files\l | true\r} | {has_tests\l | true\r} | {num_packages\l | 6\r} | {num_packages_tests_passed\l | 4\r} | {num_packages_with_tests\l | 4\r} | {num_packages_with_tests_files\l | 4\r} | {package_coverage_avg\l | 96.30\r} | {package_coverage_min\l | 98.90\r} }"];
+	"github.com/gin-contrib/sse" [label="{ github.com/gin-contrib/sse | {can_get_codecov\l | true\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | true\r} | {codecov_coverage\l | 90.65\r} | {codecov_files\l | 3\r} | {codecov_lines\l | 107\r} | {git_last_commit\l | 2020-08-15\r} | {git_last_commit_days_since\l | 249\r} | {git_num_contributors\l | 3\r} | {has_test_files\l | true\r} | {has_tests\l | true\r} | {num_packages\l | 1\r} | {num_packages_tests_passed\l | 1\r} | {num_packages_with_tests\l | 1\r} | {num_packages_with_tests_files\l | 1\r} | {package_coverage_avg\l | 94.10\r} | {package_coverage_min\l | 94.10\r} }"];
+	"github.com/go-playground/validator/v10" [label="{ github.com/go-playground/validator/v10 | {can_get_codecov\l | false\r} | {can_get_gitstats\l | false\r} | {can_run_tests\l | false\r} }"];
+	"github.com/golang/protobuf" [label="{ github.com/golang/protobuf | {can_get_codecov\l | false\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | true\r} | {git_last_commit\l | 2021-03-30\r} | {git_last_commit_days_since\l | 23\r} | {git_num_contributors\l | 96\r} | {has_test_files\l | true\r} | {has_tests\l | true\r} | {num_packages\l | 21\r} | {num_packages_tests_passed\l | 5\r} | {num_packages_with_tests\l | 5\r} | {num_packages_with_tests_files\l | 5\r} | {package_coverage_avg\l | 71\r} | {package_coverage_min\l | 79.80\r} }"];
+	"github.com/json-iterator/go" [label="{ github.com/json-iterator/go | {can_get_codecov\l | true\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | false\r} | {codecov_coverage\l | 86.37\r} | {codecov_files\l | 41\r} | {codecov_lines\l | 5115\r} | {git_last_commit\l | 2020-11-18\r} | {git_last_commit_days_since\l | 155\r} | {git_num_contributors\l | 55\r} }"];
+	"github.com/mattn/go-isatty" [label="{ github.com/mattn/go-isatty | {can_get_codecov\l | true\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | true\r} | {codecov_coverage\l | 100\r} | {codecov_files\l | 1\r} | {codecov_lines\l | 3\r} | {git_last_commit\l | 2021-01-18\r} | {git_last_commit_days_since\l | 93\r} | {git_num_contributors\l | 23\r} | {has_test_files\l | true\r} | {has_tests\l | true\r} | {num_packages\l | 1\r} | {num_packages_tests_passed\l | 1\r} | {num_packages_with_tests\l | 1\r} | {num_packages_with_tests_files\l | 1\r} | {package_coverage_avg\l | 100\r} | {package_coverage_min\l | 100\r} }"];
+	"github.com/stretchr/testify" [label="{ github.com/stretchr/testify | {can_get_codecov\l | false\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | true\r} | {git_last_commit\l | 2020-11-09\r} | {git_last_commit_days_since\l | 164\r} | {git_num_contributors\l | 217\r} | {has_test_files\l | true\r} | {has_tests\l | true\r} | {num_packages\l | 6\r} | {num_packages_tests_passed\l | 5\r} | {num_packages_with_tests\l | 5\r} | {num_packages_with_tests_files\l | 5\r} | {package_coverage_avg\l | 20.40\r} | {package_coverage_min\l | 54.26\r} }"];
+	"github.com/ugorji/go/codec" [label="{ github.com/ugorji/go/codec | {can_get_codecov\l | false\r} | {can_get_gitstats\l | false\r} | {can_run_tests\l | false\r} }"];
+	"gopkg.in/yaml.v2" [label="{ gopkg.in/yaml.v2 | {can_get_codecov\l | false\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | false\r} | {git_last_commit\l | 2020-11-17\r} | {git_last_commit_days_since\l | 155\r} | {git_num_contributors\l | 47\r} }"];
+	"github.com/go-playground/assert/v2" [label="{ github.com/go-playground/assert/v2 | {can_get_codecov\l | false\r} | {can_get_gitstats\l | false\r} | {can_run_tests\l | false\r} }"];
+	"github.com/go-playground/locales" [label="{ github.com/go-playground/locales | {can_get_codecov\l | false\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | true\r} | {git_last_commit\l | 2020-09-28\r} | {git_last_commit_days_since\l | 206\r} | {git_num_contributors\l | 10\r} | {has_test_files\l | true\r} | {has_tests\l | true\r} | {num_packages\l | 739\r} | {num_packages_tests_passed\l | 736\r} | {num_packages_with_tests\l | 736\r} | {num_packages_with_tests_files\l | 736\r} | {package_coverage_avg\l | 6.10\r} | {package_coverage_min\l | 8.75\r} }"];
+	"github.com/go-playground/universal-translator" [label="{ github.com/go-playground/universal-translator | {can_get_codecov\l | false\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | true\r} | {git_last_commit\l | 2019-11-12\r} | {git_last_commit_days_since\l | 527\r} | {git_num_contributors\l | 7\r} | {has_test_files\l | true\r} | {has_tests\l | true\r} | {num_packages\l | 1\r} | {num_packages_tests_passed\l | 1\r} | {num_packages_with_tests\l | 1\r} | {num_packages_with_tests_files\l | 1\r} | {package_coverage_avg\l | 99\r} | {package_coverage_min\l | 99\r} }"];
+	"github.com/leodido/go-urn" [label="{ github.com/leodido/go-urn | {can_get_codecov\l | true\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | true\r} | {codecov_coverage\l | 100\r} | {codecov_files\l | 1\r} | {codecov_lines\l | 34\r} | {git_last_commit\l | 2020-12-14\r} | {git_last_commit_days_since\l | 129\r} | {git_num_contributors\l | 3\r} | {has_test_files\l | true\r} | {has_tests\l | true\r} | {num_packages\l | 1\r} | {num_packages_tests_passed\l | 1\r} | {num_packages_with_tests\l | 1\r} | {num_packages_with_tests_files\l | 1\r} | {package_coverage_avg\l | 45.50\r} | {package_coverage_min\l | 45.50\r} }"];
+	"golang.org/x/crypto" [label="{ golang.org/x/crypto | {can_get_codecov\l | false\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | true\r} | {git_last_commit\l | 2020-11-25\r} | {git_last_commit_days_since\l | 148\r} | {git_num_contributors\l | 255\r} | {has_test_files\l | true\r} | {has_tests\l | true\r} | {num_packages\l | 55\r} | {num_packages_tests_passed\l | 48\r} | {num_packages_with_tests\l | 48\r} | {num_packages_with_tests_files\l | 48\r} | {package_coverage_avg\l | 55.10\r} | {package_coverage_min\l | 82.68\r} }"];
+	"github.com/davecgh/go-spew" [label="{ github.com/davecgh/go-spew | {can_get_codecov\l | false\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | false\r} | {git_last_commit\l | 2018-08-31\r} | {git_last_commit_days_since\l | 965\r} | {git_num_contributors\l | 20\r} }"];
+	"github.com/google/gofuzz" [label="{ github.com/google/gofuzz | {can_get_codecov\l | false\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | true\r} | {git_last_commit\l | 2021-01-06\r} | {git_last_commit_days_since\l | 106\r} | {git_num_contributors\l | 19\r} | {has_test_files\l | true\r} | {has_tests\l | true\r} | {num_packages\l | 2\r} | {num_packages_tests_passed\l | 2\r} | {num_packages_with_tests\l | 2\r} | {num_packages_with_tests_files\l | 2\r} | {package_coverage_avg\l | 85.20\r} | {package_coverage_min\l | 86.70\r} }"];
+	"github.com/modern-go/concurrent" [label="{ github.com/modern-go/concurrent | {can_get_codecov\l | true\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | false\r} | {codecov_coverage\l | 79.71\r} | {codecov_files\l | 3\r} | {codecov_lines\l | 69\r} | {git_last_commit\l | 2018-03-06\r} | {git_last_commit_days_since\l | 1143\r} | {git_num_contributors\l | 2\r} }"];
+	"github.com/modern-go/reflect2" [label="{ github.com/modern-go/reflect2 | {can_get_codecov\l | true\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | false\r} | {codecov_coverage\l | 65.29\r} | {codecov_files\l | 19\r} | {codecov_lines\l | 533\r} | {git_last_commit\l | 2021-01-09\r} | {git_last_commit_days_since\l | 103\r} | {git_num_contributors\l | 7\r} }"];
+	"golang.org/x/sys" [label="{ golang.org/x/sys | {can_get_codecov\l | false\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | true\r} | {git_last_commit\l | 2021-04-20\r} | {git_last_commit_days_since\l | 2\r} | {git_num_contributors\l | 212\r} | {has_test_files\l | true\r} | {has_tests\l | true\r} | {num_packages\l | 5\r} | {num_packages_tests_passed\l | 4\r} | {num_packages_with_tests\l | 4\r} | {num_packages_with_tests_files\l | 4\r} | {package_coverage_avg\l | 35.50\r} | {package_coverage_min\l | 40.33\r} }"];
+	"github.com/pmezard/go-difflib" [label="{ github.com/pmezard/go-difflib | {can_get_codecov\l | false\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | false\r} | {git_last_commit\l | 2018-12-26\r} | {git_last_commit_days_since\l | 847\r} | {git_num_contributors\l | 6\r} }"];
+	"github.com/stretchr/objx" [label="{ github.com/stretchr/objx | {can_get_codecov\l | false\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | true\r} | {git_last_commit\l | 2021-02-08\r} | {git_last_commit_days_since\l | 72\r} | {git_num_contributors\l | 12\r} | {has_test_files\l | true\r} | {has_tests\l | true\r} | {num_packages\l | 1\r} | {num_packages_tests_passed\l | 1\r} | {num_packages_with_tests\l | 1\r} | {num_packages_with_tests_files\l | 1\r} | {package_coverage_avg\l | 99.10\r} | {package_coverage_min\l | 99.10\r} }"];
+	"github.com/ugorji/go" [label="{ github.com/ugorji/go | {can_get_codecov\l | true\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | false\r} | {codecov_coverage\l | 90.06\r} | {codecov_files\l | 29\r} | {codecov_lines\l | 11645\r} | {git_last_commit\l | 2021-04-19\r} | {git_last_commit_days_since\l | 2\r} | {git_num_contributors\l | 13\r} }"];
+	"gopkg.in/check.v1" [label="{ gopkg.in/check.v1 | {can_get_codecov\l | false\r} | {can_get_gitstats\l | false\r} | {can_run_tests\l | true\r} | {has_test_files\l | true\r} | {has_tests\l | true\r} | {num_packages\l | 1\r} | {num_packages_tests_passed\l | 1\r} | {num_packages_with_tests\l | 1\r} | {num_packages_with_tests_files\l | 1\r} | {package_coverage_avg\l | 92.60\r} | {package_coverage_min\l | 92.60\r} }"];
+	"golang.org/x/text" [label="{ golang.org/x/text | {can_get_codecov\l | false\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | true\r} | {git_last_commit\l | 2021-04-11\r} | {git_last_commit_days_since\l | 11\r} | {git_num_contributors\l | 56\r} | {has_test_files\l | true\r} | {has_tests\l | true\r} | {num_packages\l | 63\r} | {num_packages_tests_passed\l | 48\r} | {num_packages_with_tests\l | 48\r} | {num_packages_with_tests_files\l | 48\r} | {package_coverage_avg\l | 5.80\r} | {package_coverage_min\l | 81.48\r} }"];
+	"golang.org/x/net" [label="{ golang.org/x/net | {can_get_codecov\l | false\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | true\r} | {git_last_commit\l | 2021-04-20\r} | {git_last_commit_days_since\l | 1\r} | {git_num_contributors\l | 196\r} | {has_test_files\l | true\r} | {has_tests\l | true\r} | {num_packages\l | 33\r} | {num_packages_tests_passed\l | 30\r} | {num_packages_with_tests\l | 30\r} | {num_packages_with_tests_files\l | 30\r} | {package_coverage_avg\l | 25.90\r} | {package_coverage_min\l | 71.36\r} }"];
+	"golang.org/x/tools" [label="{ golang.org/x/tools | {can_get_codecov\l | false\r} | {can_get_gitstats\l | true\r} | {can_run_tests\l | false\r} | {git_last_commit\l | 2021-04-20\r} | {git_last_commit_days_since\l | 1\r} | {git_num_contributors\l | 389\r} }"];
+	
+
+	"github.com/gin-gonic/gin" -> "github.com/gin-contrib/sse";
+	"github.com/gin-gonic/gin" -> "github.com/go-playground/validator/v10";
+	"github.com/gin-gonic/gin" -> "github.com/golang/protobuf";
+	"github.com/gin-gonic/gin" -> "github.com/json-iterator/go";
+	"github.com/gin-gonic/gin" -> "github.com/mattn/go-isatty";
+	"github.com/gin-gonic/gin" -> "github.com/stretchr/testify";
+	"github.com/gin-gonic/gin" -> "github.com/ugorji/go/codec";
+	"github.com/gin-gonic/gin" -> "gopkg.in/yaml.v2";
+	"github.com/gin-contrib/sse" -> "github.com/stretchr/testify";
+	"github.com/go-playground/validator/v10" -> "github.com/go-playground/assert/v2";
+	"github.com/go-playground/validator/v10" -> "github.com/go-playground/locales";
+	"github.com/go-playground/validator/v10" -> "github.com/go-playground/universal-translator";
+	"github.com/go-playground/validator/v10" -> "github.com/leodido/go-urn";
+	"github.com/go-playground/validator/v10" -> "golang.org/x/crypto";
+	"github.com/json-iterator/go" -> "github.com/davecgh/go-spew";
+	"github.com/json-iterator/go" -> "github.com/google/gofuzz";
+	"github.com/json-iterator/go" -> "github.com/modern-go/concurrent";
+	"github.com/json-iterator/go" -> "github.com/modern-go/reflect2";
+	"github.com/json-iterator/go" -> "github.com/stretchr/testify";
+	"github.com/mattn/go-isatty" -> "golang.org/x/sys";
+	"github.com/stretchr/testify" -> "github.com/davecgh/go-spew";
+	"github.com/stretchr/testify" -> "github.com/pmezard/go-difflib";
+	"github.com/stretchr/testify" -> "github.com/stretchr/objx";
+	"github.com/stretchr/testify" -> "gopkg.in/yaml.v2";
+	"github.com/ugorji/go/codec" -> "github.com/ugorji/go";
+	"gopkg.in/yaml.v2" -> "gopkg.in/check.v1";
+	"github.com/stretchr/testify" -> "github.com/davecgh/go-spew";
+	"github.com/stretchr/testify" -> "github.com/pmezard/go-difflib";
+	"github.com/stretchr/testify" -> "github.com/stretchr/objx";
+	"github.com/go-playground/locales" -> "golang.org/x/text";
+	"github.com/go-playground/universal-translator" -> "github.com/go-playground/locales";
+	"github.com/leodido/go-urn" -> "github.com/stretchr/testify";
+	"golang.org/x/crypto" -> "golang.org/x/net";
+	"golang.org/x/crypto" -> "golang.org/x/sys";
+	"gopkg.in/yaml.v2" -> "gopkg.in/check.v1";
+	"github.com/ugorji/go" -> "github.com/ugorji/go/codec";
+	"golang.org/x/text" -> "golang.org/x/tools";
+	"golang.org/x/net" -> "golang.org/x/crypto";
+	"golang.org/x/net" -> "golang.org/x/text";
+	"golang.org/x/crypto" -> "golang.org/x/sys";
+	
+}
