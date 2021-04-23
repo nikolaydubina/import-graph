@@ -7,8 +7,8 @@ Data sources:
 - [x] Detects benchmarks
 - [x] goreportcard.com
 - [x] codecov.io
-- [ ] Readme for words and badges
-- [ ] Mentionings in Awesome-lists
+- [ ] Analyzes README.md
+- [ ] Checks if mentioned in Awesome lists
 - [ ] GitHub: Repo, Organization, Contributors, Stars, Contributor, Contributors organizations, Is contributor active?
 - [ ] ... PRs wellcomed!
 
