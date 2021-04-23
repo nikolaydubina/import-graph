@@ -9,11 +9,8 @@ Data sources:
 - [x] codecov.io
 - [ ] codacy.com
 - [ ] Readme for words and badges
-- [ ] Version of module is stable
-- [ ] Version of Go in go.mod
 - [ ] Mentionings in Awesome-lists
 - [ ] GitHub: Repo, Organization, Contributors, Stars, Contributor, Contributors organizations, Is contributor active?
-- [ ] Runs linters
 
 Render with [dot](https://graphviz.org):
 ```
