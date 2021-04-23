@@ -78,6 +78,7 @@ type FileStats struct {
 
 type GoTestStats struct {
 	HasTests               bool    `json:"gotest_has_tests"`
+	AllTestsPassed         bool    `json:"gotest_all_tests_passed"`
 	NumPackages            uint    `json:"gotest_num_packages"`
 	NumPackagesWithTests   uint    `json:"gotest_num_packages_with_tests"`
 	NumPackagesTestsPassed uint    `json:"gotest_num_packages_tests_passed"`
@@ -87,6 +88,7 @@ type GoTestStats struct {
 func NewGoTestStats(r *testrunner.GoModuleTestRunResult) *GoTestStats {
 	return &GoTestStats{
 		HasTests:               r.HasTests,
+		AllTestsPassed:         r.AllTestsPassed,
 		NumPackages:            r.NumPackages,
 		NumPackagesWithTests:   r.NumPackagesWithTests,
 		NumPackagesTestsPassed: r.NumPackagesTestsPassed,

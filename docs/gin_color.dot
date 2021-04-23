@@ -34,7 +34,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">codecov_coverage</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">98.67</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">98.67</td>
 			</tr>
 
 			<tr>
@@ -64,7 +64,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">2</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">2</td>
 			</tr>
 
 			<tr>
@@ -74,7 +74,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.99</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.99</td>
 			</tr>
 
 			<tr>
@@ -90,6 +90,11 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">6</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_all_tests_passed</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -114,7 +119,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">gotest_package_coverage_avg</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">98.90</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">98.90</td>
 			</tr>
 </table>>
 	]
@@ -150,7 +155,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">codecov_coverage</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">90.65</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">90.65</td>
 			</tr>
 
 			<tr>
@@ -180,7 +185,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">251</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">251</td>
 			</tr>
 
 			<tr>
@@ -190,7 +195,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.93</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.93</td>
 			</tr>
 
 			<tr>
@@ -206,6 +211,11 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">3</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_all_tests_passed</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -230,7 +240,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">gotest_package_coverage_avg</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">94.10</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">94.10</td>
 			</tr>
 </table>>
 	]
@@ -281,7 +291,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">16</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">16</td>
 			</tr>
 
 			<tr>
@@ -291,7 +301,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.87</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.87</td>
 			</tr>
 
 			<tr>
@@ -307,6 +317,11 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">28</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_all_tests_passed</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -331,7 +346,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">gotest_package_coverage_avg</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">73.71</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">73.71</td>
 			</tr>
 </table>>
 	]
@@ -382,7 +397,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">24</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">24</td>
 			</tr>
 
 			<tr>
@@ -392,7 +407,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.92</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.92</td>
 			</tr>
 
 			<tr>
@@ -408,6 +423,11 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">16</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_all_tests_passed</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -432,7 +452,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">gotest_package_coverage_avg</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">79.80</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">79.80</td>
 			</tr>
 </table>>
 	]
@@ -468,7 +488,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">codecov_coverage</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">86.37</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">86.37</td>
 			</tr>
 
 			<tr>
@@ -498,7 +518,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">156</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">156</td>
 			</tr>
 
 			<tr>
@@ -508,7 +528,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.95</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.95</td>
 			</tr>
 
 			<tr>
@@ -559,7 +579,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">codecov_coverage</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">100</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">100</td>
 			</tr>
 
 			<tr>
@@ -589,7 +609,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">94</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">95</td>
 			</tr>
 
 			<tr>
@@ -599,7 +619,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">1.00</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">1.00</td>
 			</tr>
 
 			<tr>
@@ -615,6 +635,11 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">1</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_all_tests_passed</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -639,7 +664,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">gotest_package_coverage_avg</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">100</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">100</td>
 			</tr>
 </table>>
 	]
@@ -690,7 +715,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">165</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">165</td>
 			</tr>
 
 			<tr>
@@ -700,7 +725,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.98</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.98</td>
 			</tr>
 
 			<tr>
@@ -716,6 +741,11 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">6</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_all_tests_passed</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -740,7 +770,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">gotest_package_coverage_avg</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">54.26</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">54.26</td>
 			</tr>
 </table>>
 	]
@@ -776,7 +806,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">codecov_coverage</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">90.06</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">90.06</td>
 			</tr>
 
 			<tr>
@@ -806,7 +836,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">3</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">3</td>
 			</tr>
 
 			<tr>
@@ -816,7 +846,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.93</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.93</td>
 			</tr>
 
 			<tr>
@@ -882,7 +912,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">156</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">156</td>
 			</tr>
 
 			<tr>
@@ -892,7 +922,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.75</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">0.75</td>
 			</tr>
 
 			<tr>
@@ -958,7 +988,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">553</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">553</td>
 			</tr>
 
 			<tr>
@@ -968,7 +998,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">1.00</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">1.00</td>
 			</tr>
 
 			<tr>
@@ -984,6 +1014,11 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_all_tests_passed</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1008,7 +1043,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">gotest_package_coverage_avg</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">70.40</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">70.40</td>
 			</tr>
 </table>>
 	]
@@ -1059,7 +1094,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">207</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">207</td>
 			</tr>
 
 			<tr>
@@ -1069,7 +1104,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.46</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">0.46</td>
 			</tr>
 
 			<tr>
@@ -1085,6 +1120,11 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">924</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_all_tests_passed</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1109,7 +1149,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">gotest_package_coverage_avg</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">8.75</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">8.75</td>
 			</tr>
 </table>>
 	]
@@ -1160,7 +1200,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">528</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">528</td>
 			</tr>
 
 			<tr>
@@ -1170,7 +1210,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.95</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.95</td>
 			</tr>
 
 			<tr>
@@ -1186,6 +1226,11 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">4</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_all_tests_passed</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1210,7 +1255,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">gotest_package_coverage_avg</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">99</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">99</td>
 			</tr>
 </table>>
 	]
@@ -1246,7 +1291,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">codecov_coverage</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">100</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">100</td>
 			</tr>
 
 			<tr>
@@ -1276,7 +1321,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">130</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">130</td>
 			</tr>
 
 			<tr>
@@ -1286,7 +1331,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.84</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.84</td>
 			</tr>
 
 			<tr>
@@ -1302,6 +1347,11 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">3</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_all_tests_passed</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1326,7 +1376,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">gotest_package_coverage_avg</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">45.50</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">45.50</td>
 			</tr>
 </table>>
 	]
@@ -1377,7 +1427,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">149</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">149</td>
 			</tr>
 
 			<tr>
@@ -1387,7 +1437,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.96</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.96</td>
 			</tr>
 
 			<tr>
@@ -1403,6 +1453,11 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">84</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_all_tests_passed</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1427,7 +1482,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">gotest_package_coverage_avg</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">82.68</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">82.68</td>
 			</tr>
 </table>>
 	]
@@ -1478,7 +1533,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">966</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">966</td>
 			</tr>
 
 			<tr>
@@ -1488,7 +1543,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.98</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.98</td>
 			</tr>
 
 			<tr>
@@ -1554,7 +1609,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">107</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">107</td>
 			</tr>
 
 			<tr>
@@ -1564,7 +1619,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.94</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.94</td>
 			</tr>
 
 			<tr>
@@ -1580,6 +1635,11 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">2</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_all_tests_passed</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1604,7 +1664,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">gotest_package_coverage_avg</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">86.70</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">86.70</td>
 			</tr>
 </table>>
 	]
@@ -1640,7 +1700,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">codecov_coverage</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">79.71</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">79.71</td>
 			</tr>
 
 			<tr>
@@ -1670,7 +1730,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">1144</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">1144</td>
 			</tr>
 
 			<tr>
@@ -1680,7 +1740,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.85</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.85</td>
 			</tr>
 
 			<tr>
@@ -1731,7 +1791,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">codecov_coverage</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">65.29</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">65.29</td>
 			</tr>
 
 			<tr>
@@ -1761,7 +1821,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">104</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">104</td>
 			</tr>
 
 			<tr>
@@ -1771,7 +1831,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.93</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.93</td>
 			</tr>
 
 			<tr>
@@ -1837,7 +1897,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">3</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">3</td>
 			</tr>
 
 			<tr>
@@ -1847,7 +1907,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.99</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.99</td>
 			</tr>
 
 			<tr>
@@ -1863,6 +1923,11 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">23</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_all_tests_passed</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1887,7 +1952,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">gotest_package_coverage_avg</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">40.33</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">40.33</td>
 			</tr>
 </table>>
 	]
@@ -1938,7 +2003,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">849</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">849</td>
 			</tr>
 
 			<tr>
@@ -1948,7 +2013,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.53</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">0.53</td>
 			</tr>
 
 			<tr>
@@ -2014,7 +2079,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">74</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">74</td>
 			</tr>
 
 			<tr>
@@ -2024,7 +2089,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.97</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.97</td>
 			</tr>
 
 			<tr>
@@ -2040,6 +2105,11 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">4</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_all_tests_passed</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -2064,7 +2134,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">gotest_package_coverage_avg</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">99.10</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">99.10</td>
 			</tr>
 </table>>
 	]
@@ -2100,7 +2170,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">codecov_coverage</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">90.06</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">90.06</td>
 			</tr>
 
 			<tr>
@@ -2130,7 +2200,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">3</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">3</td>
 			</tr>
 
 			<tr>
@@ -2140,7 +2210,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.93</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.93</td>
 			</tr>
 
 			<tr>
@@ -2201,7 +2271,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.89</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.89</td>
 			</tr>
 
 			<tr>
@@ -2217,6 +2287,11 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">8</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_all_tests_passed</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -2241,7 +2316,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">gotest_package_coverage_avg</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">92.60</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">92.60</td>
 			</tr>
 </table>>
 	]
@@ -2292,7 +2367,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">12</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">12</td>
 			</tr>
 
 			<tr>
@@ -2302,7 +2377,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.94</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.94</td>
 			</tr>
 
 			<tr>
@@ -2318,6 +2393,11 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">125</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_all_tests_passed</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -2342,7 +2422,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">gotest_package_coverage_avg</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">81.48</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">81.48</td>
 			</tr>
 </table>>
 	]
@@ -2393,7 +2473,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">3</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">3</td>
 			</tr>
 
 			<tr>
@@ -2403,7 +2483,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.98</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.98</td>
 			</tr>
 
 			<tr>
@@ -2419,6 +2499,11 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">73</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_all_tests_passed</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -2443,7 +2528,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">gotest_package_coverage_avg</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">71.36</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">71.36</td>
 			</tr>
 </table>>
 	]
@@ -2494,7 +2579,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">3</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">3</td>
 			</tr>
 
 			<tr>
@@ -2504,7 +2589,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">goreportcard_average</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0.94</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.94</td>
 			</tr>
 
 			<tr>

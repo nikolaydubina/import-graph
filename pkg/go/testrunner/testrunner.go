@@ -16,6 +16,7 @@ type GoCmdTestRunner struct{}
 // GoModuleTestRunResult is summary of running tests in for all packages in Go module
 type GoModuleTestRunResult struct {
 	HasTests               bool    `json:"has_tests"`
+	AllTestsPassed         bool    `json:"all_tests_passed"`
 	NumPackages            uint    `json:"num_packages"`
 	NumPackagesWithTests   uint    `json:"num_packages_with_tests"`
 	NumPackagesTestsPassed uint    `json:"num_packages_tests_passed"`
@@ -46,6 +47,8 @@ func (c *GoCmdTestRunner) RunModuleTets(moduleDirPath string) (*GoModuleTestRunR
 	}
 
 	stats.AvgPackageCoverage = sumCov / float64(stats.NumPackagesWithTests)
+	stats.AllTestsPassed = stats.NumPackagesWithTests == stats.NumPackagesTestsPassed
+
 	return &stats, nil
 }
 

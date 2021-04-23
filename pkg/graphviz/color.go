@@ -6,6 +6,7 @@ import (
 	"image/color"
 	"io"
 	"sort"
+	"strconv"
 	"strings"
 	"text/template"
 
@@ -15,8 +16,14 @@ import (
 //go:embed templates/color.dot
 var colorTemplate string
 
+type ColorScale struct {
+	Colors []color.RGBA
+	Points []float64
+}
+
 type ColorConfigVal struct {
-	ValToColor map[string]color.RGBA
+	ValToColor map[string]color.RGBA `json:"ValToColor"`
+	ColorScale *ColorScale           `json:"ColorScale"`
 }
 
 type ColorConfig map[string]ColorConfigVal
@@ -27,6 +34,7 @@ func (c ColorConfig) RenderColorVal(k string, v interface{}) color.Color {
 		return color.White
 	}
 
+	// first check manual values
 	var key string
 	if vs, ok := v.(string); ok {
 		key = vs
@@ -37,9 +45,23 @@ func (c ColorConfig) RenderColorVal(k string, v interface{}) color.Color {
 		}
 		key = string(vs)
 	}
-
 	if c, ok := valC.ValToColor[key]; ok {
 		return c
+	}
+
+	// then check scale if present
+	if valC.ColorScale != nil && len(valC.ColorScale.Points) > 0 && len(valC.ColorScale.Points) == (len(valC.ColorScale.Colors)-1) {
+		if vs, err := strconv.ParseFloat(key, 64); err == nil {
+			idx := 0
+			for idx < len(valC.ColorScale.Points) && valC.ColorScale.Points[idx] <= vs {
+				idx++
+			}
+			if idx >= len(valC.ColorScale.Colors) {
+				idx = len(valC.ColorScale.Colors) - 1
+			}
+			return valC.ColorScale.Colors[idx]
+		}
+
 	}
 
 	return color.White
