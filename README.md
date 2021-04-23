@@ -9,7 +9,7 @@ Data sources:
 - [x] codecov.io
 - [ ] Analyzes README.md
 - [ ] Checks if mentioned in Awesome lists
-- [ ] GitHub: Repo, Organization, Contributors, Stars, Contributor, Contributors organizations, Is contributor active?
+- [ ] GitHub Stars, Organization, Contributors
 - [ ] ... PRs wellcomed!
 
 Render with [dot](https://graphviz.org):
