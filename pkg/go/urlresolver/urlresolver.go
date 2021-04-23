@@ -17,7 +17,7 @@ type GoURLResolver struct {
 // ResolveGitHubURL finds GitHub URL
 func (c *GoURLResolver) ResolveGitHubURL(name string) (url.URL, error) {
 	if strings.HasPrefix(name, "github.com/") {
-		return resolvePointerURL(url.Parse("https://" + name))
+		return resolvePointerURL(url.Parse("https://" + normalizeGitURLPath(name)))
 	}
 	resp, err := c.fetchData(name)
 	if err != nil {
@@ -36,13 +36,18 @@ func (c *GoURLResolver) ResolveGitHubURL(name string) (url.URL, error) {
 // ResolveGitURL finds git URL
 func (c *GoURLResolver) ResolveGitURL(name string) (url.URL, error) {
 	if strings.HasPrefix(name, "github.com/") {
-		return resolvePointerURL(url.Parse("https://" + name))
+		return resolvePointerURL(url.Parse("https://" + normalizeGitURLPath(name)))
 	}
 	resp, err := c.fetchData(name)
 	if err != nil {
 		return url.URL{}, fmt.Errorf("can not make GET to Go module name: %w", err)
 	}
 	return resolvePointerURL(parseResponse(resp))
+}
+
+func normalizeGitURLPath(path string) string {
+	parts := strings.Split(path, "/")
+	return strings.Join(parts[:3], "/")
 }
 
 func (c *GoURLResolver) fetchData(name string) (string, error) {

@@ -15,14 +15,11 @@ type GoCmdTestRunner struct{}
 
 // GoModuleTestRunResult is summary of running tests in for all packages in Go module
 type GoModuleTestRunResult struct {
-	HasTests                  bool    `json:"has_tests"`
-	HasTestFiles              bool    `json:"has_test_files"`
-	NumPackages               uint    `json:"num_packages"`
-	NumPackagesWithTests      uint    `json:"num_packages_with_tests"`
-	NumPackagesWithTestsFiles uint    `json:"num_packages_with_tests_files"`
-	NumPackagesTestsPassed    uint    `json:"num_packages_tests_passed"`
-	MinPackageCoverage        float64 `json:"package_coverage_avg"`
-	AvgPackageCoverage        float64 `json:"package_coverage_min"`
+	HasTests               bool    `json:"has_tests"`
+	NumPackages            uint    `json:"num_packages"`
+	NumPackagesWithTests   uint    `json:"num_packages_with_tests"`
+	NumPackagesTestsPassed uint    `json:"num_packages_tests_passed"`
+	AvgPackageCoverage     float64 `json:"package_coverage_avg"`
 }
 
 // RunModuleTets runs tests for all packages in Go module, collects aggregate statistics
@@ -32,27 +29,20 @@ func (c *GoCmdTestRunner) RunModuleTets(moduleDirPath string) (*GoModuleTestRunR
 		return nil, err
 	}
 
-	stats := GoModuleTestRunResult{}
+	stats := GoModuleTestRunResult{
+		NumPackages: uint(len(pkgTestStats)),
+	}
 
 	sumCov := 0.0
 	for _, v := range pkgTestStats {
 		if v.HasTests {
 			stats.HasTests = true
 			stats.NumPackagesWithTests++
+			if v.Passed {
+				stats.NumPackagesTestsPassed++
+			}
+			sumCov += v.Coverage
 		}
-		if v.HasTestFiles {
-			stats.HasTestFiles = true
-			stats.NumPackagesWithTestsFiles++
-		}
-
-		stats.NumPackages++
-		if v.Passed {
-			stats.NumPackagesTestsPassed++
-		}
-		if v.Coverage > 0 && (stats.MinPackageCoverage == 0 || v.Coverage < stats.MinPackageCoverage) {
-			stats.MinPackageCoverage = v.Coverage
-		}
-		sumCov += v.Coverage
 	}
 
 	stats.AvgPackageCoverage = sumCov / float64(stats.NumPackagesWithTests)

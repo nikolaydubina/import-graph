@@ -10,6 +10,7 @@ import (
 
 	"github.com/nikolaydubina/import-graph/pkg/codecov"
 	"github.com/nikolaydubina/import-graph/pkg/gitstats"
+	"github.com/nikolaydubina/import-graph/pkg/go/filescanner"
 	"github.com/nikolaydubina/import-graph/pkg/go/gomodgraph"
 	"github.com/nikolaydubina/import-graph/pkg/go/goreportcard"
 	"github.com/nikolaydubina/import-graph/pkg/go/testrunner"
@@ -22,18 +23,19 @@ type ModuleStats struct {
 	ModuleName string `json:"-"`  // this is in id anyways
 
 	// Collected data
-	CanGetGitStats          bool `json:"can_get_gitstats"`
+	CanGetGitStats          bool `json:"can_get_git"`
 	CanGetCodecovStats      bool `json:"can_get_codecov"`
-	CanRunTests             bool `json:"can_run_tests"`
 	CanGetGoReportCardStats bool `json:"can_get_goreportcard"`
+	CanRunTests             bool `json:"can_run_tests"`
 
 	GitHubURL string `json:"github_url,omitempty"`
 	GitURL    string `json:"git_url,omitempty"`
 
-	*GitStats                         `json:",omitempty"`
-	*CodecovStats                     `json:",omitempty"`
-	*testrunner.GoModuleTestRunResult `json:",omitempty"`
-	*GoReportCardStats                `json:",omitempty"`
+	*GitStats          `json:",omitempty"`
+	*CodecovStats      `json:",omitempty"`
+	*GoTestStats       `json:",omitempty"`
+	*GoReportCardStats `json:",omitempty"`
+	*FileStats         `json:",omitempty"`
 }
 
 type Edge struct {
@@ -71,6 +73,7 @@ type GoModuleStatsCollector struct {
 	TestRunner         *testrunner.GoCmdTestRunner
 	CodecovClient      *codecov.HTTPClient
 	GoReportCardClient *goreportcard.GoReportCardHTTPClient
+	FileScanner        *filescanner.FileScanner
 }
 
 // CollectStats fetches all possible information about Go module
@@ -93,8 +96,10 @@ func (c *GoModuleStatsCollector) CollectStats(moduleName string) (ModuleStats, e
 	}
 	moduleStats.GitHubURL = gitHubURL.String()
 
+	wasCloned := true
 	if err := c.GitStorage.Clone(gitURL); err != nil {
 		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not fetch git: %w", err))
+		wasCloned = false
 	}
 
 	if c.GitStatsFetcher != nil {
@@ -128,12 +133,20 @@ func (c *GoModuleStatsCollector) CollectStats(moduleName string) (ModuleStats, e
 		}
 	}
 
+	if c.FileScanner != nil && wasCloned {
+		path := c.GitStorage.DirPath(gitURL)
+		moduleStats.FileStats = &FileStats{
+			HasBenchmarks: c.FileScanner.HasBenchmarks(path),
+			HasTests:      c.FileScanner.HasTests(path),
+		}
+	}
+
 	if c.TestRunner != nil {
 		if st, err := c.TestRunner.RunModuleTets(c.GitStorage.DirPath(gitURL)); err != nil {
 			errFinal = multierr.Combine(errFinal, fmt.Errorf("can not run tests: %w", err))
 		} else {
 			moduleStats.CanRunTests = true
-			moduleStats.GoModuleTestRunResult = st
+			moduleStats.GoTestStats = NewGoTestStats(st)
 		}
 	}
 

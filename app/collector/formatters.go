@@ -9,6 +9,7 @@ import (
 	"github.com/nikolaydubina/import-graph/pkg/codecov"
 	"github.com/nikolaydubina/import-graph/pkg/gitstats"
 	"github.com/nikolaydubina/import-graph/pkg/go/goreportcard"
+	"github.com/nikolaydubina/import-graph/pkg/go/testrunner"
 )
 
 type CodecovStats struct {
@@ -67,5 +68,28 @@ func NewGoReportCardStats(r *goreportcard.Report) *GoReportCardStats {
 		Grade:     r.Grade,
 		NumFiles:  r.NumFiles,
 		NumIssues: r.NumIssues,
+	}
+}
+
+type FileStats struct {
+	HasBenchmarks bool `json:"files_has_benchmarks"`
+	HasTests      bool `json:"files_has_tests"`
+}
+
+type GoTestStats struct {
+	HasTests               bool    `json:"gotest_has_tests"`
+	NumPackages            uint    `json:"gotest_num_packages"`
+	NumPackagesWithTests   uint    `json:"gotest_num_packages_with_tests"`
+	NumPackagesTestsPassed uint    `json:"gotest_num_packages_tests_passed"`
+	AvgPackageCoverage     float64 `json:"gotest_package_coverage_avg"`
+}
+
+func NewGoTestStats(r *testrunner.GoModuleTestRunResult) *GoTestStats {
+	return &GoTestStats{
+		HasTests:               r.HasTests,
+		NumPackages:            r.NumPackages,
+		NumPackagesWithTests:   r.NumPackagesWithTests,
+		NumPackagesTestsPassed: r.NumPackagesTestsPassed,
+		AvgPackageCoverage:     r.AvgPackageCoverage,
 	}
 }

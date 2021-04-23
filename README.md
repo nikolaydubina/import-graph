@@ -4,8 +4,7 @@ Data sources:
 
 - [x] Analyzes git log
 - [x] Runs tests and code coverage
-- [ ] Runs linters
-- [ ] Detects benchmarks
+- [x] Detects benchmarks
 - [x] goreportcard.com
 - [x] codecov.io
 - [ ] codacy.com
@@ -14,6 +13,7 @@ Data sources:
 - [ ] Version of Go in go.mod
 - [ ] Mentionings in Awesome-lists
 - [ ] GitHub: Repo, Organization, Contributors, Stars, Contributor, Contributors organizations, Is contributor active?
+- [ ] Runs linters
 
 Render with [dot](https://graphviz.org):
 
