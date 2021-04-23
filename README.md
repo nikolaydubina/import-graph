@@ -16,11 +16,10 @@ Data sources:
 - [ ] Runs linters
 
 Render with [dot](https://graphviz.org):
-
 ```
-$ go mod graph | ./bin/import-graph -output=dot | dot -Tsvg > output.svg
+$ go mod graph | ./bin/import-graph -output=dot-color | dot -Tsvg > output.svg
 ```
-![dot-svg-example](./docs/gin.svg)
+![dot-svg-example](./docs/gin_color.svg)
 
 Output in [JSONL](https://jsonlines.org) graph:
 ```
@@ -93,3 +92,14 @@ $ go mod graph | ./bin/import-graph | jq -f
 - `PHP` https://github.com/mamuz/PhpDependencyAnalysis written in PHP; does not collect data; code analysis; CLI; dot  
 - `Go` `Python` `Java` `JavaScript` `C++` https://github.com/oss-review-toolkit/ort written in Kotlin JavaSCript Python; collects data; analyses; analysis, downloading, reporting; used for licence scanning in open source; good architecture; a bit lacking support for Go; components may not be used separately  
 - `Code` https://github.com/aspiers/git-deps written in Python; analyses dependencies of commits in Git repository  
+
+
+## Appendix
+
+Fallback dot renderer with simpler notation without HTML coloring.
+
+
+```
+$ go mod graph | ./bin/import-graph -output=dot | dot -Tsvg > output.svg
+```
+![dot-svg-example](./docs/gin.svg)

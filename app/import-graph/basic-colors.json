@@ -1,0 +1,65 @@
+{
+    "can_get_git": {
+        "ValToColor": {
+            "false": {"R": 255, "G": 1, "B": 1},
+            "true": {"R": 1, "G": 255, "B": 1}
+        }
+    },
+    "can_get_codecov": {
+        "ValToColor": {
+            "false": {"R": 255, "G": 1, "B": 1},
+            "true": {"R": 1, "G": 255, "B": 1}
+        }
+    },
+    "can_get_goreportcard": {
+        "ValToColor": {
+            "false": {"R": 255, "G": 1, "B": 1},
+            "true": {"R": 1, "G": 255, "B": 1}
+        }
+    },
+    "can_run_tests": {
+        "ValToColor": {
+            "false": {"R": 255, "G": 1, "B": 1},
+            "true": {"R": 1, "G": 255, "B": 1}
+        }
+    },
+    "files_has_benchmarks": {
+        "ValToColor": {
+            "false": {"R": 255, "G": 1, "B": 1},
+            "true": {"R": 1, "G": 255, "B": 1}
+        }
+    },
+    "files_has_tests":  {
+        "ValToColor": {
+            "false": {"R": 255, "G": 1, "B": 1},
+            "true": {"R": 1, "G": 255, "B": 1}
+        }
+    },
+    "gotest_has_tests":  {
+        "ValToColor": {
+            "false": {"R": 255, "G": 1, "B": 1},
+            "true": {"R": 1, "G": 255, "B": 1}
+        }
+    },
+    "goreportcard_grade": {
+        "ValToColor": {
+            "A+": {"R": 1, "G": 255, "B": 1},
+            "A": {"R": 1, "G": 255, "B": 1},
+            "B": {"R": 1, "G": 255, "B": 1},
+            "C": {"R": 255, "G": 1, "B": 1},
+            "D": {"R": 255, "G": 1, "B": 1},
+            "E": {"R": 255, "G": 1, "B": 1},
+            "F": {"R": 255, "G": 1, "B": 1}
+        } 
+    },
+    "gotest_num_packages_with_tests": {
+        "ValToColor": {
+            "0": {"R": 255, "G": 1, "B": 1}
+        }
+    },
+    "gotest_num_packages_tests_passed": {
+        "ValToColor": {
+            "0": {"R": 255, "G": 1, "B": 1}
+        }
+    }
+}

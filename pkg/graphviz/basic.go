@@ -14,19 +14,19 @@ import (
 //go:embed templates/basic.dot
 var basicTemplate string
 
-// GraphvizRenderer contains methods to tranform input to Graphviz format
+// GraphvizBasicRenderer contains methods to tranform input to Graphviz format
 // TODO: consider adding colors in background https://stackoverflow.com/questions/17765301/graphviz-dot-how-to-change-the-colour-of-one-record-in-multi-record-shape
-type GraphvizRenderer struct {
+type GraphvizBasicRenderer struct {
 	Template *template.Template
 }
 
-// NewGraphvizRenderer initializes template for reuse
-func NewGraphvizRenderer() *GraphvizRenderer {
+// NewGraphvizBasicRenderer initializes template for reuse
+func NewGraphvizBasicRenderer() *GraphvizBasicRenderer {
 	basicTemplate := template.Must(template.New("basicDotTemplate").Funcs(template.FuncMap{
 		"nodeLabelBasic": RenderBasicLabel,
 	}).Parse(basicTemplate))
 
-	ret := GraphvizRenderer{
+	ret := GraphvizBasicRenderer{
 		Template: basicTemplate,
 	}
 	return &ret
@@ -38,7 +38,7 @@ type TemplateParams struct {
 }
 
 // Render writes graph in Graphviz format to writer
-func (g *GraphvizRenderer) Render(params TemplateParams, w io.Writer) error {
+func (g *GraphvizBasicRenderer) Render(params TemplateParams, w io.Writer) error {
 	return g.Template.Execute(w, params)
 }
 

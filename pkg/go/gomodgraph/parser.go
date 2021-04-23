@@ -28,11 +28,16 @@ type GoModGraphParser struct{}
 func (c *GoModGraphParser) Parse(input io.Reader) (*Graph, error) {
 	scanner := bufio.NewScanner(input)
 
+	edgeAdded := map[Edge]bool{}
 	nodeAdded := map[string]bool{}
 	var graph Graph
 	for scanner.Scan() {
 		from, to := processLine(scanner.Text())
-		graph.Edges = append(graph.Edges, Edge{From: from, To: to})
+
+		if !edgeAdded[Edge{From: from, To: to}] {
+			graph.Edges = append(graph.Edges, Edge{From: from, To: to})
+			edgeAdded[Edge{From: from, To: to}] = true
+		}
 
 		if !nodeAdded[from] {
 			graph.Modules = append(graph.Modules, Node{ModuleName: from})

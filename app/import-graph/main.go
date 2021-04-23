@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"encoding/json"
 	"flag"
 	"log"
 	"net/http"
@@ -19,13 +20,19 @@ import (
 	"github.com/nikolaydubina/import-graph/pkg/go/urlresolver"
 	"github.com/nikolaydubina/import-graph/pkg/go/urlresolver/basiccache"
 	"github.com/nikolaydubina/import-graph/pkg/graphviz"
+
+	_ "embed"
 )
+
+//go:embed basic-colors.json
+var defaultColorsConfig []byte
 
 type OutputType struct{ V string }
 
 var (
-	OutputTypeJSONL = OutputType{V: "jsonl"}
-	OutputTypeDot   = OutputType{V: "dot"}
+	OutputTypeJSONL    = OutputType{V: "jsonl"}
+	OutputTypeDot      = OutputType{V: "dot"}
+	OutputTypeDotColor = OutputType{V: "dot-color"}
 )
 
 func main() {
@@ -89,7 +96,24 @@ func main() {
 			log.Fatalln(err)
 		}
 
-		if err := graphviz.NewGraphvizRenderer().Render(graphviz.TemplateParams{Graph: g}, os.Stdout); err != nil {
+		if err := graphviz.NewGraphvizBasicRenderer().Render(graphviz.TemplateParams{Graph: g}, os.Stdout); err != nil {
+			log.Println(err)
+		}
+	case OutputTypeDotColor:
+		var buf bytes.Buffer
+
+		goModGraphCollector.CollectStatsWrite(*g, &buf)
+		g, err := graphviz.NewGraphFromJSONLReader(&buf)
+		if err != nil {
+			log.Fatalln(err)
+		}
+
+		var cconf graphviz.ColorConfig
+		if err := json.Unmarshal(defaultColorsConfig, &cconf); err != nil {
+			log.Println(err)
+		}
+
+		if err := graphviz.NewGraphvizColorRenderer(cconf).Render(graphviz.TemplateParams{Graph: g}, os.Stdout); err != nil {
 			log.Println(err)
 		}
 	default:
