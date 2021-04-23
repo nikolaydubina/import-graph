@@ -66,14 +66,13 @@ func main() {
 			},
 		},
 	}
-	graphVizRenderer, err := graphviz.NewGraphvizRenderer()
-	if err != nil {
-		log.Fatalln(err)
-	}
 
 	g, err := goModGraphParser.Parse(os.Stdin)
 	if err != nil {
 		log.Println(err)
+	}
+	if g == nil {
+		log.Fatalln("parsed graph is nil")
 	}
 
 	switch outputType {
@@ -88,7 +87,7 @@ func main() {
 			log.Fatalln(err)
 		}
 
-		if err := graphVizRenderer.Render(graphviz.TemplateParams{Graph: g}, os.Stdout); err != nil {
+		if err := graphviz.NewGraphvizRenderer().Render(graphviz.TemplateParams{Graph: g}, os.Stdout); err != nil {
 			log.Println(err)
 		}
 	default:

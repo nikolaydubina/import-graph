@@ -13,13 +13,7 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-
-	graphVizRenderer, err := graphviz.NewGraphvizRenderer()
-	if err != nil {
-		log.Fatalln(err)
-	}
-
-	if err := graphVizRenderer.Render(graphviz.TemplateParams{Graph: g}, os.Stdout); err != nil {
+	if err := graphviz.NewGraphvizRenderer().Render(graphviz.TemplateParams{Graph: g}, os.Stdout); err != nil {
 		log.Println(err)
 	}
 }

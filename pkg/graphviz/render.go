@@ -21,18 +21,15 @@ type GraphvizRenderer struct {
 }
 
 // NewGraphvizRenderer initializes template for reuse
-func NewGraphvizRenderer() (*GraphvizRenderer, error) {
-	basicTemplate, err := template.New("basicDotTemplate").Funcs(template.FuncMap{
+func NewGraphvizRenderer() *GraphvizRenderer {
+	basicTemplate := template.Must(template.New("basicDotTemplate").Funcs(template.FuncMap{
 		"nodeLabelBasic": RenderBasicLabel,
-	}).Parse(basicTemplate)
-	if err != nil {
-		return nil, fmt.Errorf("can not init template: %w", err)
-	}
+	}).Parse(basicTemplate))
 
 	ret := GraphvizRenderer{
 		Template: basicTemplate,
 	}
-	return &ret, nil
+	return &ret
 }
 
 // TemplateParams is data passed to template
