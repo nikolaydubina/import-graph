@@ -11,6 +11,7 @@ Data sources:
 - [ ] Readme for words and badges
 - [ ] Mentionings in Awesome-lists
 - [ ] GitHub: Repo, Organization, Contributors, Stars, Contributor, Contributors organizations, Is contributor active?
+- [ ] ... PRs wellcomed!
 
 Render with [dot](https://graphviz.org):
 ```
