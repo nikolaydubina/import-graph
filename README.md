@@ -7,7 +7,6 @@ Data sources:
 - [x] Detects benchmarks
 - [x] goreportcard.com
 - [x] codecov.io
-- [ ] codacy.com
 - [ ] Readme for words and badges
 - [ ] Mentionings in Awesome-lists
 - [ ] GitHub: Repo, Organization, Contributors, Stars, Contributor, Contributors organizations, Is contributor active?
