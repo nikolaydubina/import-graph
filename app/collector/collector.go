@@ -11,6 +11,7 @@ import (
 	"github.com/nikolaydubina/import-graph/pkg/codecov"
 	"github.com/nikolaydubina/import-graph/pkg/gitstats"
 	"github.com/nikolaydubina/import-graph/pkg/go/gomodgraph"
+	"github.com/nikolaydubina/import-graph/pkg/go/goreportcard"
 	"github.com/nikolaydubina/import-graph/pkg/go/testrunner"
 	"github.com/nikolaydubina/import-graph/pkg/go/urlresolver/basiccache"
 )
@@ -21,9 +22,10 @@ type ModuleStats struct {
 	ModuleName string `json:"-"`  // this is in id anyways
 
 	// Collected data
-	CanGetGitStats     bool `json:"can_get_gitstats"`
-	CanGetCodecovStats bool `json:"can_get_codecov"`
-	CanRunTests        bool `json:"can_run_tests"`
+	CanGetGitStats          bool `json:"can_get_gitstats"`
+	CanGetCodecovStats      bool `json:"can_get_codecov"`
+	CanRunTests             bool `json:"can_run_tests"`
+	CanGetGoReportCardStats bool `json:"can_get_goreportcard"`
 
 	GitHubURL string `json:"github_url,omitempty"`
 	GitURL    string `json:"git_url,omitempty"`
@@ -31,6 +33,7 @@ type ModuleStats struct {
 	*GitStats                         `json:",omitempty"`
 	*CodecovStats                     `json:",omitempty"`
 	*testrunner.GoModuleTestRunResult `json:",omitempty"`
+	*GoReportCardStats                `json:",omitempty"`
 }
 
 type Edge struct {
@@ -62,11 +65,12 @@ func (g *Graph) WriteJSONL(w io.Writer) error {
 // GoModuleStatsCollector is collecting all the details about single Go module
 // Does not fail if encounters errors, but still collects thoese errors.
 type GoModuleStatsCollector struct {
-	GitStorage      *gitstats.GitCmdLocalClient
-	URLResolver     *basiccache.GoCachedResolver
-	GitStatsFetcher *gitstats.GitStatsFetcher
-	TestRunner      *testrunner.GoCmdTestRunner
-	CodecovClient   *codecov.HTTPClient
+	GitStorage         *gitstats.GitCmdLocalClient
+	URLResolver        *basiccache.GoCachedResolver
+	GitStatsFetcher    *gitstats.GitStatsFetcher
+	TestRunner         *testrunner.GoCmdTestRunner
+	CodecovClient      *codecov.HTTPClient
+	GoReportCardClient *goreportcard.GoReportCardHTTPClient
 }
 
 // CollectStats fetches all possible information about Go module
@@ -112,6 +116,15 @@ func (c *GoModuleStatsCollector) CollectStats(moduleName string) (ModuleStats, e
 				moduleStats.CanGetCodecovStats = true
 				moduleStats.CodecovStats = st
 			}
+		}
+	}
+
+	if c.GoReportCardClient != nil {
+		if resp, err := c.GoReportCardClient.GetReport(moduleName); err != nil {
+			errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get goreport card: %w", err))
+		} else {
+			moduleStats.CanGetGoReportCardStats = true
+			moduleStats.GoReportCardStats = NewGoReportCardStats(resp)
 		}
 	}
 

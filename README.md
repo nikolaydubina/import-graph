@@ -1,10 +1,19 @@
 # Collect data about your dependencies
 
-![import-graph-overview](./docs/import-graph-overview.svg)
+Data sources:
 
-Visualize with `jsonl-graph-viz`:
-
-TODO
+- [x] Analyzes git log
+- [x] Runs tests and code coverage
+- [ ] Runs linters
+- [ ] Detects benchmarks
+- [x] goreportcard.com
+- [x] codecov.io
+- [ ] codacy.com
+- [ ] Readme for words and badges
+- [ ] Version of module is stable
+- [ ] Version of Go in go.mod
+- [ ] Mentionings in Awesome-lists
+- [ ] GitHub: Repo, Organization, Contributors, Stars, Contributor, Contributors organizations, Is contributor active?
 
 Render with [dot](https://graphviz.org):
 
@@ -56,21 +65,6 @@ $ go mod graph | ./bin/import-graph | jq -f
 }
 ...
 ```
-
-## Data Sources
-
-- [x] Analyzes git log
-- [x] Runs tests and code coverage
-- [ ] Runs linters
-- [ ] Detects benchmarks
-- [x] codecov.io
-- [ ] codacy.com
-- [ ] goreportcard.com
-- [ ] Readme for words and badges
-- [ ] Version of module is stable
-- [ ] Version of Go in go.mod
-- [ ] Mentionings in Awesome-lists
-- [ ] GitHub: Repo, Organization, Contributors, Stars, Contributor, Contributors organizations, Is contributor active?
 
 ## Related Projects
 

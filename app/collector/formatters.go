@@ -1,11 +1,14 @@
 package collector
 
 import (
+	"encoding/json"
 	"errors"
+	"fmt"
 	"math"
 
 	"github.com/nikolaydubina/import-graph/pkg/codecov"
 	"github.com/nikolaydubina/import-graph/pkg/gitstats"
+	"github.com/nikolaydubina/import-graph/pkg/go/goreportcard"
 )
 
 type CodecovStats struct {
@@ -45,5 +48,24 @@ func NewGitStats(r *gitstats.GitStats) *GitStats {
 		LastCommit:          r.LastCommit.Format("2006-01-02"),
 		DaysSinceLastCommit: uint(math.Floor(r.DaysSinceLastCommit)),
 		NumContributors:     r.NumContributors,
+	}
+}
+
+type GoReportCardStats struct {
+	Average   json.Number            `json:"goreportcard_average"`
+	Grade     goreportcard.GradeEnum `json:"goreportcard_grade"`
+	NumFiles  uint                   `json:"goreportcard_files"`
+	NumIssues uint                   `json:"goreportcard_issues"`
+}
+
+func NewGoReportCardStats(r *goreportcard.Report) *GoReportCardStats {
+	if r == nil {
+		return nil
+	}
+	return &GoReportCardStats{
+		Average:   json.Number(fmt.Sprintf("%.2f", r.Average)),
+		Grade:     r.Grade,
+		NumFiles:  r.NumFiles,
+		NumIssues: r.NumIssues,
 	}
 }

@@ -13,6 +13,7 @@ import (
 	"github.com/nikolaydubina/import-graph/pkg/codecov"
 	"github.com/nikolaydubina/import-graph/pkg/gitstats"
 	"github.com/nikolaydubina/import-graph/pkg/go/gomodgraph"
+	"github.com/nikolaydubina/import-graph/pkg/go/goreportcard"
 	"github.com/nikolaydubina/import-graph/pkg/go/testrunner"
 	"github.com/nikolaydubina/import-graph/pkg/go/urlresolver"
 	"github.com/nikolaydubina/import-graph/pkg/go/urlresolver/basiccache"
@@ -58,6 +59,10 @@ func main() {
 			CodecovClient: &codecov.HTTPClient{
 				HTTPClient: http.DefaultClient,
 				BaseURL:    "api.codecov.io",
+			},
+			GoReportCardClient: &goreportcard.GoReportCardHTTPClient{
+				HTTPClient: http.DefaultClient,
+				BaseURL:    "goreportcard.com",
 			},
 		},
 	}

@@ -1,0 +1,395 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Go Report Card | Go project code quality report cards</title>
+    <link rel="stylesheet" href="/assets/bulma.0.0.23.min.css">
+    <link rel="stylesheet" href="/assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/goreportcard.css">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-58936835-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</head>
+<body>
+  <div id="notifications">
+  </div>
+  <header class="header">
+  <div class="container">
+        
+        <div class="header-left">
+          <a class="header-item" href="/">
+            <h3 class="title">Go Report Card</h3>
+          </a>
+          <div class="header-item">
+              <form method="POST" action="/checks" id="check_form">
+                <input name="repo" type="text" class="input-box" value="github.com/gin-gonic/gin" placeholder="github.com/gin-gonic/gin"/>
+              </form>
+          </div>
+        </div>
+
+        
+        <span class="header-toggle" data-target="header-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+
+        
+        <div class="header-right header-menu" id="header-menu">
+          <span class="header-item">
+            <a href="/high_scores">High Scores</a>
+          </span>
+          <span class="header-item">
+            <a href="https://github.com/gojp/goreportcard">GitHub</a>
+          </span>
+          <span class="header-item">
+            <a href="/about">About</a>
+          </span>
+        </div>
+      </div>
+  </header>
+  <section class="section container-loading">
+      <div class="container loading">
+          <div class="columns">
+              <div class="column has-text-centered">
+                  <h3 class="subtitle">Preparing report...</h3>
+                  <button class="button is-loading is-large" style="border: none;">
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="section container-results ">
+    <div class="container">
+        <div class="columns results-text">
+        </div>
+        <div class="columns">
+          <div class="column is-one-quarter">
+            <nav class="panel results">
+            </nav>
+            <div class="container-update">
+            </div>
+          </div>
+          <div class="column">
+              <div class="results-details">
+              </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Go Report Card</strong> by
+          <a href="https://twitter.com/shawnps">Shawn Smith</a> and
+          <a href="https://twitter.com/ironzeb">Herman Schaaf</a>,
+          authors of <a href="https://leanpub.com/productiongo">Production Go</a>.
+      </p>
+      <p>Sponsored by:</p>
+       <p>
+         <a href="https://www.cooperpress.com">
+           <img width="15%" src="/assets/cooperpress.png">
+         </a>
+       </p>
+       <p>
+         <a href="https://www.digitalocean.com?utm_medium=opensource&utm_source=goreportcard">
+           <img width="15%" src="/assets/digitalocean.svg">
+         </a>
+       </p>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js" integrity="sha256-+JMHsXRyeTsws/tzbIh5YHQxRdKCuNjmvNcTFtY6DLc=" crossorigin="anonymous"></script>
+  <script id="template-alert" type="text/x-handlebars-template">
+      <div class="notification is-warning">
+          <button class="delete"></button>
+          {{{message}}}
+      </div>
+    </div>
+  </script>
+  <script id="template-grade" type="text/x-handlebars-template">
+      <div class="column">
+          <h1 class="title">Report for {{#if link}}<a href="{{ link }}">{{/if}}<strong>{{repo}}</strong>{{#if link}}</a>{{/if}}</h1>
+        <p><span class="huge">{{grade}}</span> &nbsp;&nbsp; {{gradeMessage grade}} &emsp;&emsp; Found <strong>{{issues}}</strong> issues across <strong>{{files}}</strong> files</p>
+      </div>
+      <div class="column is-one-quarter badge-col">
+        <img class="badge" tag="{{repo}}" src="/badge/{{repo}}"/>
+        <a class="button is-info is-small tweet-button"
+          href="https://twitter.com/intent/tweet?text={{ repo }} gets {{#if use_an}}an{{else}}a{{/if}} {{ grade_encoded }} on goreportcard.com! #golang">
+            <span class="icon is-small">
+              <i class="fa fa-twitter"></i>
+            </span>
+            <span>Tweet</span>
+        </a>
+      </div>
+  </script>
+  <script id="template-check" type="text/x-handlebars-template">
+      <a class="panel-block" href="#{{{name}}}">
+        {{{name}}}
+        <span class="percentage {{color percentage}}">{{percentage}}%</span>
+      </a>
+  </script>
+  <script id="template-badgedropdown" type="text/x-handlebars-template">
+      <div id="badge_dropdown" class="hidden">
+          <div>
+              <label>Image URL</label><input value="{{{image_url}}}">
+          </div>
+          <div>
+              <label>Markdown</label><input value="[![Go Report Card]({{{image_url}}})]({{{url}}})">
+          </div>
+      </div>
+  </script>
+  <script id="template-details" type="text/x-handlebars-template">
+    <div class="wrapper">
+      <a name="{{{name}}}"></a><h1 class="tool-title">{{{name}}}<span class="percentage {{color percentage}}">{{percentage}}%</span></h1>
+      <p class="tool-description">{{{description}}}</p>
+    {{#if error}}
+        <p class="error-msg">An error occurred while running this test ({{error}})</p>
+    {{else}}
+      {{^file_summaries}}
+        <p class="perfect">No problems detected. Good job!</p>
+      {{/file_summaries}}
+      {{#each file_summaries}}
+        <ul class="files">
+          <li class="file">
+            <ul class="errors">
+            <a href="{{this.file_url}}">{{this.filename}}</a>
+            {{#each this.errors}}
+              {{#if line_number}}
+              <li class="error"><a href="{{../file_url}}#L{{this.line_number}}">Line {{this.line_number}}</a>: {{this.error_string}}</li>
+              {{/if}}
+            {{/each}}
+            </ul>
+          </li>
+        </ul>
+      {{/each}}
+    {{/if}}
+    </div>
+    <hr>
+  </script>
+  <script id="template-lastrefresh" type="text/x-handlebars-template">
+  <div title="{{formatted_last_refresh}}">
+    Last refresh:
+    <time datetime="{{last_refresh}}">{{humanized_last_refresh}}</time>
+  </div>
+  <br>
+  <p><a class="refresh-button button" href=""><strong>Refresh now</strong></a></p>
+  </script>
+  <script>
+  var loading =  false ;
+  var response =  "{\"checks\":[{\"name\":\"gofmt\",\"description\":\"Gofmt formats Go programs. We run \\u003ccode\\u003egofmt -s\\u003c/code\\u003e on your code, where \\u003ccode\\u003e-s\\u003c/code\\u003e is for the \\u003ca href=\\\"https://golang.org/cmd/gofmt/#hdr-The_simplify_command\\\"\\u003e\\\"simplify\\\" command\\u003c/a\\u003e\",\"file_summaries\":[],\"weight\":0.3,\"percentage\":1,\"error\":\"\"},{\"name\":\"go_vet\",\"description\":\"\\u003ccode\\u003ego vet\\u003c/code\\u003e examines Go source code and reports suspicious constructs, such as Printf calls whose arguments do not align with the format string.\",\"file_summaries\":[],\"weight\":0.25,\"percentage\":1,\"error\":\"\"},{\"name\":\"golint\",\"description\":\"Golint is a linter for Go source code.\",\"file_summaries\":[{\"filename\":\"gin/ginS/gins.go\",\"file_url\":\"https://github.com/gin-gonic/gin/blob/master/ginS/gins.go\",\"errors\":[{\"line_number\":5,\"error_string\":\"warning: don't use MixedCaps in package name; ginS should be gins (golint)\"}]}],\"weight\":0.1,\"percentage\":0.9878048780487805,\"error\":\"\"},{\"name\":\"gocyclo\",\"description\":\"\\u003ca href=\\\"https://github.com/fzipp/gocyclo\\\"\\u003eGocyclo\\u003c/a\\u003e calculates cyclomatic complexities of functions in Go source code.\\n\\nThe cyclomatic complexity of a function is calculated according to the following rules:\\n\\n1 is the base complexity of a function\\n+1 for each 'if', 'for', 'case', '\\u0026\\u0026' or '||'\\n\\nGo Report Card warns on functions with cyclomatic complexity \\u003e 15.\",\"file_summaries\":[{\"filename\":\"gin/tree.go\",\"file_url\":\"https://github.com/gin-gonic/gin/blob/master/tree.go\",\"errors\":[{\"line_number\":595,\"error_string\":\"warning: cyclomatic complexity 48 of function (*node).findCaseInsensitivePathRec() is high (\\u003e 15) (gocyclo)\"},{\"line_number\":402,\"error_string\":\"warning: cyclomatic complexity 40 of function (*node).getValue() is high (\\u003e 15) (gocyclo)\"},{\"line_number\":146,\"error_string\":\"warning: cyclomatic complexity 22 of function (*node).addRoute() is high (\\u003e 15) (gocyclo)\"}]},{\"filename\":\"gin/path.go\",\"file_url\":\"https://github.com/gin-gonic/gin/blob/master/path.go\",\"errors\":[{\"line_number\":21,\"error_string\":\"warning: cyclomatic complexity 28 of function cleanPath() is high (\\u003e 15) (gocyclo)\"}]},{\"filename\":\"gin/tree_test.go\",\"file_url\":\"https://github.com/gin-gonic/gin/blob/master/tree_test.go\",\"errors\":[{\"line_number\":521,\"error_string\":\"warning: cyclomatic complexity 19 of function TestTreeFindCaseInsensitivePath() is high (\\u003e 15) (gocyclo)\"}]},{\"filename\":\"gin/gin.go\",\"file_url\":\"https://github.com/gin-gonic/gin/blob/master/gin.go\",\"errors\":[{\"line_number\":461,\"error_string\":\"warning: cyclomatic complexity 18 of function (*Engine).handleHTTPRequest() is high (\\u003e 15) (gocyclo)\"}]},{\"filename\":\"gin/binding/form_mapping.go\",\"file_url\":\"https://github.com/gin-gonic/gin/blob/master/binding/form_mapping.go\",\"errors\":[{\"line_number\":188,\"error_string\":\"warning: cyclomatic complexity 20 of function setWithProperType() is high (\\u003e 15) (gocyclo)\"},{\"line_number\":69,\"error_string\":\"warning: cyclomatic complexity 17 of function mapping() is high (\\u003e 15) (gocyclo)\"}]}],\"weight\":0.1,\"percentage\":0.9390243902439024,\"error\":\"\"},{\"name\":\"ineffassign\",\"description\":\"\\u003ca href=\\\"https://github.com/gordonklaus/ineffassign\\\"\\u003eIneffAssign\\u003c/a\\u003e detects ineffectual assignments in Go code.\",\"file_summaries\":[],\"weight\":0.05,\"percentage\":1,\"error\":\"\"},{\"name\":\"license\",\"description\":\"Checks whether your project has a LICENSE file.\",\"file_summaries\":[],\"weight\":0.05,\"percentage\":1,\"error\":\"\"},{\"name\":\"misspell\",\"description\":\"\\u003ca href=\\\"https://github.com/client9/misspell\\\"\\u003eMisspell\\u003c/a\\u003e Finds commonly misspelled English words\",\"file_summaries\":[],\"weight\":0,\"percentage\":1,\"error\":\"\"}],\"average\":0.9913916786226685,\"grade\":\"A+\",\"files\":82,\"issues\":6,\"repo\":\"github.com/gin-gonic/gin\",\"resolvedRepo\":\"https://github.com/gin-gonic/gin\",\"last_refresh\":\"2021-04-19T22:46:06.711707815Z\",\"formatted_last_refresh\":\"Mon Apr 19 22:46:06 UTC 2021\",\"humanized_last_refresh\":\"3 days ago\"}" ;
+  </script>
+  <script type="text/javascript">
+    Handlebars.registerHelper('gradeMessage', function(grade, options) {
+      var gradeMessages = {
+        "A+": "Excellent!",
+        "A": "Great!",
+        "B": "Not bad!",
+        "C": "Needs some work",
+        "D": "Needs lots of improvement",
+        "E": "Urgent improvement needed",
+        "F": "... is for lots of things to Fix!"
+      };
+      return gradeMessages[grade];
+    });
+
+    
+    Handlebars.registerHelper('color', function(percentage, options) {
+      switch(true){
+        case percentage < 30:
+          return 'danger';
+        case percentage < 50:
+          return 'warning';
+        case percentage < 80:
+          return 'info';
+        default:
+          return 'success';
+      };
+    });
+
+    Handlebars.registerHelper('isfalse', function(percentage, options) {
+      return percentage == false;
+    });
+
+    var allowedLinkDomains = ["https://github.com/", "https://bitbucket.org/",
+      "https://golang.org/", "https://go.googlesource.com/"];
+
+    
+    var templates = {};
+    $("script[id^=template]").each(function(){
+      var name = $(this).attr("id").substring(9);
+      var source   = $(this).html();
+      templates[name] = Handlebars.compile(source);
+    });
+
+    var shrinkHeader = function(){
+      var $hero = $("section.hero");
+      $hero.slideUp();
+    }
+
+    var populateResults = function(data){
+        var checks = data.checks;
+        var $resultsText = $(".results-text");
+        var $resultsDetails = $('.results-details').empty();
+
+        for (var i = 0; i < allowedLinkDomains.length; i++) {
+          if (data.resolvedRepo.indexOf(allowedLinkDomains[i]) == 0) {
+            data.link = data.resolvedRepo;
+          }
+        }
+        data.use_an = data.grade == "A" || data.grade == "A+";
+        data.grade_encoded = encodeURIComponent(data.grade);
+        $resultsText.html($(templates.grade(data)));
+        var $table = $(".results");
+        $table.html('<p class="panel-heading">Results</p>');
+        for (var i = 0; i < checks.length; i++) {
+            checks[i].percentage = parseInt(checks[i].percentage * 100.0);
+            var $headRow = $(templates.check(checks[i]));
+            $headRow.on("click", function(){
+            $(this).closest("nav").find(".is-active").removeClass("is-active");
+              $(this).toggleClass("is-active");
+            });
+            $headRow.appendTo($table);
+            if (i == 0) {
+                $headRow.toggleClass("is-active");
+            }
+
+            var $details = $(templates.details(checks[i]));
+            $details.appendTo($resultsDetails);
+        }
+        $(".container-suggestions").addClass('hidden');
+        $(".container-results").removeClass('hidden').slideDown();
+
+        $lastRefresh = $(templates.lastrefresh(data));
+        $div = $(".container-update").html($lastRefresh);
+        $div.find("a.refresh-button").on("click", function(e){
+          loadData.call($("form#check_form")[0], false);
+          $(this).addClass('is-loading');
+          return false;
+        });
+
+        var badgeData = {
+            url: "https://goreportcard.com/report/" + data.repo,
+            image_url: "https://goreportcard.com/badge/" + data.repo,
+        }
+        var $badgeDropdown = $(templates.badgedropdown(badgeData));
+        $badgeDropdown.find("input").on("click", function(){
+            $(this).select();
+        });
+        $(".badge-col").append($badgeDropdown);
+        $(".badge-col .badge").on("click", function(){
+            $(this).closest(".badge-col").find("#badge_dropdown").toggleClass("hidden");
+        });
+    };
+
+    function alertMessage(msg){
+      var html = templates.alert({message: msg});
+      var $alert = $(html);
+      $alert.find(".delete").on("click", function(){
+          $(this).closest(".notification").remove();
+      });
+      $("#notifications").children().remove();
+      $alert.hide();
+      $alert.appendTo("#notifications");
+      $alert.slideDown();
+    }
+
+    var loadData = function(getRequest){
+      loading = true;
+      var $form = $(this),
+          url = $form.attr("action"),
+          method = $form.attr("method"),
+          data = {};
+        $form.serializeArray().map(function(x){data[x.name] = x.value;});
+
+        if(!data["repo"]) {
+            alertMessage("Input cannot be empty. Please enter a valid repository path");
+            return false;
+        }
+
+        $("#check_form .button").addClass("is-loading");
+      $.ajax({
+          type: getRequest ? "GET" : "POST",
+          url: url,
+          data: data,
+          dataType: "json"
+      }).fail(function(xhr, status, err){
+          alertMessage("There was an error processing your request: " + xhr.responseText);
+      }).done(function(data, textStatus, jqXHR){
+          if (data.redirect) {
+              location.replace(data.redirect);
+          }
+      }).always(function(){
+          loading = false;
+          $("a.refresh-button").removeClass("is-loading");
+          $("#check_form .button").removeClass("is-loading");
+          $(".container-loading").slideUp();
+      });
+      return false;
+    };
+
+    var hideResults = function(){
+      $(".container-results").hide();
+    };
+
+    
+    $(function(){
+
+      if (loading) {
+          
+          loadData.call($("form#check_form")[0], true);
+      } else {
+          populateResults(JSON.parse(response));
+          $(".container-loading").slideUp();
+      }
+
+      
+      $("form#check_form").submit(loadData);
+
+      
+      $(window).scroll(function() {
+          if ($(this).scrollTop() >= 240) {
+              $('nav.results').addClass('stickytop');
+          }
+          else {
+              $('nav.results').removeClass('stickytop');
+          }
+      });
+
+      
+      var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.header-toggle'), 0);
+      
+      if ($navbarBurgers.length > 0) {
+        
+        $navbarBurgers.forEach(function ($el) {
+          $el.addEventListener('click', function () {
+            
+            var target = $el.dataset.target;
+            var $target = document.getElementById(target);
+            
+            $el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+          });
+        });
+      }
+
+    });
+  </script>
+</body>
+</html>
