@@ -9,7 +9,7 @@ Currently only Go modules are supported. In future, other languages may be added
 - [x] codecov.io
 - [x] Analyzes README.md
 - [x] Checks if mentioned in Awesome lists
-- [x] GitHub Stars, Organization, Contributors
+- [x] GitHub Stars
 - [ ] ... add yours here
 
 Render with [dot](https://graphviz.org):
