@@ -13,6 +13,11 @@ digraph G
 				</tr>
 
 			<tr>
+				<td border="1" ALIGN="LEFT">awesomelists_is_mentioned</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
+
+			<tr>
 				<td border="1" ALIGN="LEFT">can_get_codecov</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
@@ -255,6 +260,11 @@ digraph G
 				</tr>
 
 			<tr>
+				<td border="1" ALIGN="LEFT">awesomelists_is_mentioned</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
+
+			<tr>
 				<td border="1" ALIGN="LEFT">can_get_codecov</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
 			</tr>
@@ -359,6 +369,11 @@ digraph G
 				<tr>
 					<td port="port0" border="1" colspan="2" ALIGN="CENTER" bgcolor="#c8c8c8c8">github.com/golang/protobuf</td>
 				</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">awesomelists_is_mentioned</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_codecov</td>
@@ -472,6 +487,11 @@ digraph G
 				</tr>
 
 			<tr>
+				<td border="1" ALIGN="LEFT">awesomelists_is_mentioned</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
+
+			<tr>
 				<td border="1" ALIGN="LEFT">can_get_codecov</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
@@ -561,6 +581,11 @@ digraph G
 				<tr>
 					<td port="port0" border="1" colspan="2" ALIGN="CENTER" bgcolor="#c8c8c8c8">github.com/mattn/go-isatty</td>
 				</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">awesomelists_is_mentioned</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_codecov</td>
@@ -684,6 +709,11 @@ digraph G
 				</tr>
 
 			<tr>
+				<td border="1" ALIGN="LEFT">awesomelists_is_mentioned</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
+
+			<tr>
 				<td border="1" ALIGN="LEFT">can_get_codecov</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
 			</tr>
@@ -795,6 +825,11 @@ digraph G
 				</tr>
 
 			<tr>
+				<td border="1" ALIGN="LEFT">awesomelists_is_mentioned</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
+
+			<tr>
 				<td border="1" ALIGN="LEFT">can_get_codecov</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
@@ -886,6 +921,11 @@ digraph G
 				</tr>
 
 			<tr>
+				<td border="1" ALIGN="LEFT">awesomelists_is_mentioned</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
+
+			<tr>
 				<td border="1" ALIGN="LEFT">can_get_codecov</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
 			</tr>
@@ -960,6 +1000,11 @@ digraph G
 				<tr>
 					<td port="port0" border="1" colspan="2" ALIGN="CENTER" bgcolor="#c8c8c8c8">github.com/go-playground/assert/v2</td>
 				</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">awesomelists_is_mentioned</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_codecov</td>
@@ -1401,6 +1446,11 @@ digraph G
 				</tr>
 
 			<tr>
+				<td border="1" ALIGN="LEFT">awesomelists_is_mentioned</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
+
+			<tr>
 				<td border="1" ALIGN="LEFT">can_get_codecov</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
 			</tr>
@@ -1507,6 +1557,11 @@ digraph G
 				</tr>
 
 			<tr>
+				<td border="1" ALIGN="LEFT">awesomelists_is_mentioned</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
+
+			<tr>
 				<td border="1" ALIGN="LEFT">can_get_codecov</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
 			</tr>
@@ -1581,6 +1636,11 @@ digraph G
 				<tr>
 					<td port="port0" border="1" colspan="2" ALIGN="CENTER" bgcolor="#c8c8c8c8">github.com/google/gofuzz</td>
 				</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">awesomelists_is_mentioned</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_codecov</td>
@@ -1869,6 +1929,11 @@ digraph G
 				<tr>
 					<td port="port0" border="1" colspan="2" ALIGN="CENTER" bgcolor="#c8c8c8c8">golang.org/x/sys</td>
 				</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">awesomelists_is_mentioned</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_codecov</td>
@@ -2164,6 +2229,11 @@ digraph G
 				</tr>
 
 			<tr>
+				<td border="1" ALIGN="LEFT">awesomelists_is_mentioned</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
+
+			<tr>
 				<td border="1" ALIGN="LEFT">can_get_codecov</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
@@ -2255,6 +2325,11 @@ digraph G
 				</tr>
 
 			<tr>
+				<td border="1" ALIGN="LEFT">awesomelists_is_mentioned</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
+
+			<tr>
 				<td border="1" ALIGN="LEFT">can_get_codecov</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
 			</tr>
@@ -2344,6 +2419,11 @@ digraph G
 				<tr>
 					<td port="port0" border="1" colspan="2" ALIGN="CENTER" bgcolor="#c8c8c8c8">golang.org/x/text</td>
 				</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">awesomelists_is_mentioned</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_codecov</td>
@@ -2457,6 +2537,11 @@ digraph G
 				</tr>
 
 			<tr>
+				<td border="1" ALIGN="LEFT">awesomelists_is_mentioned</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
+
+			<tr>
 				<td border="1" ALIGN="LEFT">can_get_codecov</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
 			</tr>
@@ -2561,6 +2646,11 @@ digraph G
 				<tr>
 					<td port="port0" border="1" colspan="2" ALIGN="CENTER" bgcolor="#c8c8c8c8">golang.org/x/tools</td>
 				</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">awesomelists_is_mentioned</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_codecov</td>

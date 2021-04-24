@@ -99,3 +99,7 @@ func NewGoTestStats(r *testrunner.GoModuleTestRunResult) *GoTestStats {
 type ReadmeStats struct {
 	IsDeprecated bool `json:"readme_deprecated,omitempty"`
 }
+
+type AwesomeLists struct {
+	IsMentioned bool `json:"awesomelists_is_mentioned,omitempty"`
+}

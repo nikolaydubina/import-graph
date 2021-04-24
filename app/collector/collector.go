@@ -8,6 +8,7 @@ import (
 
 	"go.uber.org/multierr"
 
+	"github.com/nikolaydubina/import-graph/pkg/awesomelists"
 	"github.com/nikolaydubina/import-graph/pkg/codecov"
 	"github.com/nikolaydubina/import-graph/pkg/gitstats"
 	"github.com/nikolaydubina/import-graph/pkg/go/filescanner"
@@ -38,6 +39,7 @@ type ModuleStats struct {
 	*GoReportCardStats `json:",omitempty"`
 	*FileStats         `json:",omitempty"`
 	*ReadmeStats       `json:",omitempty"`
+	*AwesomeLists      `json:",omitempty"`
 }
 
 type Edge struct {
@@ -69,13 +71,14 @@ func (g *Graph) WriteJSONL(w io.Writer) error {
 // GoModuleStatsCollector is collecting all the details about single Go module
 // Does not fail if encounters errors, but still collects thoese errors.
 type GoModuleStatsCollector struct {
-	GitStorage         *gitstats.GitCmdLocalClient
-	URLResolver        *basiccache.GoCachedResolver
-	GitStatsFetcher    *gitstats.GitStatsFetcher
-	TestRunner         *testrunner.GoCmdTestRunner
-	CodecovClient      *codecov.HTTPClient
-	GoReportCardClient *goreportcard.GoReportCardHTTPClient
-	FileScanner        *filescanner.FileScanner
+	GitStorage          *gitstats.GitCmdLocalClient
+	URLResolver         *basiccache.GoCachedResolver
+	GitStatsFetcher     *gitstats.GitStatsFetcher
+	TestRunner          *testrunner.GoCmdTestRunner
+	CodecovClient       *codecov.HTTPClient
+	GoReportCardClient  *goreportcard.GoReportCardHTTPClient
+	FileScanner         *filescanner.FileScanner
+	AwesomeListsChecker *awesomelists.AwesomeListsChecker
 }
 
 // CollectStats fetches all possible information about Go module
@@ -150,6 +153,14 @@ func (c *GoModuleStatsCollector) CollectStats(moduleName string) (ModuleStats, e
 		moduleStats.ReadmeStats = &ReadmeStats{
 			IsDeprecated: readmeScanner.IsDeprecated(readmeProvider.GetReadme(path)),
 		}
+	}
+
+	if isMentioned, err := c.AwesomeListsChecker.IsMentioned(gitHubURL); err == nil {
+		moduleStats.AwesomeLists = &AwesomeLists{
+			IsMentioned: isMentioned,
+		}
+	} else {
+		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not check awesomelists: %w", err))
 	}
 
 	if c.TestRunner != nil {

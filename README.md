@@ -8,7 +8,7 @@ Currently only Go modules are supported. In future other languages may be added.
 - [x] goreportcard.com
 - [x] codecov.io
 - [x] Analyzes README.md
-- [ ] Checks if mentioned in Awesome lists
+- [x] Checks if mentioned in Awesome lists
 - [ ] GitHub Stars, Organization, Contributors
 - [ ] ... PRs wellcomed!
 

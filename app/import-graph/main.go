@@ -11,6 +11,7 @@ import (
 
 	"github.com/nikolaydubina/import-graph/app/collector"
 
+	"github.com/nikolaydubina/import-graph/pkg/awesomelists"
 	"github.com/nikolaydubina/import-graph/pkg/codecov"
 	"github.com/nikolaydubina/import-graph/pkg/gitstats"
 	"github.com/nikolaydubina/import-graph/pkg/go/filescanner"
@@ -72,7 +73,8 @@ func main() {
 				HTTPClient: http.DefaultClient,
 				BaseURL:    "goreportcard.com",
 			},
-			FileScanner: &filescanner.FileScanner{},
+			FileScanner:         &filescanner.FileScanner{},
+			AwesomeListsChecker: &awesomelists.AwesomeListsChecker{HTTPClient: http.DefaultClient},
 		},
 	}
 
