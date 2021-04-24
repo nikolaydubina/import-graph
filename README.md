@@ -7,7 +7,7 @@ Currently only Go modules are supported. In future other languages may be added.
 - [x] Detects benchmarks
 - [x] goreportcard.com
 - [x] codecov.io
-- [ ] Analyzes README.md
+- [x] Analyzes README.md
 - [ ] Checks if mentioned in Awesome lists
 - [ ] GitHub Stars, Organization, Contributors
 - [ ] ... PRs wellcomed!
@@ -38,26 +38,31 @@ $ go mod graph | ./bin/import-graph | jq -f
 ...
 {
     "id": "github.com/gin-gonic/gin",
-    "can_get_gitstats": true,
+    "can_get_git": true,
     "can_get_codecov": true,
+    "can_get_goreportcard": true,
     "can_run_tests": true,
     "github_url": "https://github.com/gin-gonic/gin",
     "git_url": "https://github.com/gin-gonic/gin",
     "git_last_commit": "2021-04-21",
-    "git_last_commit_days_since": 1,
+    "git_last_commit_days_since": 3,
     "git_num_contributors": 321,
     "codecov_url": "https://app.codecov.io/gh/gin-gonic/gin",
     "codecov_files": 41,
     "codecov_lines": 2036,
     "codecov_coverage": 98.67,
-    "has_tests": true,
-    "has_test_files": true,
-    "num_packages": 6,
-    "num_packages_with_tests": 4,
-    "num_packages_with_tests_files": 4,
-    "num_packages_tests_passed": 4,
-    "package_coverage_avg": 96.3,
-    "package_coverage_min": 98.9
+    "gotest_has_tests": true,
+    "gotest_all_tests_passed": true,
+    "gotest_num_packages": 6,
+    "gotest_num_packages_with_tests": 4,
+    "gotest_num_packages_tests_passed": 4,
+    "gotest_package_coverage_avg": 98.9,
+    "goreportcard_average": 0.99,
+    "goreportcard_grade": "A+",
+    "goreportcard_files": 82,
+    "goreportcard_issues": 6,
+    "files_has_benchmarks": true,
+    "files_has_tests": true
 }
 ...
 ```

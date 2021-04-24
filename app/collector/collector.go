@@ -15,6 +15,7 @@ import (
 	"github.com/nikolaydubina/import-graph/pkg/go/goreportcard"
 	"github.com/nikolaydubina/import-graph/pkg/go/testrunner"
 	"github.com/nikolaydubina/import-graph/pkg/go/urlresolver/basiccache"
+	"github.com/nikolaydubina/import-graph/pkg/scandocs"
 )
 
 // ModuleStats is stats about single module
@@ -36,6 +37,7 @@ type ModuleStats struct {
 	*GoTestStats       `json:",omitempty"`
 	*GoReportCardStats `json:",omitempty"`
 	*FileStats         `json:",omitempty"`
+	*ReadmeStats       `json:",omitempty"`
 }
 
 type Edge struct {
@@ -138,6 +140,15 @@ func (c *GoModuleStatsCollector) CollectStats(moduleName string) (ModuleStats, e
 		moduleStats.FileStats = &FileStats{
 			HasBenchmarks: c.FileScanner.HasBenchmarks(path),
 			HasTests:      c.FileScanner.HasTests(path),
+		}
+	}
+
+	if wasCloned {
+		path := c.GitStorage.DirPath(gitURL)
+		readmeProvider := scandocs.LocalReadmeProvider{}
+		readmeScanner := scandocs.ReadmeScanner{}
+		moduleStats.ReadmeStats = &ReadmeStats{
+			IsDeprecated: readmeScanner.IsDeprecated(readmeProvider.GetReadme(path)),
 		}
 	}
 

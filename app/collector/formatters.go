@@ -95,3 +95,7 @@ func NewGoTestStats(r *testrunner.GoModuleTestRunResult) *GoTestStats {
 		AvgPackageCoverage:     r.AvgPackageCoverage,
 	}
 }
+
+type ReadmeStats struct {
+	IsDeprecated bool `json:"readme_deprecated,omitempty"`
+}
