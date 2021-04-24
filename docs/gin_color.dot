@@ -39,7 +39,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_run_tests</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -84,7 +84,37 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">47496</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">47500</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_all_tests_passed</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_has_tests</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_num_packages</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">6</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_num_packages_tests_passed</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">4</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_num_packages_with_tests</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">4</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">gotest_package_coverage_avg</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">98.90</td>
 			</tr>
 </table>>
 	]
@@ -155,7 +185,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">251</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">252</td>
 			</tr>
 
 			<tr>
@@ -1433,7 +1463,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">4388</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">4389</td>
 			</tr>
 </table>>
 	]
@@ -1848,7 +1878,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">849</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">850</td>
 			</tr>
 
 			<tr>
@@ -1919,7 +1949,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">74</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">75</td>
 			</tr>
 
 			<tr>
@@ -2384,7 +2414,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">3</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">4</td>
 			</tr>
 
 			<tr>
