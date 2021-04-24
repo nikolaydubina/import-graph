@@ -73,6 +73,7 @@ $ go mod graph | ./bin/import-graph | jq -f
 - `Graphviz` https://graphviz.org/Gallery/directed/neural-network.html is nice example of dot format
 - `Graphviz` http://magjac.com/graphviz-visual-editor online editor
 - `Docs` https://awesomeopensource.com/projects/dependency-graph is a list of dependency visualization projects  
+- `Go` https://github.com/lucasepe/modgv written in Go; converts go mod graph into graphviz; does not collect data; CLI; dot   
 - `Go` https://github.com/loov/goda written in Go; analyses imports on its own; does not collect dta; CLI; dot  
 - `Go` https://github.com/adonovan/spaghetti wirtten in Go; search and read details about selected package; web; not graphic
 - `Go` https://github.com/psampaz/go-mod-outdated written in Go; pretty prints built-in Go tooling; not collecting; not dot; CLI 
