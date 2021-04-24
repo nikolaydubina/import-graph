@@ -24,7 +24,7 @@
   </div>
   <header class="header">
   <div class="container">
-        
+        <!-- Left side -->
         <div class="header-left">
           <a class="header-item" href="/">
             <h3 class="title">Go Report Card</h3>
@@ -36,14 +36,14 @@
           </div>
         </div>
 
-        
+        <!-- Hamburger menu (on mobile) -->
         <span class="header-toggle" data-target="header-menu">
           <span></span>
           <span></span>
           <span></span>
         </span>
 
-        
+        <!-- Right side -->
         <div class="header-right header-menu" id="header-menu">
           <span class="header-item">
             <a href="/high_scores">High Scores</a>
@@ -192,7 +192,7 @@
   </script>
   <script>
   var loading =  false ;
-  var response =  "{\"checks\":[{\"name\":\"gofmt\",\"description\":\"Gofmt formats Go programs. We run \\u003ccode\\u003egofmt -s\\u003c/code\\u003e on your code, where \\u003ccode\\u003e-s\\u003c/code\\u003e is for the \\u003ca href=\\\"https://golang.org/cmd/gofmt/#hdr-The_simplify_command\\\"\\u003e\\\"simplify\\\" command\\u003c/a\\u003e\",\"file_summaries\":[],\"weight\":0.3,\"percentage\":1,\"error\":\"\"},{\"name\":\"go_vet\",\"description\":\"\\u003ccode\\u003ego vet\\u003c/code\\u003e examines Go source code and reports suspicious constructs, such as Printf calls whose arguments do not align with the format string.\",\"file_summaries\":[],\"weight\":0.25,\"percentage\":1,\"error\":\"\"},{\"name\":\"golint\",\"description\":\"Golint is a linter for Go source code.\",\"file_summaries\":[{\"filename\":\"gin/ginS/gins.go\",\"file_url\":\"https://github.com/gin-gonic/gin/blob/master/ginS/gins.go\",\"errors\":[{\"line_number\":5,\"error_string\":\"warning: don't use MixedCaps in package name; ginS should be gins (golint)\"}]}],\"weight\":0.1,\"percentage\":0.9878048780487805,\"error\":\"\"},{\"name\":\"gocyclo\",\"description\":\"\\u003ca href=\\\"https://github.com/fzipp/gocyclo\\\"\\u003eGocyclo\\u003c/a\\u003e calculates cyclomatic complexities of functions in Go source code.\\n\\nThe cyclomatic complexity of a function is calculated according to the following rules:\\n\\n1 is the base complexity of a function\\n+1 for each 'if', 'for', 'case', '\\u0026\\u0026' or '||'\\n\\nGo Report Card warns on functions with cyclomatic complexity \\u003e 15.\",\"file_summaries\":[{\"filename\":\"gin/tree.go\",\"file_url\":\"https://github.com/gin-gonic/gin/blob/master/tree.go\",\"errors\":[{\"line_number\":595,\"error_string\":\"warning: cyclomatic complexity 48 of function (*node).findCaseInsensitivePathRec() is high (\\u003e 15) (gocyclo)\"},{\"line_number\":402,\"error_string\":\"warning: cyclomatic complexity 40 of function (*node).getValue() is high (\\u003e 15) (gocyclo)\"},{\"line_number\":146,\"error_string\":\"warning: cyclomatic complexity 22 of function (*node).addRoute() is high (\\u003e 15) (gocyclo)\"}]},{\"filename\":\"gin/path.go\",\"file_url\":\"https://github.com/gin-gonic/gin/blob/master/path.go\",\"errors\":[{\"line_number\":21,\"error_string\":\"warning: cyclomatic complexity 28 of function cleanPath() is high (\\u003e 15) (gocyclo)\"}]},{\"filename\":\"gin/tree_test.go\",\"file_url\":\"https://github.com/gin-gonic/gin/blob/master/tree_test.go\",\"errors\":[{\"line_number\":521,\"error_string\":\"warning: cyclomatic complexity 19 of function TestTreeFindCaseInsensitivePath() is high (\\u003e 15) (gocyclo)\"}]},{\"filename\":\"gin/gin.go\",\"file_url\":\"https://github.com/gin-gonic/gin/blob/master/gin.go\",\"errors\":[{\"line_number\":461,\"error_string\":\"warning: cyclomatic complexity 18 of function (*Engine).handleHTTPRequest() is high (\\u003e 15) (gocyclo)\"}]},{\"filename\":\"gin/binding/form_mapping.go\",\"file_url\":\"https://github.com/gin-gonic/gin/blob/master/binding/form_mapping.go\",\"errors\":[{\"line_number\":188,\"error_string\":\"warning: cyclomatic complexity 20 of function setWithProperType() is high (\\u003e 15) (gocyclo)\"},{\"line_number\":69,\"error_string\":\"warning: cyclomatic complexity 17 of function mapping() is high (\\u003e 15) (gocyclo)\"}]}],\"weight\":0.1,\"percentage\":0.9390243902439024,\"error\":\"\"},{\"name\":\"ineffassign\",\"description\":\"\\u003ca href=\\\"https://github.com/gordonklaus/ineffassign\\\"\\u003eIneffAssign\\u003c/a\\u003e detects ineffectual assignments in Go code.\",\"file_summaries\":[],\"weight\":0.05,\"percentage\":1,\"error\":\"\"},{\"name\":\"license\",\"description\":\"Checks whether your project has a LICENSE file.\",\"file_summaries\":[],\"weight\":0.05,\"percentage\":1,\"error\":\"\"},{\"name\":\"misspell\",\"description\":\"\\u003ca href=\\\"https://github.com/client9/misspell\\\"\\u003eMisspell\\u003c/a\\u003e Finds commonly misspelled English words\",\"file_summaries\":[],\"weight\":0,\"percentage\":1,\"error\":\"\"}],\"average\":0.9913916786226685,\"grade\":\"A+\",\"files\":82,\"issues\":6,\"repo\":\"github.com/gin-gonic/gin\",\"resolvedRepo\":\"https://github.com/gin-gonic/gin\",\"last_refresh\":\"2021-04-19T22:46:06.711707815Z\",\"formatted_last_refresh\":\"Mon Apr 19 22:46:06 UTC 2021\",\"humanized_last_refresh\":\"3 days ago\"}" ;
+  var response =  {"checks":[{"name":"gofmt","description":"Gofmt formats Go programs. We run \u003ccode\u003egofmt -s\u003c/code\u003e on your code, where \u003ccode\u003e-s\u003c/code\u003e is for the \u003ca href=\"https://golang.org/cmd/gofmt/#hdr-The_simplify_command\"\u003e\"simplify\" command\u003c/a\u003e","file_summaries":[],"weight":0.3,"percentage":1,"error":""},{"name":"go_vet","description":"\u003ccode\u003ego vet\u003c/code\u003e examines Go source code and reports suspicious constructs, such as Printf calls whose arguments do not align with the format string.","file_summaries":[],"weight":0.25,"percentage":1,"error":""},{"name":"golint","description":"Golint is a linter for Go source code.","file_summaries":[{"filename":"gin/ginS/gins.go","file_url":"https://github.com/gin-gonic/gin/blob/master/ginS/gins.go","errors":[{"line_number":5,"error_string":"warning: don't use MixedCaps in package name; ginS should be gins (golint)"}]}],"weight":0.1,"percentage":0.9879518072289156,"error":""},{"name":"gocyclo","description":"\u003ca href=\"https://github.com/fzipp/gocyclo\"\u003eGocyclo\u003c/a\u003e calculates cyclomatic complexities of functions in Go source code.\n\nThe cyclomatic complexity of a function is calculated according to the following rules:\n\n1 is the base complexity of a function\n+1 for each 'if', 'for', 'case', '\u0026\u0026' or '||'\n\nGo Report Card warns on functions with cyclomatic complexity \u003e 15.","file_summaries":[{"filename":"gin/gin.go","file_url":"https://github.com/gin-gonic/gin/blob/master/gin.go","errors":[{"line_number":461,"error_string":"warning: cyclomatic complexity 18 of function (*Engine).handleHTTPRequest() is high (\u003e 15) (gocyclo)"}]},{"filename":"gin/binding/form_mapping.go","file_url":"https://github.com/gin-gonic/gin/blob/master/binding/form_mapping.go","errors":[{"line_number":188,"error_string":"warning: cyclomatic complexity 20 of function setWithProperType() is high (\u003e 15) (gocyclo)"},{"line_number":69,"error_string":"warning: cyclomatic complexity 17 of function mapping() is high (\u003e 15) (gocyclo)"}]},{"filename":"gin/tree.go","file_url":"https://github.com/gin-gonic/gin/blob/master/tree.go","errors":[{"line_number":595,"error_string":"warning: cyclomatic complexity 48 of function (*node).findCaseInsensitivePathRec() is high (\u003e 15) (gocyclo)"},{"line_number":402,"error_string":"warning: cyclomatic complexity 40 of function (*node).getValue() is high (\u003e 15) (gocyclo)"},{"line_number":146,"error_string":"warning: cyclomatic complexity 22 of function (*node).addRoute() is high (\u003e 15) (gocyclo)"}]},{"filename":"gin/path.go","file_url":"https://github.com/gin-gonic/gin/blob/master/path.go","errors":[{"line_number":21,"error_string":"warning: cyclomatic complexity 28 of function cleanPath() is high (\u003e 15) (gocyclo)"}]},{"filename":"gin/tree_test.go","file_url":"https://github.com/gin-gonic/gin/blob/master/tree_test.go","errors":[{"line_number":521,"error_string":"warning: cyclomatic complexity 19 of function TestTreeFindCaseInsensitivePath() is high (\u003e 15) (gocyclo)"}]}],"weight":0.1,"percentage":0.9397590361445783,"error":""},{"name":"ineffassign","description":"\u003ca href=\"https://github.com/gordonklaus/ineffassign\"\u003eIneffAssign\u003c/a\u003e detects ineffectual assignments in Go code.","file_summaries":[],"weight":0.05,"percentage":1,"error":""},{"name":"license","description":"Checks whether your project has a LICENSE file.","file_summaries":[],"weight":0.05,"percentage":1,"error":""},{"name":"misspell","description":"\u003ca href=\"https://github.com/client9/misspell\"\u003eMisspell\u003c/a\u003e Finds commonly misspelled English words","file_summaries":[],"weight":0,"percentage":1,"error":""}],"average":0.991495393338058,"grade":"A+","files":83,"issues":6,"repo":"github.com/gin-gonic/gin","resolvedRepo":"https://github.com/gin-gonic/gin","last_refresh":"2021-04-24T11:46:49.025202503Z","formatted_last_refresh":"Sat Apr 24 11:46:49 UTC 2021","humanized_last_refresh":"4 minutes ago"} ;
   </script>
   <script type="text/javascript">
     Handlebars.registerHelper('gradeMessage', function(grade, options) {
@@ -208,7 +208,7 @@
       return gradeMessages[grade];
     });
 
-    
+    // add a helper for picking the progress bar colors
     Handlebars.registerHelper('color', function(percentage, options) {
       switch(true){
         case percentage < 30:
@@ -229,7 +229,7 @@
     var allowedLinkDomains = ["https://github.com/", "https://bitbucket.org/",
       "https://golang.org/", "https://go.googlesource.com/"];
 
-    
+    // initialize handlebars templates
     var templates = {};
     $("script[id^=template]").each(function(){
       var name = $(this).attr("id").substring(9);
@@ -347,21 +347,21 @@
       $(".container-results").hide();
     };
 
-    
+    // on ready
     $(function(){
 
       if (loading) {
-          
+          // we need to load the results
           loadData.call($("form#check_form")[0], true);
       } else {
-          populateResults(JSON.parse(response));
+          populateResults(response);
           $(".container-loading").slideUp();
       }
 
-      
+      // handle form submission
       $("form#check_form").submit(loadData);
 
-      
+      // sticky menu
       $(window).scroll(function() {
           if ($(this).scrollTop() >= 240) {
               $('nav.results').addClass('stickytop');
@@ -371,17 +371,17 @@
           }
       });
 
-      
+      // Get all "header-toggle" elements
       var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.header-toggle'), 0);
-      
+      // Check if there are any navbar burgers
       if ($navbarBurgers.length > 0) {
-        
+        // Add a click event on each of them
         $navbarBurgers.forEach(function ($el) {
           $el.addEventListener('click', function () {
-            
+            // Get the target from the "data-target" attribute
             var target = $el.dataset.target;
             var $target = document.getElementById(target);
-            
+            // Toggle the class on both the "header-toggle" and the "header-menu"
             $el.classList.toggle('is-active');
             $target.classList.toggle('is-active');
 

@@ -23,10 +23,5 @@ func TestExtractResponse(t *testing.T) {
 		resp, err := extractResponse(string(htmlBytes))
 		assert.NoError(t, err)
 		assert.Equal(t, &expResp, resp)
-
-		assert.Equal(t, 0.9913916786226685, resp.Average)
-		assert.Equal(t, GradeAP, resp.Grade)
-		assert.Equal(t, uint(82), resp.NumFiles)
-		assert.Equal(t, uint(6), resp.NumIssues)
 	})
 }

@@ -34,7 +34,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -85,6 +85,26 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">47500</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.99</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">83</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A+</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">6</td>
 			</tr>
 
 			<tr>
@@ -145,7 +165,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -196,6 +216,26 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">56</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.93</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">5</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A+</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">3</td>
 			</tr>
 
 			<tr>
@@ -261,7 +301,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -297,6 +337,26 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">7563</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.87</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">48</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">28</td>
 			</tr>
 
 			<tr>
@@ -362,7 +422,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -398,6 +458,26 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">7608</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.92</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">39</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A+</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">16</td>
 			</tr>
 
 			<tr>
@@ -468,7 +548,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -520,6 +600,26 @@ digraph G
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">9202</td>
 			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.95</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">127</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A+</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">47</td>
+			</tr>
 </table>>
 	]
 	
@@ -554,7 +654,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -605,6 +705,26 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">511</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">1.00</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">10</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A+</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">1</td>
 			</tr>
 
 			<tr>
@@ -670,7 +790,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -706,6 +826,26 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">13096</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.98</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">36</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A+</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">6</td>
 			</tr>
 
 			<tr>
@@ -776,7 +916,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -828,6 +968,26 @@ digraph G
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">1532</td>
 			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.93</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">69</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A+</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">24</td>
+			</tr>
 </table>>
 	]
 	
@@ -862,7 +1022,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -893,6 +1053,26 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">47</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.75</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">18</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">B</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">15</td>
 			</tr>
 </table>>
 	]
@@ -928,7 +1108,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -964,6 +1144,26 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">32</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">1.00</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">3</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A+</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">0</td>
 			</tr>
 
 			<tr>
@@ -1024,7 +1224,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1060,6 +1260,26 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">174</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">0.46</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">1477</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">E</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">924</td>
 			</tr>
 
 			<tr>
@@ -1120,7 +1340,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1156,6 +1376,26 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">205</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.95</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">10</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A+</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">4</td>
 			</tr>
 
 			<tr>
@@ -1216,7 +1456,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1267,6 +1507,26 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">32</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.84</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">6</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">3</td>
 			</tr>
 
 			<tr>
@@ -1332,7 +1592,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1363,6 +1623,26 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">255</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.96</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">324</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A+</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">84</td>
 			</tr>
 
 			<tr>
@@ -1428,7 +1708,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1465,6 +1745,26 @@ digraph G
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">4389</td>
 			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.98</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">17</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A+</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">4</td>
+			</tr>
 </table>>
 	]
 	
@@ -1499,7 +1799,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1535,6 +1835,26 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">1036</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.94</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">6</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A+</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">2</td>
 			</tr>
 
 			<tr>
@@ -1595,7 +1915,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1647,6 +1967,26 @@ digraph G
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">187</td>
 			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.85</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">7</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">3</td>
+			</tr>
 </table>>
 	]
 	
@@ -1676,7 +2016,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1728,6 +2068,26 @@ digraph G
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">411</td>
 			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.93</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">22</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A+</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">10</td>
+			</tr>
 </table>>
 	]
 	
@@ -1762,7 +2122,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1793,6 +2153,26 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">212</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.99</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">381</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A+</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">23</td>
 			</tr>
 
 			<tr>
@@ -1853,7 +2233,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1892,6 +2272,26 @@ digraph G
 			</tr>
 
 			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">0.53</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">2</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">D</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">2</td>
+			</tr>
+
+			<tr>
 				<td border="1" ALIGN="LEFT">readme_deprecated</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">true</td>
 			</tr>
@@ -1924,7 +2324,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1960,6 +2360,26 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">364</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.97</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">21</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A+</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">4</td>
 			</tr>
 
 			<tr>
@@ -2025,7 +2445,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -2077,6 +2497,26 @@ digraph G
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">1532</td>
 			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.93</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">69</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A+</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">24</td>
+			</tr>
 </table>>
 	]
 	
@@ -2111,7 +2551,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -2127,6 +2567,26 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">files_has_tests</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.89</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">19</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">8</td>
 			</tr>
 
 			<tr>
@@ -2192,7 +2652,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -2223,6 +2683,26 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">56</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.94</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">375</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A+</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">125</td>
 			</tr>
 
 			<tr>
@@ -2293,7 +2773,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -2324,6 +2804,26 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">196</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.98</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">432</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A+</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">73</td>
 			</tr>
 
 			<tr>
@@ -2389,7 +2889,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -2420,6 +2920,26 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">389</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_average</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">0.94</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_files</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">832</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_grade</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">A+</td>
+			</tr>
+
+			<tr>
+				<td border="1" ALIGN="LEFT">goreportcard_issues</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">346</td>
 			</tr>
 </table>>
 	]

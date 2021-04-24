@@ -6,7 +6,6 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
-	"strconv"
 	"strings"
 )
 
@@ -68,21 +67,17 @@ func (c *GoReportCardHTTPClient) GetReport(modName string) (*Report, error) {
 
 // extractResponse parses HTML, finds variable with value, unescapes and unmarshals it
 func extractResponse(htmlResp string) (*Report, error) {
-	idxStart := strings.Index(htmlResp, `var response =  "`)
+	idxStart := strings.Index(htmlResp, `var response =  `)
 	if idxStart == -1 {
 		return nil, errors.New("not found response object in html")
 	}
 
-	offEnd := strings.Index(htmlResp[idxStart:], "\" ;\n")
+	offEnd := strings.Index(htmlResp[idxStart:], " ;\n")
 	if offEnd == -1 {
 		return nil, errors.New("not found response end object in html")
 	}
 
-	respStrEscaped := htmlResp[idxStart+len(`var response =  "`) : idxStart+offEnd]
-	respStr, err := strconv.Unquote(`"` + respStrEscaped + `"`)
-	if err != nil {
-		return nil, fmt.Errorf("can not unescape: %w", err)
-	}
+	respStr := htmlResp[idxStart+len(`var response =  `) : idxStart+offEnd]
 
 	var rep Report
 	if err := json.Unmarshal([]byte(respStr), &rep); err != nil {

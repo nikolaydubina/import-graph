@@ -32,13 +32,37 @@
                 }
             ],
             "weight": 0.1,
-            "percentage": 0.9878048780487805,
+            "percentage": 0.9879518072289156,
             "error": ""
         },
         {
             "name": "gocyclo",
             "description": "<a href=\"https://github.com/fzipp/gocyclo\">Gocyclo</a> calculates cyclomatic complexities of functions in Go source code.\n\nThe cyclomatic complexity of a function is calculated according to the following rules:\n\n1 is the base complexity of a function\n+1 for each 'if', 'for', 'case', '&&' or '||'\n\nGo Report Card warns on functions with cyclomatic complexity > 15.",
             "file_summaries": [
+                {
+                    "filename": "gin/gin.go",
+                    "file_url": "https://github.com/gin-gonic/gin/blob/master/gin.go",
+                    "errors": [
+                        {
+                            "line_number": 461,
+                            "error_string": "warning: cyclomatic complexity 18 of function (*Engine).handleHTTPRequest() is high (> 15) (gocyclo)"
+                        }
+                    ]
+                },
+                {
+                    "filename": "gin/binding/form_mapping.go",
+                    "file_url": "https://github.com/gin-gonic/gin/blob/master/binding/form_mapping.go",
+                    "errors": [
+                        {
+                            "line_number": 188,
+                            "error_string": "warning: cyclomatic complexity 20 of function setWithProperType() is high (> 15) (gocyclo)"
+                        },
+                        {
+                            "line_number": 69,
+                            "error_string": "warning: cyclomatic complexity 17 of function mapping() is high (> 15) (gocyclo)"
+                        }
+                    ]
+                },
                 {
                     "filename": "gin/tree.go",
                     "file_url": "https://github.com/gin-gonic/gin/blob/master/tree.go",
@@ -76,34 +100,10 @@
                             "error_string": "warning: cyclomatic complexity 19 of function TestTreeFindCaseInsensitivePath() is high (> 15) (gocyclo)"
                         }
                     ]
-                },
-                {
-                    "filename": "gin/gin.go",
-                    "file_url": "https://github.com/gin-gonic/gin/blob/master/gin.go",
-                    "errors": [
-                        {
-                            "line_number": 461,
-                            "error_string": "warning: cyclomatic complexity 18 of function (*Engine).handleHTTPRequest() is high (> 15) (gocyclo)"
-                        }
-                    ]
-                },
-                {
-                    "filename": "gin/binding/form_mapping.go",
-                    "file_url": "https://github.com/gin-gonic/gin/blob/master/binding/form_mapping.go",
-                    "errors": [
-                        {
-                            "line_number": 188,
-                            "error_string": "warning: cyclomatic complexity 20 of function setWithProperType() is high (> 15) (gocyclo)"
-                        },
-                        {
-                            "line_number": 69,
-                            "error_string": "warning: cyclomatic complexity 17 of function mapping() is high (> 15) (gocyclo)"
-                        }
-                    ]
                 }
             ],
             "weight": 0.1,
-            "percentage": 0.9390243902439024,
+            "percentage": 0.9397590361445783,
             "error": ""
         },
         {
@@ -131,13 +131,13 @@
             "error": ""
         }
     ],
-    "average": 0.9913916786226685,
+    "average": 0.991495393338058,
     "grade": "A+",
-    "files": 82,
+    "files": 83,
     "issues": 6,
     "repo": "github.com/gin-gonic/gin",
     "resolvedRepo": "https://github.com/gin-gonic/gin",
-    "last_refresh": "2021-04-19T22:46:06.711707815Z",
-    "formatted_last_refresh": "Mon Apr 19 22:46:06 UTC 2021",
-    "humanized_last_refresh": "3 days ago"
+    "last_refresh": "2021-04-24T11:46:49.025202503Z",
+    "formatted_last_refresh": "Sat Apr 24 11:46:49 UTC 2021",
+    "humanized_last_refresh": "4 minutes ago"
 }
