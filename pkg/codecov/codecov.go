@@ -8,7 +8,8 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
-	"strings"
+
+	"github.com/nikolaydubina/import-graph/pkg/github"
 )
 
 type HTTPClient struct {
@@ -69,21 +70,7 @@ func (c *HTTPClient) GetRepoStats(owner string, repoName string) (*RepoStats, er
 	return &stats, nil
 }
 
-func ParseGitHubURL(repoURL url.URL) (owner, repoName string) {
-	parts := []string{}
-	// Filtering out empty strings
-	for _, p := range strings.Split(repoURL.EscapedPath(), "/") {
-		if p != "" {
-			parts = append(parts, p)
-		}
-	}
-	if len(parts) != 2 {
-		return "", ""
-	}
-	return parts[0], parts[1]
-}
-
 func (c *HTTPClient) GetRepoStatsFromGitHubURL(ghURL url.URL) (*RepoStats, error) {
-	owner, repo := ParseGitHubURL(ghURL)
+	owner, repo := github.ParseGitHubURL(ghURL)
 	return c.GetRepoStats(owner, repo)
 }

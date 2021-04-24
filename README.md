@@ -9,7 +9,7 @@ Currently only Go modules are supported. In future, other languages may be added
 - [x] codecov.io
 - [x] Analyzes README.md
 - [x] Checks if mentioned in Awesome lists
-- [ ] GitHub Stars, Organization, Contributors
+- [x] GitHub Stars, Organization, Contributors
 - [ ] ... improvements welcomed!
 
 Render with [dot](https://graphviz.org):
@@ -65,6 +65,14 @@ $ go mod graph | ./bin/import-graph | jq -f
     "files_has_tests": true
 }
 ...
+```
+
+## Notes
+
+For GitHub you need to set to set in environment `GITHUB_IMPORT_GRAPH_TOKEN` to your [personal GitHub token](https://github.com/settings/tokens). It does not need any permissions at all. It is used to have higher quota for GitHub API calls. Since this is private data, you can pass it to process securely like this:
+
+```
+FOO=bar bash -c 'somecommand someargs | somecommand2'
 ```
 
 ## Related Projects

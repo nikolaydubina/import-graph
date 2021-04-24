@@ -12,7 +12,7 @@ docs: build
 	cat docs/gin_graph | ./bin/import-graph -test > docs/gin.jsonl
 	cat docs/gin.jsonl | ./bin/jsonl-to-dot > docs/gin.dot
 	cat docs/gin.dot | dot -Tsvg > docs/gin.svg
-	cat docs/gin.jsonl | ./bin/jsonl-to-dot -color > docs/gin_color.dot
+	cat docs/gin.jsonl | ./bin/jsonl-to-dot -color-scheme=file://$$PWD/app/import-graph/basic-colors.json > docs/gin_color.dot
 	cat docs/gin_color.dot | dot -Tsvg > docs/gin_color.svg
 
 .PHONY: clean build docs

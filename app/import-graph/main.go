@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"flag"
 	"log"
@@ -9,8 +10,10 @@ import (
 	"os"
 	"sync"
 
-	"github.com/nikolaydubina/import-graph/app/collector"
+	"github.com/google/go-github/v35/github"
+	"golang.org/x/oauth2"
 
+	"github.com/nikolaydubina/import-graph/app/collector"
 	"github.com/nikolaydubina/import-graph/pkg/awesomelists"
 	"github.com/nikolaydubina/import-graph/pkg/codecov"
 	"github.com/nikolaydubina/import-graph/pkg/gitstats"
@@ -50,6 +53,12 @@ func main() {
 		testRunner = &testrunner.GoCmdTestRunner{}
 	}
 
+	ctx := context.Background()
+	ts := oauth2.StaticTokenSource(
+		&oauth2.Token{AccessToken: os.Getenv("GITHUB_IMPORT_GRAPH_TOKEN")},
+	)
+	tc := oauth2.NewClient(ctx, ts)
+
 	gitClient := gitstats.GitCmdLocalClient{
 		Path: ".import-graph/git-repos/",
 	}
@@ -75,6 +84,9 @@ func main() {
 			},
 			FileScanner:         &filescanner.FileScanner{},
 			AwesomeListsChecker: &awesomelists.AwesomeListsChecker{HTTPClient: http.DefaultClient},
+			GitHubSummarizer: &collector.GitHubSummarizer{
+				GitHubClient: github.NewClient(tc),
+			},
 		},
 	}
 

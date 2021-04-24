@@ -1,6 +1,7 @@
 package collector
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -29,6 +30,7 @@ type ModuleStats struct {
 	CanGetCodecovStats      bool `json:"can_get_codecov"`
 	CanGetGoReportCardStats bool `json:"can_get_goreportcard"`
 	CanRunTests             bool `json:"can_run_tests"`
+	CanGetGitHub            bool `json:"can_get_github"`
 
 	GitHubURL string `json:"github_url,omitempty"`
 	GitURL    string `json:"git_url,omitempty"`
@@ -40,6 +42,7 @@ type ModuleStats struct {
 	*FileStats         `json:",omitempty"`
 	*ReadmeStats       `json:",omitempty"`
 	*AwesomeLists      `json:",omitempty"`
+	*GitHubSummary     `json:",omitempty"`
 }
 
 type Edge struct {
@@ -79,6 +82,7 @@ type GoModuleStatsCollector struct {
 	GoReportCardClient  *goreportcard.GoReportCardHTTPClient
 	FileScanner         *filescanner.FileScanner
 	AwesomeListsChecker *awesomelists.AwesomeListsChecker
+	GitHubSummarizer    *GitHubSummarizer
 }
 
 // CollectStats fetches all possible information about Go module
@@ -161,6 +165,13 @@ func (c *GoModuleStatsCollector) CollectStats(moduleName string) (ModuleStats, e
 		}
 	} else {
 		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not check awesomelists: %w", err))
+	}
+
+	if ghSummary, err := c.GitHubSummarizer.GetSummary(context.TODO(), gitHubURL); err == nil {
+		moduleStats.GitHubSummary = ghSummary
+		moduleStats.CanGetGitHub = true
+	} else {
+		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get github stats: %w", err))
 	}
 
 	if c.TestRunner != nil {
