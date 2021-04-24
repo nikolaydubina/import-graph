@@ -1,6 +1,6 @@
 # Collect data about your dependencies
 
-Currently only Go modules are supported. In future other languages may be added. Data sources:
+Currently only Go modules are supported. In future, other languages may be added. Data sources:
 
 - [x] Analyzes git log
 - [x] Runs tests and code coverage
