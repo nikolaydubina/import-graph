@@ -25,12 +25,9 @@ type ModuleStats struct {
 	ID         string `json:"id"` // unique key among all nodes, for Go this is module name
 	ModuleName string `json:"-"`  // this is in id anyways
 
-	// Collected data
-	CanGetGitStats          bool `json:"can_get_git"`
-	CanGetCodecovStats      bool `json:"can_get_codecov"`
-	CanGetGoReportCardStats bool `json:"can_get_goreportcard"`
-	CanRunTests             bool `json:"can_run_tests"`
-	CanGetGitHub            bool `json:"can_get_github"`
+	CanGetGitStats bool `json:"can_get_git"`
+	CanRunTests    bool `json:"can_run_tests"`
+	CanGetGitHub   bool `json:"can_get_github"`
 
 	GitHubURL string `json:"github_url,omitempty"`
 	GitURL    string `json:"git_url,omitempty"`
@@ -127,7 +124,6 @@ func (c *GoModuleStatsCollector) CollectStats(moduleName string) (ModuleStats, e
 			if st, err := NewCodecovStats(resp); err != nil {
 				errFinal = multierr.Combine(errFinal, fmt.Errorf("can not format codecov stats: %w", err))
 			} else {
-				moduleStats.CanGetCodecovStats = true
 				moduleStats.CodecovStats = st
 			}
 		}
@@ -137,7 +133,6 @@ func (c *GoModuleStatsCollector) CollectStats(moduleName string) (ModuleStats, e
 		if resp, err := c.GoReportCardClient.GetReport(moduleName); err != nil {
 			errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get goreport card: %w", err))
 		} else {
-			moduleStats.CanGetGoReportCardStats = true
 			moduleStats.GoReportCardStats = NewGoReportCardStats(resp)
 		}
 	}

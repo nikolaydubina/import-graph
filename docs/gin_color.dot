@@ -18,22 +18,12 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
@@ -74,17 +64,17 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">3</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">4</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">321</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">321</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">47500</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">47520</td>
 			</tr>
 
 			<tr>
@@ -149,22 +139,12 @@ digraph G
 				</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
@@ -210,7 +190,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">3</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffff0">3</td>
 			</tr>
 
 			<tr>
@@ -285,22 +265,12 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
@@ -326,17 +296,17 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">17</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">18</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">116</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">116</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">7563</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">7569</td>
 			</tr>
 
 			<tr>
@@ -406,11 +376,6 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
@@ -421,18 +386,13 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_run_tests</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">files_has_benchmarks</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">false</td>
 			</tr>
 
 			<tr>
@@ -447,12 +407,12 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">25</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">26</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">96</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">96</td>
 			</tr>
 
 			<tr>
@@ -532,22 +492,12 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
@@ -588,17 +538,17 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">157</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">158</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">55</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">55</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">9202</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">9204</td>
 			</tr>
 
 			<tr>
@@ -638,22 +588,12 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
@@ -679,7 +619,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">files_has_benchmarks</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">false</td>
 			</tr>
 
 			<tr>
@@ -694,12 +634,12 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">95</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">96</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">23</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffff0">23</td>
 			</tr>
 
 			<tr>
@@ -774,22 +714,12 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
@@ -815,17 +745,17 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">166</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">167</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">217</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">217</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">13096</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">13106</td>
 			</tr>
 
 			<tr>
@@ -900,22 +830,12 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
@@ -956,12 +876,12 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">4</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">5</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">13</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffff0">13</td>
 			</tr>
 
 			<tr>
@@ -1006,11 +926,6 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
@@ -1018,11 +933,6 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1047,12 +957,12 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">157</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">158</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">47</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffff0">47</td>
 			</tr>
 
 			<tr>
@@ -1092,11 +1002,6 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
@@ -1107,18 +1012,13 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_run_tests</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">files_has_benchmarks</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">false</td>
 			</tr>
 
 			<tr>
@@ -1133,12 +1033,12 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">554</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">555</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">4</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffff0">4</td>
 			</tr>
 
 			<tr>
@@ -1208,22 +1108,12 @@ digraph G
 				</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
@@ -1249,12 +1139,12 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">208</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">209</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">10</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffff0">10</td>
 			</tr>
 
 			<tr>
@@ -1324,22 +1214,12 @@ digraph G
 				</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
@@ -1365,12 +1245,12 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">529</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">530</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">7</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffff0">7</td>
 			</tr>
 
 			<tr>
@@ -1440,22 +1320,12 @@ digraph G
 				</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
@@ -1496,12 +1366,12 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">131</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">132</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">3</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffff0">3</td>
 			</tr>
 
 			<tr>
@@ -1576,11 +1446,6 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
@@ -1588,11 +1453,6 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -1617,12 +1477,12 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">150</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">151</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">255</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">255</td>
 			</tr>
 
 			<tr>
@@ -1692,11 +1552,6 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
@@ -1707,18 +1562,13 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_run_tests</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">files_has_benchmarks</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">false</td>
 			</tr>
 
 			<tr>
@@ -1733,12 +1583,12 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">967</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">968</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">20</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffff0">20</td>
 			</tr>
 
 			<tr>
@@ -1783,22 +1633,12 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
@@ -1824,12 +1664,12 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">108</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">109</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">19</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffff0">19</td>
 			</tr>
 
 			<tr>
@@ -1899,22 +1739,12 @@ digraph G
 				</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
@@ -1940,7 +1770,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">files_has_benchmarks</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">false</td>
 			</tr>
 
 			<tr>
@@ -1955,12 +1785,12 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">1145</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">1146</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">2</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffff0">2</td>
 			</tr>
 
 			<tr>
@@ -2000,22 +1830,12 @@ digraph G
 				</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
@@ -2041,7 +1861,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">files_has_benchmarks</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">false</td>
 			</tr>
 
 			<tr>
@@ -2056,17 +1876,17 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">105</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">106</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">7</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffff0">7</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">github_repo_stars</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">411</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">413</td>
 			</tr>
 
 			<tr>
@@ -2106,11 +1926,6 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
@@ -2121,18 +1936,13 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_run_tests</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">files_has_benchmarks</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">false</td>
 			</tr>
 
 			<tr>
@@ -2147,12 +1957,12 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">4</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">5</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">212</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">212</td>
 			</tr>
 
 			<tr>
@@ -2217,22 +2027,12 @@ digraph G
 				</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
@@ -2263,7 +2063,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">6</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffff0">6</td>
 			</tr>
 
 			<tr>
@@ -2308,11 +2108,6 @@ digraph G
 				</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
@@ -2323,18 +2118,13 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_run_tests</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">files_has_benchmarks</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">false</td>
 			</tr>
 
 			<tr>
@@ -2354,7 +2144,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">12</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffff0">12</td>
 			</tr>
 
 			<tr>
@@ -2429,22 +2219,12 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
@@ -2485,12 +2265,12 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">4</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">5</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">13</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffff0">13</td>
 			</tr>
 
 			<tr>
@@ -2535,11 +2315,6 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
 			</tr>
@@ -2550,18 +2325,13 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_run_tests</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">files_has_benchmarks</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">false</td>
 			</tr>
 
 			<tr>
@@ -2636,11 +2406,6 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
@@ -2648,11 +2413,6 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -2677,12 +2437,12 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_last_commit_days_since</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">13</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">14</td>
 			</tr>
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">56</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">56</td>
 			</tr>
 
 			<tr>
@@ -2757,11 +2517,6 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
@@ -2769,11 +2524,6 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -2803,7 +2553,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">196</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">196</td>
 			</tr>
 
 			<tr>
@@ -2873,11 +2623,6 @@ digraph G
 			</tr>
 
 			<tr>
-				<td border="1" ALIGN="LEFT">can_get_codecov</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
 				<td border="1" ALIGN="LEFT">can_get_git</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
@@ -2885,11 +2630,6 @@ digraph G
 			<tr>
 				<td border="1" ALIGN="LEFT">can_get_github</td>
 				<td border="1" ALIGN="RIGHT" bgcolor="#ff110">false</td>
-			</tr>
-
-			<tr>
-				<td border="1" ALIGN="LEFT">can_get_goreportcard</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">true</td>
 			</tr>
 
 			<tr>
@@ -2919,7 +2659,7 @@ digraph G
 
 			<tr>
 				<td border="1" ALIGN="LEFT">git_num_contributors</td>
-				<td border="1" ALIGN="RIGHT" bgcolor="#ffffffff">389</td>
+				<td border="1" ALIGN="RIGHT" bgcolor="#1ff10">389</td>
 			</tr>
 
 			<tr>

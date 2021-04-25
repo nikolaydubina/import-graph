@@ -3,16 +3,17 @@
 [![Tests](https://github.com/nikolaydubina/import-graph/workflows/Test/badge.svg)](https://github.com/nikolaydubina/import-graph/workflows/Test/badge.svg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/nikolaydubina/import-graph)](https://goreportcard.com/report/github.com/nikolaydubina/import-graph)
 
-Currently only Go modules are supported. In future, other languages may be added. Data sources:
+Features and Data Sources:
 
-- [x] Analyzes git log
-- [x] Runs tests and code coverage
-- [x] Detects benchmarks
+- [x] Go modules, runs tests, detects tests and benchmarks
+- [x] Flexible rendering with Graphviz, JSONL, and coloring configuration
+- [x] git log
 - [x] goreportcard.com
 - [x] codecov.io
 - [x] Analyzes README.md
 - [x] Checks if mentioned in Awesome lists
 - [x] GitHub Stars
+- [ ] GitHub verified Organizations
 - [ ] ... add yours here
 
 Render with [dot](https://graphviz.org):
@@ -72,11 +73,7 @@ $ go mod graph | ./bin/import-graph | jq -f
 
 ## Notes
 
-For GitHub you need to set to set in environment `GITHUB_IMPORT_GRAPH_TOKEN` to your [personal GitHub token](https://github.com/settings/tokens). It does not need any permissions at all. It is used to have higher quota for GitHub API calls. Since this is private data, you can pass it to process securely like this:
-
-```
-FOO=bar bash -c 'somecommand someargs | somecommand2'
-```
+For GitHub you need to set to set in environment `GITHUB_IMPORT_GRAPH_TOKEN` to your [personal GitHub token](https://github.com/settings/tokens). It does not need any permissions at all. It is needed for higher quota of GitHub API calls.
 
 ## Related Projects
 

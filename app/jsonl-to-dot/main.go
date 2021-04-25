@@ -53,16 +53,18 @@ func main() {
 		log.Fatalln(err)
 	}
 
-	if cconf, err := loadColorConfigFromURL(colorSchemeFilePath); cconf != nil && err == nil {
-		if err := graphviz.NewGraphvizColorRenderer(*cconf).Render(graphviz.TemplateParams{Graph: g}, os.Stdout); err != nil {
-			log.Println(err)
+	if colorSchemeFilePath != "" {
+		if cconf, err := loadColorConfigFromURL(colorSchemeFilePath); cconf != nil && err == nil {
+			if err := graphviz.NewGraphvizColorRenderer(*cconf).Render(graphviz.TemplateParams{Graph: g}, os.Stdout); err != nil {
+				log.Println(fmt.Errorf("can not render colored from path (%s): %w", colorSchemeFilePath, err))
+			}
+			return
+		} else {
+			log.Println(fmt.Errorf("can not load config with error, will fallback: %w", err))
 		}
-		return
-	} else {
-		log.Println(err)
 	}
 
 	if err := graphviz.NewGraphvizBasicRenderer().Render(graphviz.TemplateParams{Graph: g}, os.Stdout); err != nil {
-		log.Println(err)
+		log.Println(fmt.Errorf("fallback renderer got error: %w", err))
 	}
 }
