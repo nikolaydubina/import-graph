@@ -11,10 +11,12 @@ import (
 	iggithub "github.com/nikolaydubina/import-graph/pkg/github"
 )
 
+// GitHubSummarizer collects summary about github repo
 type GitHubSummarizer struct {
 	GitHubClient *github.Client
 }
 
+// GetSummary collects summary about github repo
 func (c *GitHubSummarizer) GetSummary(ctx context.Context, ghURL url.URL) (*GitHubSummary, error) {
 	owner, repo := iggithub.ParseGitHubURL(ghURL)
 	ghRepo, _, err := c.GitHubClient.Repositories.Get(ctx, owner, repo)
@@ -32,6 +34,7 @@ func (c *GitHubSummarizer) GetSummary(ctx context.Context, ghURL url.URL) (*GitH
 	return &summary, nil
 }
 
+// GitHubSummary is used in collector result
 type GitHubSummary struct {
 	NumStartsRepo *int `json:"github_repo_stars,omitempty"`
 }

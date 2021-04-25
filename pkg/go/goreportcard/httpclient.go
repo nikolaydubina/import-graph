@@ -15,6 +15,7 @@ type GoReportCardHTTPClient struct {
 	BaseURL    string
 }
 
+// GradeEnum is goreportcard grade
 type GradeEnum string
 
 var (
@@ -27,6 +28,7 @@ var (
 	GradeF  GradeEnum = "F"
 )
 
+// Report from goreportcard about single module
 type Report struct {
 	Average   float64   `json:"average"`
 	Grade     GradeEnum `json:"grade"`
@@ -39,6 +41,7 @@ type redirectResponse struct {
 	RedirectPath string `json:"redirect"` // e.g. "/report/github.com/go-playground/validator"
 }
 
+// GetReport fetches report from goreportcard.com
 func (c *GoReportCardHTTPClient) GetReport(modName string) (*Report, error) {
 	path := fmt.Sprintf("/report/%s", modName)
 

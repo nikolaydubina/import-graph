@@ -9,8 +9,10 @@ import (
 	"strings"
 )
 
+// FileScanner has various methods to check Go files
 type FileScanner struct{}
 
+// HasTests checks if repo at path has tests files
 func (f *FileScanner) HasTests(path string) bool {
 	found := false
 	filepath.Walk(path, func(path string, f os.FileInfo, err error) error {
@@ -26,6 +28,7 @@ func (f *FileScanner) HasTests(path string) bool {
 	return found
 }
 
+// HasBenchmarks checks if repo at path has benchmark files
 func (f *FileScanner) HasBenchmarks(path string) bool {
 	found := false
 	filepath.Walk(path, func(path string, f os.FileInfo, err error) error {

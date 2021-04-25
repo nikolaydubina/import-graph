@@ -48,6 +48,7 @@ func (logs GitLog) NumContributors() uint {
 	return count
 }
 
+// DaysSinceLastCommit returns partial days since last commit
 func (logs GitLog) DaysSinceLastCommit() float64 {
 	if len(logs) == 0 {
 		return 0

@@ -6,20 +6,24 @@ import (
 	"sync"
 )
 
+// GoURLResolver is implementation to be cached
 type GoURLResolver interface {
 	ResolveGitHubURL(name string) (url.URL, error)
 	ResolveGitURL(name string) (url.URL, error)
 }
 
+// GoCachedResolver caches GoURLResolver
 type GoCachedResolver struct {
 	URLResolver GoURLResolver
 	Storage     sync.Map
 }
 
+// ResolveGitHubURL cached version
 func (c *GoCachedResolver) ResolveGitHubURL(name string) (url.URL, error) {
 	return c.tryLoad(name, newKeyGitHubURLKey(name), c.URLResolver.ResolveGitHubURL)
 }
 
+// ResolveGitURL cached version
 func (c *GoCachedResolver) ResolveGitURL(name string) (url.URL, error) {
 	return c.tryLoad(name, newKeyGitURLKey(name), c.URLResolver.ResolveGitURL)
 }

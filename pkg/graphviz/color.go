@@ -10,24 +10,29 @@ import (
 	"strings"
 	"text/template"
 
+	// embed
 	_ "embed"
 )
 
 //go:embed templates/color.dot
 var colorTemplate string
 
+// ColorScale is sequence of colors and numerical anchors between them
 type ColorScale struct {
 	Colors []color.RGBA
 	Points []float64
 }
 
+// ColorConfigVal is configuration for single key on how to color its value
 type ColorConfigVal struct {
 	ValToColor map[string]color.RGBA `json:"ValToColor"`
 	ColorScale *ColorScale           `json:"ColorScale"`
 }
 
+// ColorConfig is config for all keys
 type ColorConfig map[string]ColorConfigVal
 
+// RenderColorVal returns color for single key based on its value
 func (c ColorConfig) RenderColorVal(k string, v interface{}) color.Color {
 	valC, ok := c[k]
 	if !ok {
@@ -67,7 +72,7 @@ func (c ColorConfig) RenderColorVal(k string, v interface{}) color.Color {
 	return color.White
 }
 
-// GraphvizColorRenderer contains methods to tranform input to Graphviz format
+// GraphvizColorRenderer contains methods to transform input to Graphviz format
 // TODO: consider adding colors in background https://stackoverflow.com/questions/17765301/graphviz-dot-how-to-change-the-colour-of-one-record-in-multi-record-shape
 type GraphvizColorRenderer struct {
 	Template    *template.Template
@@ -92,6 +97,7 @@ func (g *GraphvizColorRenderer) Render(params TemplateParams, w io.Writer) error
 	return g.Template.Execute(w, params)
 }
 
+// RenderColor transforms Go color to Graphviz RGBA format
 func RenderColor(c color.Color) string {
 	r, g, b, a := c.RGBA()
 	return fmt.Sprintf("#%x%x%x%x", uint8(r), uint8(g), uint8(b), uint8(a))

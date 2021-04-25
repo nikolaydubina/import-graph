@@ -12,25 +12,30 @@ import (
 	"github.com/nikolaydubina/import-graph/pkg/github"
 )
 
+// HTTPClient is codecov HTTP based client
 type HTTPClient struct {
 	BaseURL    string // e.g. "api.codecov.io"
 	HTTPClient *http.Client
 }
 
+// Totals in HTTP response
 type Totals struct {
 	NumFiles uint    `json:"files"`
 	NumLines uint    `json:"lines"`
 	Coverage float64 `json:"coverage"`
 }
 
+// Report in HTTP response
 type Report struct {
 	Totals Totals `json:"totals"`
 }
 
+// CommitStats in HTTP response
 type CommitStats struct {
 	Report Report `json:"report"`
 }
 
+// RepoStats codecov stats about single repo
 type RepoStats struct {
 	Language      string       `json:"language"`      // e.g. "go"
 	Branch        string       `json:"branch"`        // e.g. "main"
@@ -43,6 +48,7 @@ func getRepoURL(owner string, repoName string) (*url.URL, error) {
 	return url.Parse(fmt.Sprintf("https://app.codecov.io/gh/%s/%s", owner, repoName))
 }
 
+// GetRepoStats makes HTTP call to codecov and parses response
 func (c *HTTPClient) GetRepoStats(owner string, repoName string) (*RepoStats, error) {
 	if owner == "" || repoName == "" {
 		return nil, errors.New("owner or repo is empty stirng")
@@ -70,6 +76,7 @@ func (c *HTTPClient) GetRepoStats(owner string, repoName string) (*RepoStats, er
 	return &stats, nil
 }
 
+// GetRepoStatsFromGitHubURL is convenience wrapper
 func (c *HTTPClient) GetRepoStatsFromGitHubURL(ghURL url.URL) (*RepoStats, error) {
 	owner, repo := github.ParseGitHubURL(ghURL)
 	return c.GetRepoStats(owner, repo)

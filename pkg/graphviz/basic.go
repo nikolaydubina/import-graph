@@ -8,13 +8,14 @@ import (
 	"strings"
 	"text/template"
 
+	// embed
 	_ "embed"
 )
 
 //go:embed templates/basic.dot
 var basicTemplate string
 
-// GraphvizBasicRenderer contains methods to tranform input to Graphviz format
+// GraphvizBasicRenderer contains methods to transform input to Graphviz format
 // TODO: consider adding colors in background https://stackoverflow.com/questions/17765301/graphviz-dot-how-to-change-the-colour-of-one-record-in-multi-record-shape
 type GraphvizBasicRenderer struct {
 	Template *template.Template
