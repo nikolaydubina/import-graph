@@ -1,5 +1,8 @@
 # Collect data about your dependencies
 
+[![Tests](https://github.com/nikolaydubina/import-graph/workflows/Test/badge.svg)](https://github.com/nikolaydubina/import-graph/workflows/Test/badge.svg)
+[![Go Report Card](https://goreportcard.com/badge/github.com/nikolaydubina/import-graph)](https://goreportcard.com/report/github.com/nikolaydubina/import-graph)
+
 Currently only Go modules are supported. In future, other languages may be added. Data sources:
 
 - [x] Analyzes git log
