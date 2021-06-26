@@ -25,7 +25,7 @@ type Graph struct {
 // This is conveneint if caller can call `go mod graph` by himself.
 type GoModGraphParser struct{}
 
-func (c *GoModGraphParser) Parse(input io.Reader) (*Graph, error) {
+func (c GoModGraphParser) Parse(input io.Reader) (Graph, error) {
 	scanner := bufio.NewScanner(input)
 
 	edgeAdded := map[Edge]bool{}
@@ -49,10 +49,10 @@ func (c *GoModGraphParser) Parse(input io.Reader) (*Graph, error) {
 		}
 	}
 	if err := scanner.Err(); err != nil {
-		return nil, fmt.Errorf("got error from stdout go mod graph scanner: %w", err)
+		return graph, fmt.Errorf("got error from stdout go mod graph scanner: %w", err)
 	}
 
-	return &graph, nil
+	return graph, nil
 }
 
 // processLine parses single line of go mod graph output

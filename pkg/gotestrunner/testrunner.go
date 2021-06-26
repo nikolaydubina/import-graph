@@ -1,4 +1,4 @@
-package testrunner
+package gotestrunner
 
 import (
 	"bufio"
@@ -24,7 +24,7 @@ type GoModuleTestRunResult struct {
 }
 
 // RunModuleTets runs tests for all packages in Go module, collects aggregate statistics
-func (c *GoCmdTestRunner) RunModuleTets(moduleDirPath string) (*GoModuleTestRunResult, error) {
+func (c GoCmdTestRunner) RunModuleTets(moduleDirPath string) (*GoModuleTestRunResult, error) {
 	pkgTestStats, err := c.RunTests(moduleDirPath)
 	if err != nil {
 		return nil, err
@@ -61,7 +61,7 @@ type GoPackageTestRunResult struct {
 }
 
 // RunTests runs tests via Go process and returns report
-func (c *GoCmdTestRunner) RunTests(moduleDirPath string) (map[string]GoPackageTestRunResult, error) {
+func (c GoCmdTestRunner) RunTests(moduleDirPath string) (map[string]GoPackageTestRunResult, error) {
 	cmd := exec.Command("go", "test", "-short", "-json", "-covermode=atomic", "./...")
 	cmd.Dir = moduleDirPath
 	stdout, err := cmd.StdoutPipe()

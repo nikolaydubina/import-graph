@@ -11,12 +11,13 @@ import (
 
 	"github.com/nikolaydubina/import-graph/pkg/awesomelists"
 	"github.com/nikolaydubina/import-graph/pkg/codecov"
+	"github.com/nikolaydubina/import-graph/pkg/github"
 	"github.com/nikolaydubina/import-graph/pkg/gitstats"
-	"github.com/nikolaydubina/import-graph/pkg/go/filescanner"
-	"github.com/nikolaydubina/import-graph/pkg/go/gomodgraph"
-	"github.com/nikolaydubina/import-graph/pkg/go/goreportcard"
-	"github.com/nikolaydubina/import-graph/pkg/go/testrunner"
-	"github.com/nikolaydubina/import-graph/pkg/go/urlresolver/basiccache"
+	"github.com/nikolaydubina/import-graph/pkg/gofilescanner"
+	"github.com/nikolaydubina/import-graph/pkg/gomodgraph"
+	"github.com/nikolaydubina/import-graph/pkg/goreportcard"
+	"github.com/nikolaydubina/import-graph/pkg/gotestrunner"
+	"github.com/nikolaydubina/import-graph/pkg/gourlresolver/basiccache"
 	"github.com/nikolaydubina/import-graph/pkg/scandocs"
 )
 
@@ -32,14 +33,14 @@ type ModuleStats struct {
 	GitHubURL string `json:"github_url,omitempty"`
 	GitURL    string `json:"git_url,omitempty"`
 
-	*GitStats          `json:",omitempty"`
-	*CodecovStats      `json:",omitempty"`
-	*GoTestStats       `json:",omitempty"`
-	*GoReportCardStats `json:",omitempty"`
-	*FileStats         `json:",omitempty"`
-	*ReadmeStats       `json:",omitempty"`
-	*AwesomeLists      `json:",omitempty"`
-	*GitHubSummary     `json:",omitempty"`
+	*GitStats             `json:",omitempty"`
+	*CodecovStats         `json:",omitempty"`
+	*GoTestStats          `json:",omitempty"`
+	*GoReportCardStats    `json:",omitempty"`
+	*FileStats            `json:",omitempty"`
+	*ReadmeStats          `json:",omitempty"`
+	*AwesomeLists         `json:",omitempty"`
+	*github.GitHubSummary `json:",omitempty"`
 }
 
 type Edge struct {
@@ -71,19 +72,19 @@ func (g *Graph) WriteJSONL(w io.Writer) error {
 // GoModuleStatsCollector is collecting all the details about single Go module
 // Does not fail if encounters errors, but still collects thoese errors.
 type GoModuleStatsCollector struct {
-	GitStorage          *gitstats.GitCmdLocalClient
-	URLResolver         *basiccache.GoCachedResolver
-	GitStatsFetcher     *gitstats.GitStatsFetcher
-	TestRunner          *testrunner.GoCmdTestRunner
-	CodecovClient       *codecov.HTTPClient
-	GoReportCardClient  *goreportcard.GoReportCardHTTPClient
-	FileScanner         *filescanner.FileScanner
-	AwesomeListsChecker *awesomelists.AwesomeListsChecker
-	GitHubSummarizer    *GitHubSummarizer
+	GitStorage          gitstats.GitCmdLocalClient
+	URLResolver         basiccache.GoCachedResolver
+	GitStatsFetcher     gitstats.GitStatsFetcher
+	TestRunner          gotestrunner.GoCmdTestRunner
+	CodecovClient       codecov.HTTPClient
+	GoReportCardClient  goreportcard.GoReportCardHTTPClient
+	FileScanner         gofilescanner.FileScanner
+	AwesomeListsChecker awesomelists.AwesomeListsChecker
+	GitHubSummarizer    github.GitHubSummarizer
 }
 
 // CollectStats fetches all possible information about Go module
-func (c *GoModuleStatsCollector) CollectStats(moduleName string) (ModuleStats, error) {
+func (c GoModuleStatsCollector) CollectStats(moduleName string) (ModuleStats, error) {
 	moduleStats := ModuleStats{
 		ID:         moduleName,
 		ModuleName: moduleName,
@@ -108,36 +109,30 @@ func (c *GoModuleStatsCollector) CollectStats(moduleName string) (ModuleStats, e
 		wasCloned = false
 	}
 
-	if c.GitStatsFetcher != nil {
-		if st, err := c.GitStatsFetcher.GetGitStats(gitURL); err != nil {
-			errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get git stats: %w", err))
+	if st, err := c.GitStatsFetcher.GetGitStats(gitURL); err != nil {
+		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get git stats: %w", err))
+	} else {
+		moduleStats.GitStats = NewGitStats(st)
+		moduleStats.CanGetGitStats = true
+	}
+
+	if resp, err := c.CodecovClient.GetRepoStatsFromGitHubURL(gitHubURL); err != nil {
+		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get codecov stats: %w", err))
+	} else {
+		if st, err := NewCodecovStats(resp); err != nil {
+			errFinal = multierr.Combine(errFinal, fmt.Errorf("can not format codecov stats: %w", err))
 		} else {
-			moduleStats.GitStats = NewGitStats(st)
-			moduleStats.CanGetGitStats = true
+			moduleStats.CodecovStats = st
 		}
 	}
 
-	if c.CodecovClient != nil {
-		if resp, err := c.CodecovClient.GetRepoStatsFromGitHubURL(gitHubURL); err != nil {
-			errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get codecov stats: %w", err))
-		} else {
-			if st, err := NewCodecovStats(resp); err != nil {
-				errFinal = multierr.Combine(errFinal, fmt.Errorf("can not format codecov stats: %w", err))
-			} else {
-				moduleStats.CodecovStats = st
-			}
-		}
+	if resp, err := c.GoReportCardClient.GetReport(moduleName); err != nil {
+		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get goreport card: %w", err))
+	} else {
+		moduleStats.GoReportCardStats = NewGoReportCardStats(resp)
 	}
 
-	if c.GoReportCardClient != nil {
-		if resp, err := c.GoReportCardClient.GetReport(moduleName); err != nil {
-			errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get goreport card: %w", err))
-		} else {
-			moduleStats.GoReportCardStats = NewGoReportCardStats(resp)
-		}
-	}
-
-	if c.FileScanner != nil && wasCloned {
+	if wasCloned {
 		path := c.GitStorage.DirPath(gitURL)
 		moduleStats.FileStats = &FileStats{
 			HasBenchmarks: c.FileScanner.HasBenchmarks(path),
@@ -169,13 +164,11 @@ func (c *GoModuleStatsCollector) CollectStats(moduleName string) (ModuleStats, e
 		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not get github stats: %w", err))
 	}
 
-	if c.TestRunner != nil {
-		if st, err := c.TestRunner.RunModuleTets(c.GitStorage.DirPath(gitURL)); err != nil {
-			errFinal = multierr.Combine(errFinal, fmt.Errorf("can not run tests: %w", err))
-		} else {
-			moduleStats.CanRunTests = true
-			moduleStats.GoTestStats = NewGoTestStats(st)
-		}
+	if st, err := c.TestRunner.RunModuleTets(c.GitStorage.DirPath(gitURL)); err != nil {
+		errFinal = multierr.Combine(errFinal, fmt.Errorf("can not run tests: %w", err))
+	} else {
+		moduleStats.CanRunTests = true
+		moduleStats.GoTestStats = NewGoTestStats(st)
 	}
 
 	return moduleStats, errFinal

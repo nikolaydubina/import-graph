@@ -8,8 +8,8 @@ import (
 
 	"github.com/nikolaydubina/import-graph/pkg/codecov"
 	"github.com/nikolaydubina/import-graph/pkg/gitstats"
-	"github.com/nikolaydubina/import-graph/pkg/go/goreportcard"
-	"github.com/nikolaydubina/import-graph/pkg/go/testrunner"
+	"github.com/nikolaydubina/import-graph/pkg/goreportcard"
+	"github.com/nikolaydubina/import-graph/pkg/gotestrunner"
 )
 
 // CodecovStats is pretty printed for embedding in bigger structures
@@ -94,7 +94,7 @@ type GoTestStats struct {
 }
 
 // NewGoTestStats look struct
-func NewGoTestStats(r *testrunner.GoModuleTestRunResult) *GoTestStats {
+func NewGoTestStats(r *gotestrunner.GoModuleTestRunResult) *GoTestStats {
 	return &GoTestStats{
 		HasTests:               r.HasTests,
 		AllTestsPassed:         r.AllTestsPassed,

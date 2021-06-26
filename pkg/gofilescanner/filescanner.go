@@ -1,4 +1,4 @@
-package filescanner
+package gofilescanner
 
 import (
 	"bufio"

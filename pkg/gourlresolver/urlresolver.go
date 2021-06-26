@@ -1,4 +1,4 @@
-package urlresolver
+package gourlresolver
 
 import (
 	"bytes"
@@ -15,7 +15,7 @@ type GoURLResolver struct {
 }
 
 // ResolveGitHubURL finds GitHub URL
-func (c *GoURLResolver) ResolveGitHubURL(name string) (url.URL, error) {
+func (c GoURLResolver) ResolveGitHubURL(name string) (url.URL, error) {
 	if strings.HasPrefix(name, "github.com/") {
 		return resolvePointerURL(url.Parse("https://" + normalizeGitURLPath(name)))
 	}
@@ -34,7 +34,7 @@ func (c *GoURLResolver) ResolveGitHubURL(name string) (url.URL, error) {
 }
 
 // ResolveGitURL finds git URL
-func (c *GoURLResolver) ResolveGitURL(name string) (url.URL, error) {
+func (c GoURLResolver) ResolveGitURL(name string) (url.URL, error) {
 	if strings.HasPrefix(name, "github.com/") {
 		return resolvePointerURL(url.Parse("https://" + normalizeGitURLPath(name)))
 	}
@@ -50,7 +50,7 @@ func normalizeGitURLPath(path string) string {
 	return strings.Join(parts[:3], "/")
 }
 
-func (c *GoURLResolver) fetchData(name string) (string, error) {
+func (c GoURLResolver) fetchData(name string) (string, error) {
 	resp, err := c.HTTPClient.Get("https://" + name + "?go-get=1")
 	if err != nil {
 		return "", fmt.Errorf("can not make GET to Go module name: %w", err)

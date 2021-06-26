@@ -49,7 +49,7 @@ func getRepoURL(owner string, repoName string) (*url.URL, error) {
 }
 
 // GetRepoStats makes HTTP call to codecov and parses response
-func (c *HTTPClient) GetRepoStats(owner string, repoName string) (*RepoStats, error) {
+func (c HTTPClient) GetRepoStats(owner string, repoName string) (*RepoStats, error) {
 	if owner == "" || repoName == "" {
 		return nil, errors.New("owner or repo is empty stirng")
 	}
@@ -77,7 +77,7 @@ func (c *HTTPClient) GetRepoStats(owner string, repoName string) (*RepoStats, er
 }
 
 // GetRepoStatsFromGitHubURL is convenience wrapper
-func (c *HTTPClient) GetRepoStatsFromGitHubURL(ghURL url.URL) (*RepoStats, error) {
+func (c HTTPClient) GetRepoStatsFromGitHubURL(ghURL url.URL) (*RepoStats, error) {
 	owner, repo := github.ParseGitHubURL(ghURL)
 	return c.GetRepoStats(owner, repo)
 }
