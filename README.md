@@ -19,6 +19,7 @@ Features
 - [x] Checks if mentioned in Awesome lists
 - [x] GitHub Stars
 - [ ] GitHub verified Organizations
+- [ ] reuse `go get` and `go list` to get code loaded by native Go routines
 - [ ] ... add yours here
 
 ## Example
