@@ -31,8 +31,12 @@ func main() {
 	flag.Parse()
 
 	ctx := context.Background()
+	ghtoken := os.Getenv("GITHUB_IMPORT_GRAPH_TOKEN")
+	if ghtoken == "" {
+		log.Println("WARN: $GITHUB_IMPORT_GRAPH_TOKEN is empty, might not be able to fetch GitHub data")
+	}
 	ts := oauth2.StaticTokenSource(
-		&oauth2.Token{AccessToken: os.Getenv("GITHUB_IMPORT_GRAPH_TOKEN")},
+		&oauth2.Token{AccessToken: ghtoken},
 	)
 	tc := oauth2.NewClient(ctx, ts)
 
