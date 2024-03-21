@@ -3,6 +3,7 @@
 [![Tests](https://github.com/nikolaydubina/import-graph/workflows/Test/badge.svg)](https://github.com/nikolaydubina/import-graph/workflows/Test/badge.svg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/nikolaydubina/import-graph)](https://goreportcard.com/report/github.com/nikolaydubina/import-graph)
 [![go-recipes](https://raw.githubusercontent.com/nikolaydubina/go-recipes/main/badge.svg?raw=true)](https://github.com/nikolaydubina/go-recipes)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/nikolaydubina/import-graph/badge)](https://securityscorecards.dev/viewer/?uri=github.com/nikolaydubina/import-graph)
 
 ```bash
 $ go install github.com/nikolaydubina/jsonl-graph@latest
